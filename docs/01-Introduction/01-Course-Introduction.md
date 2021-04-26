@@ -32,4 +32,3 @@
 ## Course Objectives
 
 The objectives of this course are aligned to match the **`Certified Kubernetes Security Exam (CKS)`**
-  ![Etcd Node Configuration](../../images/courseObjective.png)
