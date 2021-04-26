@@ -2,6 +2,8 @@
 
 These are notes from the [Certified Kubernetes Security Specialist (CKS)](https://kodekloud.com/courses/enrolled/1378608) hosted on KodeKloud.
 
+> Note: Some of the sections are still work in progress. We will be finishing this soon.
+
 # Sections
 - [01-Introduction](docs/01-Introduction)
   - [01-Course-Introduction](docs/01-Introduction/01-Course-Introduction.md)
@@ -155,3 +157,5 @@ These are notes from the [Certified Kubernetes Security Specialist (CKS)](https:
   - [03-Mock-Exam-2](docs/08-Mock-Exams/03-Mock-Exam-2.md)
   - [04-Mock-Exam-3](docs/08-Mock-Exams/04-Mock-Exam-3.md)
  
+
+
