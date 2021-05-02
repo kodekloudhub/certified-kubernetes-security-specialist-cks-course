@@ -1,3 +1,18 @@
 # SSH Hardening
   - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704433)
  In this section, we will take a look at SSH Hardening
+
+ - SSH is used for logging into a remote machine and for executing commands on a remote machine.
+
+ - the basic syntax of doing this is to run the SSH command followed by the IP address or hostname of the server you want to connect to.
+    ![k8sSSH](../../images/k8sSSH.png)
+
+ - A more secure way is to make use of a cryptographic key pair that uses a private and public keys to authenticate to the system.
+
+ - to improve the security of the system:
+
+      - disable SSH for the root account. This ensures that no one can login remotely using the root account and only as their own user account.
+
+      -  disable SSH for the root account. This ensures that no one can login remotely using the root account and only as their own user account
+
+        ![sshHarderning](../../images/sshHarderning.png)
