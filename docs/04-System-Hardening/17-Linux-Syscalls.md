@@ -18,4 +18,7 @@ In this section, we will take a look at Linux Syscalls
 
   - Tracing the syscalls used by a process
 
+        which trace
+        strace touch /tmp/error.log
+
   ![trace](../../images/trace.png)

@@ -5,6 +5,14 @@ In this section, we will take a look at Creation AppArmor Profiles
 
 
 ### A simple bash script
+
+    #!/bin/bash
+    data_directory=/opt/app/data
+    mkdir -p ${data_directory}
+    echo "=>  File created at `date`" | tee $(data_directory) create.log
+
+
+
 ![simpleBashScript](../../images/simpleBashScript.png)
 
 
@@ -14,6 +22,8 @@ In this section, we will take a look at Creation AppArmor Profiles
 
 
 ### Create a profile for bash script
+
+    aa-genprof /root/add_data.sh
 
 ![apparmorprofileBash](../../images/apparmorprofileBash.png)
 

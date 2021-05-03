@@ -10,6 +10,12 @@ In this section, we will take a look at UFW Firewall Basics
 
 ### UFW Rules
 
+    ufw status
+
+    ufw default allow outgoing
+
+    ufw default deny incoming
+
 ![fwRules](../../images/fwRules.png)
 
 ### Allowed & denied Rules
@@ -20,5 +26,12 @@ add an allow rule to permit SSH connections from the jump server with the IP 172
 
    ![allowedRules.png](../../images/allowed.png)
 
+### Delete Rules
+
+    ufw delete deny 8080
+
+    ufw status
+
+    ufw delete 5
 
 ![delete.png](../../images/delete.png)
