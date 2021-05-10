@@ -2,8 +2,6 @@
 
 These are notes from the [Certified Kubernetes Security Specialist (CKS)](https://kodekloud.com/courses/enrolled/1378608) hosted on KodeKloud.
 
-> Note: Some of the sections are still work in progress. We will be finishing this soon.
-
 # Sections
 - [01-Introduction](docs/01-Introduction)
   - [01-Course-Introduction](docs/01-Introduction/01-Course-Introduction.md)
@@ -63,7 +61,6 @@ These are notes from the [Certified Kubernetes Security Specialist (CKS)](https:
   - [46-Labs-Ingress-2](docs/03-Cluster-Setup-and-Hardening/46-Labs-Ingress-2.md)
   - [47-Docker-Service-Configuration](docs/03-Cluster-Setup-and-Hardening/47-Docker-Service-Configuration.md)
   - [48-Docker-Securing-the-Daemon](docs/03-Cluster-Setup-and-Hardening/48-Docker-Securing-the-Daemon.md)
-  - [49-Feedback](docs/03-Cluster-Setup-and-Hardening/49-Feedback.md)
 
 - [04-System-Hardening](docs/04-System-Hardening)
   - [01-Section-Introduction](docs/04-System-Hardening/01-Section-Introduction.md)
@@ -92,7 +89,6 @@ These are notes from the [Certified Kubernetes Security Specialist (CKS)](https:
   - [24-AppArmor-in-Kubernetes](docs/04-System-Hardening/24-AppArmor-in-Kubernetes.md)
   - [25-Linux-Capabilities](docs/04-System-Hardening/25-Linux-Capabilities.md)
   - [26-Lab-AppArmor](docs/04-System-Hardening/26-Lab-AppArmor.md)
-  - [27-Feedback](docs/04-System-Hardening/27-Feedback.md)
 
 - [05-Minimize-Microservice-Vulnerabilities](docs/05-Minimize-Microservice-Vulnerabilities)
   - [01-Section-Introduction](docs/05-Minimize-Microservice-Vulnerabilities/01-Section-Introduction.md)
@@ -105,21 +101,21 @@ These are notes from the [Certified Kubernetes Security Specialist (CKS)](https:
   - [08-Pod-Security-Policies](docs/05-Minimize-Microservice-Vulnerabilities/08-Pod-Security-Policies.md)
   - [09-Labs-PSP](docs/05-Minimize-Microservice-Vulnerabilities/09-Labs-PSP.md)
   - [10-Open-Policy-Agent-(OPA)](docs/05-Minimize-Microservice-Vulnerabilities/10-Open-Policy-Agent-(OPA).md)
-  - [11-OPA-in-Kubernetes](docs/05-Minimize-Microservice-Vulnerabilities/11-OPA-in-Kubernetes.md)
-  - [12-Labs-OPA](docs/05-Minimize-Microservice-Vulnerabilities/12-Labs-OPA.md)
-  - [13-OPA-Gatekeeper-in-Kubernetes](docs/05-Minimize-Microservice-Vulnerabilities/13-OPA-Gatekeeper-in-Kubernetes.md)
-  - [14-Manage-Kubernetes-secrets](docs/05-Minimize-Microservice-Vulnerabilities/14-Manage-Kubernetes-secrets.md)
-  - [15-Lab-Manage-Kubernetes-secrets](docs/05-Minimize-Microservice-Vulnerabilities/15-Lab-Manage-Kubernetes-secrets.md)
-  - [16-Container-Sandboxing](docs/05-Minimize-Microservice-Vulnerabilities/16-Container-Sandboxing.md)
-  - [17-gVisor](docs/05-Minimize-Microservice-Vulnerabilities/17-gVisor.md)
-  - [18-kata-Containers](docs/05-Minimize-Microservice-Vulnerabilities/18-kata-Containers.md)
-  - [19-Runtime-Classes](docs/05-Minimize-Microservice-Vulnerabilities/19-Runtime-Classes.md)
-  - [20-Using-Runtimes-in-Kubernetes](docs/05-Minimize-Microservice-Vulnerabilities/20-Using-Runtimes-in-Kubernetes.md)
-  - [21-Lab-Using-Runtimes-in-Kubernetes](docs/05-Minimize-Microservice-Vulnerabilities/21-Lab-Using-Runtimes-in-Kubernetes.md)
-  - [22-One-way-SSL-vs-Mutual-SSL](docs/05-Minimize-Microservice-Vulnerabilities/22-One-way-SSL-vs-Mutual-SSL.md)
-  - [23-Implement-pod-to-pod-encryption-by-use-of-mTLS](docs/05-Minimize-Microservice-Vulnerabilities/23-Implement-pod-to-pod-encryption-by-use-of-mTLS.md)
-  - [24-Labs-mTLS-with-Istio](docs/05-Minimize-Microservice-Vulnerabilities/24-Labs-mTLS-with-Istio.md)
-  - [25-Feedback](docs/05-Minimize-Microservice-Vulnerabilities/25-Feedback.md)
+  - [11-Labs-OPA](docs/05-Minimize-Microservice-Vulnerabilities/11-Labs-OPA.md)
+  - [12-OPA-in-Kubernetes](docs/05-Minimize-Microservice-Vulnerabilities/12-OPA-in-Kubernetes.md)
+  - [13-Labs-OPA-in-Kubernetes](docs/05-Minimize-Microservice-Vulnerabilities/13-Labs-OPA-in-Kubernetes.md)
+  - [14-OPA-Gatekeeper-in-Kubernetes](docs/05-Minimize-Microservice-Vulnerabilities/14-OPA-Gatekeeper-in-Kubernetes.md)
+  - [15-Manage-Kubernetes-secrets](docs/05-Minimize-Microservice-Vulnerabilities/15-Manage-Kubernetes-secrets.md)
+  - [16-Lab-Manage-Kubernetes-secrets](docs/05-Minimize-Microservice-Vulnerabilities/16-Lab-Manage-Kubernetes-secrets.md)
+  - [17-Container-Sandboxing](docs/05-Minimize-Microservice-Vulnerabilities/17-Container-Sandboxing.md)
+  - [18-gVisor](docs/05-Minimize-Microservice-Vulnerabilities/18-gVisor.md)
+  - [19-kata-Containers](docs/05-Minimize-Microservice-Vulnerabilities/19-kata-Containers.md)
+  - [20-Runtime-Classes](docs/05-Minimize-Microservice-Vulnerabilities/20-Runtime-Classes.md)
+  - [21-Using-Runtimes-in-Kubernetes](docs/05-Minimize-Microservice-Vulnerabilities/21-Using-Runtimes-in-Kubernetes.md)
+  - [22-Lab-Using-Runtimes-in-Kubernetes](docs/05-Minimize-Microservice-Vulnerabilities/22-Lab-Using-Runtimes-in-Kubernetes.md)
+  - [23-One-way-SSL-vs-Mutual-SSL](docs/05-Minimize-Microservice-Vulnerabilities/23-One-way-SSL-vs-Mutual-SSL.md)
+  - [24-Implement-pod-to-pod-encryption-by-use-of-mTLS](docs/05-Minimize-Microservice-Vulnerabilities/24-Implement-pod-to-pod-encryption-by-use-of-mTLS.md)
+  - [25-Labs-mTLS-with-Istio](docs/05-Minimize-Microservice-Vulnerabilities/25-Labs-mTLS-with-Istio.md)
 
 
 - [06-Supply-Chain-Security](docs/06-Supply-Chain-Security)
@@ -133,9 +129,8 @@ These are notes from the [Certified Kubernetes Security Specialist (CKS)](https:
   - [08-Labs-kubesec](docs/06-Supply-Chain-Security/08-Labs-kubesec.md)
   - [09-Scan-images-for-known-vulnerabilities-(Trivy)](docs/06-Supply-Chain-Security/09-Scan-images-for-known-vulnerabilities-(Trivy).md)
   - [10-Labs-Trivy](docs/06-Supply-Chain-Security/10-Labs-Trivy.md)
-  - [11-Feedback](docs/06-Supply-Chain-Security/11-Feedback.md)
- 
-  
+
+
 - [07-Monitoring,-Logging-and-Runtime-Security](docs/07-Monitoring,-Logging-and-Runtime-Security)
   - [01-Section-Introduction](docs/07-Monitoring,-Logging-and-Runtime-Security/01-Section-Introduction.md)
   - [02-Perform-behavioral-analytics-of-syscall-process](docs/07-Monitoring,-Logging-and-Runtime-Security/02-Perform-behavioral-analytics-of-syscall-process.md)
@@ -148,8 +143,7 @@ These are notes from the [Certified Kubernetes Security Specialist (CKS)](https:
   - [09-Lab-Ensure-Immutability-of-Containers-at-Runtime](docs/07-Monitoring,-Logging-and-Runtime-Security/09-Lab-Ensure-Immutability-of-Containers-at-Runtime.md)
   - [10-Use-Audit-Logs-to-monitor-access](docs/07-Monitoring,-Logging-and-Runtime-Security/10-Use-Audit-Logs-to-monitor-access.md)
   - [11-Labs-Use-Audit-Logs-to-monitor-access](docs/07-Monitoring,-Logging-and-Runtime-Security/11-Labs-Use-Audit-Logs-to-monitor-access.md)
-  - [12-Feedback](docs/07-Monitoring,-Logging-and-Runtime-Security/12-Feedback.md)
- 
+
 
 - [08-Mock-Exams](docs/08-Mock-Exams)
   - [01-Mock-Exams-Introduction](docs/08-Mock-Exams/01-Security-Section-Introduction.md)
@@ -157,5 +151,3 @@ These are notes from the [Certified Kubernetes Security Specialist (CKS)](https:
   - [03-Mock-Exam-2](docs/08-Mock-Exams/03-Mock-Exam-2.md)
   - [04-Mock-Exam-3](docs/08-Mock-Exams/04-Mock-Exam-3.md)
  
-
-
