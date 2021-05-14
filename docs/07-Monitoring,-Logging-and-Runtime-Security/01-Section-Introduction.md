@@ -3,3 +3,5 @@
 
 In this section, we will take a look at section introduction
 
+
+![section7Intro](../../images/section7Intro.png)
