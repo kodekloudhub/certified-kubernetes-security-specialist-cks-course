@@ -24,9 +24,7 @@ This YAML file uses the latest nginx image from DockerHub.
   ```
   </details>
 
-- Let us now deploy an Image Policy Webhook server.
-Deploy it using the file image-policy-webhook.yaml
-This will deploy the simple webhook endpoint server and expose it as a service.
+- Deploy an Image Policy Webhook server.
   <details>
   ```
   Run
@@ -36,8 +34,7 @@ This will deploy the simple webhook endpoint server and expose it as a service.
   ```
   </details>
 
-- What is the value passed to registry-whitelist parameter by the command running inside the webhook pods?
-registry-whitelist defines the whitelisted(allowed) registry that can be used by our pods.
+- **`docker.io`** is the value passed to registry-whitelist parameter by the command running inside the webhook pods
   <details>
   ```
   Get webhook pods by
@@ -48,16 +45,12 @@ registry-whitelist defines the whitelisted(allowed) registry that can be used by
 
   $ kubectl describe po <image-bouncer-webhook-POD>
 
-  Answer:
-
-  docker.io
-
   ```
-  </details>
+</details>
 
-- We have added an AdmissionConfiguration file admission_configuration.yaml and a Kubeconfig file admission_kube_config.yaml under /etc/kubernetes/pki/
-There are some fixes to be done so that it works with ImagePolicyWebhook.
-Fix those two YAML files.
+
+- Fix those two YAML files so that it works with ImagePolicyWebhook.
+
   <details>
   ```
   $ vi /etc/kubernetes/pki/admission_configuration.yaml
@@ -87,9 +80,7 @@ Fix those two YAML files.
   ```
   </details>
 
-- Enable the ImagePolicyWebhook admission controller as final step so that our image policy validation can take place in API server. You need to specify admission-control-config-file as well for this controller
-admission-control-config-file:
- /etc/kubernetes/pki/admission_configuration.yaml
+- Enable the ImagePolicyWebhook admission controller as final step so that our image policy validation can take place in API server.
   <details>
   ```
   $ vi /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -115,7 +106,6 @@ admission-control-config-file:
   </details>
 
 - Fix the error for untrusted registry in /root/nginx-latest.yml using the 1.19 image.
-Trusted Image : nginx:1.19
   <details>
   ```
   $ vi /root/nginx-latest.yml

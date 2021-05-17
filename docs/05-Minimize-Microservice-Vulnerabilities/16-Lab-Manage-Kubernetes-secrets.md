@@ -3,7 +3,7 @@
 
 Solutions for Lab Manage Kubernetes Secrets
 
-- How many Secrets exist on the system? in the current(default) namespace
+- To get the Secrets exist on the system, Run
   <details>
   ```
   Run
@@ -26,25 +26,19 @@ Solutions for Lab Manage Kubernetes Secrets
   ```
   </details>
 
-- What is the type of the default-token secret?
+- **`kubernetes.io/service-account-token`** is the type of the default-token secret?
   <details>
   ```
   Look at the Type field using
-  $ kubectl describe secrets default-token-sphlt
-  Answer:
-  kubernetes.io/service-account-token
+
+  $ kubectl describe secrets default-token-sphlt  
   ```
   </details>
 
-- Which of the following is not a secret data defined in default-token secret
-  <details>
-  ```
-  Answer:
-  Type
-  ```
-  </details>
+- **`Type`** is not a secret data defined in default-token secret
 
--  Create a new secret named db-secret with the data given below.
+
+-  Create a new secret named db-secret.
   <details>
   ```
   Run

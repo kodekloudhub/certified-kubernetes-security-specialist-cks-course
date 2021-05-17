@@ -20,6 +20,7 @@ Solutions Lab AppArmor
     Run
     $ ssh node01
     $ aa-status
+    
     52
     ```
   </details>
@@ -30,6 +31,7 @@ Solutions Lab AppArmor
     Run
     $ ssh node01
     $ aa-status
+
     15
     ```
   </details>

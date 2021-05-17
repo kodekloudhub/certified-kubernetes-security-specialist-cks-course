@@ -3,7 +3,7 @@
 
 Solutions to Lab Ensure Immutability of Containers at Runtime
 
-- We have deployed a few pods in the alpha namespace. Which one of them cannot be considered as an immutable pod?
+- 1
 
   <details>
   ```
@@ -15,12 +15,12 @@ Solutions to Lab Ensure Immutability of Containers at Runtime
   </details>
 
 
-- Why isn't the pod called triton considered to be immutable?
+- 2
 
     Answer **`it can write to the root filesystem`**
 
 
-- Let's fix that. Make sure that the triton pod uses a read-only root filesystem.
+- 3
 
   - Use securityContext in the container section and add readOnlyRootFilesystem to true.
 
@@ -43,11 +43,11 @@ Solutions to Lab Ensure Immutability of Containers at Runtime
             readOnlyRootFilesystem: true
 
 
-- What is the status of the triton pod now?
+- 4
 
     Answer: **`CrashLoopBackOff`**
 
-- Why is it in this state?
+- 5
 
     - Inspect the logs to find out the reason.
 
@@ -55,12 +55,7 @@ Solutions to Lab Ensure Immutability of Containers at Runtime
 
 
 
-- Add a volume of type emptyDir to be mounted at the path /usr/local/apache2/logs inside the container running in the triton pod. Use the below specs:
-
-  - volume-name: log-volume
-  - mountPath: /usr/local/apache2/logs
-  - Type: emptyDir
-
+- 6
 
 
     apiVersion: v1
@@ -84,7 +79,7 @@ Solutions to Lab Ensure Immutability of Containers at Runtime
         emptyDir: {}
 
 
-- Another pod called grimsby has been created inside the alpha namespace. Currently it runs as the root user. Update the pod so that it runs with the uid of 1000 and gid of 3000.
+- 7
 
       apiVersion: v1
       kind: Pod
@@ -107,6 +102,6 @@ Solutions to Lab Ensure Immutability of Containers at Runtime
             mountPath: /data/demo
 
 
-- Using privileged containers is a huge security risk! Delete the solaris pod entirely from the cluster.
+- 8
 
     Answer: **`kubectl -n alpha delete pod solaris`**

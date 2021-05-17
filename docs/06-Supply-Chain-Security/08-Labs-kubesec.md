@@ -8,7 +8,7 @@ Solution to Labs Kubesec
     Answer: **`all of these`**
 
 
-- Install kubesec plugin on controlplane. Also make sure its binary is available globally to run.
+- To install kubesec plugin, Run
 
   Answer:
 
@@ -19,9 +19,8 @@ Solution to Labs Kubesec
       mv kubesec /usr/bin/
 
 
-- What of the below output formats is NOT supported by kubesec?
+- **`Bash`** format is NOT supported by kubesec
 
-  Answer: Bash
 
 
 - We have a pod definition template /root/node.yaml on controlplane host. Scan this template using kubesec and save the report in /root/kubesec_report.json file on controlplane host itself.
@@ -40,5 +39,5 @@ Solution to Labs Kubesec
 - kubesec scan failed for pod definition file /root/node.yaml . Fix the issues in this file as per the suggestions in the scan report and make sure that the final kubesec scan status is passed.
 
   Answer:
-  
+
   In node.yaml template change privileged: true to privileged: false under securityContext:
