@@ -3,10 +3,11 @@
 
 Solutions to Lab UFW Firewall Basics
 
-- This is a 2-node kubernetes cluster. What is the status of ufw tool on the nodes
+- To get the status of ufw tool on the nodes, Run
   <details>
   ```
   Find the status of the firewall by running the below command, if it is active that means that the tool is installed but needs to be enabled from the firewall
+
   $ ufw status
   ```
   </details>

@@ -25,17 +25,18 @@ Solutions Lab Limit Node Access
   ```
   </details>
 
-- Set a new password 874#@HDy1 for user david
+- Run
   <details>
   ```
   As a root run
+
   $ passwd david
+
   and then enter the password
   ```
   </details>
 
-- An unknown User called ray and group called devs was identified in the controlplane node. Delete this user and group from this host
-  <details>
+- Run
   ```
   use those commands
   $ userdel ray
@@ -44,15 +45,15 @@ Solutions Lab Limit Node Access
   ```
   </details>
 
-- There is a user named himanshi on the controlplane host. Suspend this user account so that this user cannot login to the system but make sure not to delete it.
+- To suspend the user account, Run
   <details>
   ```
-  Run
   $ uermod -s /usr/sbin/nologin himanshi
   ```
   </details>
 
-- Create a user named sam on the controlplane host. The user's home directory must be /opt/sam. Login shell must be /bin/bash and uid must be 2328. Make sam a member of the admin group.
+
+- Run
   <details>
   ```
   Run

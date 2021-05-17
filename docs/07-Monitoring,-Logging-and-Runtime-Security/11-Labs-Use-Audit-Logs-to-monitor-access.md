@@ -3,25 +3,23 @@
 
 Solutions to Labs Use Audit Logs to monitor access
 
-- Which component in the Kubernetes cluster is responsible for handling audit logs?
+- 1
 
     Answer: **`kubeapi server`**
 
-- Is auditing enabled at this moment? Check the command used by the kube-apiserver pod to find out. This cluster has been deployed using kubeadm so check accordingly.
+- 2
 
     Answer: `No`
 
-- Which stage generates events when a request is complete?
+- 3
 
     Answer: `ResponseComplete`
 
 
-- In an audit policy object, what level would you configure for highest verbosity of logs?
+- 4
 
     Answer: `RequestResponse`
 
-- A sample policy file called audit-1.yaml has been created under the root filesystem in the controlplane. Analyze it.
-
-    Which audit events will be logged by this policy?
+- 5
 
     Answer: `logs all requests at the metadata level`

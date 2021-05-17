@@ -3,9 +3,7 @@
 
 In this section, we will take a look at Mock Exam 1
 
-- A pod has been created in the omni namespace. However, there are a couple of issues with it.
-  The pod has been created with more permissions than it needs.
-  It allows read access in the directory /usr/share/nginx/html/internal causing the Internal Site to be accessed (Check the link called Prohibited Site above the terminal).
+- 1
   <details>
 
   ```
@@ -44,9 +42,9 @@ In this section, we will take a look at Mock Exam 1
   ```
   </details>
 
-- A pod has been created in the orion namespace. It uses secrets as environment variables.
-  Extract the decoded secret for the CONNECTOR_PASSWORD and place it under /root/CKS/secrets/CONNECTOR_PASSWORD.
-  You are not done, instead of using secrets as an environment variable, mount the secret as a read-only volume at path /mnt/connector/password that can be then used by the application inside.
+
+- 2
+
   <details>
 
   ```
@@ -84,8 +82,9 @@ In this section, we will take a look at Mock Exam 1
   ```
   </details>
 
-- A number of pods have been created in the delta namespace. Using the trivy tool,
-  which has been   installed on the controlplane, identify all the pods that have HIGH or CRITICAL level vulnerabilities and delete the corresponding pods.
+
+- 3
+
   <details>
 
   ```
@@ -101,9 +100,9 @@ In this section, we will take a look at Mock Exam 1
   ```
   </details>
 
-- Create a new pod called audit-nginx in the default namespace using the nginx image.
-  Secure the syscalls that this pod can use by using the audit.json seccomp profile in the pod's security  context. The pod should run on node01.
-  The audit.json is provided at /root/CKS directory. Make sure to move it under the profiles directory inside the default seccomp directory before creating the pod
+
+- 4
+
   <details>
 
   ```
@@ -129,8 +128,8 @@ In this section, we will take a look at Mock Exam 1
   </details>
 
 
-- The CIS Benchmark report for the kube-apiserver is available at the tab called CIS Report 1.
- Inspect this report and fix the issues reported as FAIL.
+- 5
+
    <details>
    ```
    # The fixes are mentioned in the same report.
@@ -141,14 +140,7 @@ In this section, we will take a look at Mock Exam 1
    </details>
 
 
-- There is something suspicious happening with one of the pods running an httpd image in this cluster.
-   The Falco service in node01 shows frequent alerts that start with: File below a known binary directory opened for writing.
-   Identify the rule causing this alert and update it as per the below requirements:
-   - Output should be displayed as: CRITICAL File below a known binary directory opened for writing (user=user_name file_updated=file_name command=command_that_was_run)
-   - Alerts are logged to /opt/security_incidents/alerts.log
-   Do not update the default rules file directly. Rather use the falco_rules.local.yaml file to override.
-
-   Note: Once the alert has been updated, you may have to wait for up to a minute for the alerts to be written to the new log location.
+- 6
    <details>
     ```
     # Create /opt/security_incidents on node01
@@ -184,10 +176,8 @@ In this section, we will take a look at Mock Exam 1
    </details>
 
 
-- A pod called busy-rx100 has been created in the production namespace. Secure the pod by recreating it using the runtimeClass called gvisor. You may delete and recreate the pod.
+- 7
 
-   Note:
-   As long as the pod is recreated with the correct runtimeClass, the task will be marked correct. This lab environment does not support gvisor at the moment so if the pod is not in a running state, ignore it and move on to the next question.
    <details>
 
    ```
@@ -209,15 +199,8 @@ In this section, we will take a look at Mock Exam 1
    ```
    </details>
 
-- We need to make sure that when pods are created in this cluster, they cannot use the latest image tag, irrespective of the repository being used.
-   To achieve this, a simple Admission Webhook Server has been developed and deployed. A service called image-bouncer-webhook is exposed in the cluster internally. This Webhook server ensures that the developers of the team cannot use the latest image tag. Make use of the following specs to integrate it with the cluster using an ImagePolicyWebhook:
 
-- Create a new admission configuration file at /etc/admission-controllers/admission-configuration.yaml
-   - The kubeconfig file with the credentials to connect to the webhook server is located at /root/CKS/ImagePolicy/admission-kubeconfig.yaml. Note: The directory /root/CKS/ImagePolicy/ has already been mounted on the kube-apiserver at path /etc/admission-controllers so use this path to store the admission configuration.
-   - Make sure that if the latest tag is used, the request must be rejected at all times.
-   - Enable the Admission Controller.
-
-   Finally, delete the existing pod in the magnum namespace that is in violation of the policy and recreate it, ensuring the same image but using the tag 1.27.
+- 8
 
 
 

@@ -21,22 +21,24 @@ Solutions to Lab Identify and Disable Open Ports
   - On controlplane host we have nginx service running which isn't needed on that system. Stop the nginx service and remove its service unit file. Make sure not to remove nginx package from the system
   <details>
   ```
-  Run to get the unit name
-  $ systemctl list-units --all | grep nginx
-  Stop Nginx service by running
-  $ systemctl stop nginx
-  Find the location of the unit then remove it by running
-  $ systemctl status nginx
-  $ rm /lib/systemd/system/nginx.service
+
+        Run to get the unit name
+        $ systemctl list-units --all | grep nginx
+        Stop Nginx service by running
+        $ systemctl stop nginx
+        Find the location of the unit then remove it by running
+        $ systemctl status nginx
+        $ rm /lib/systemd/system/nginx.service
   ```
   </details>
 
   - We want to blacklist the evbug kernel module on controlplane host.
   <details>
   ```
-  Edit in this file to blacklist a kernel module.
-  $ vim /etc/modprobe.d/blacklist.conf
-  Edit this line from #blacklist evbug to blacklist evbug
+  
+        Edit in this file to blacklist a kernel module.
+        $ vim /etc/modprobe.d/blacklist.conf
+        Edit this line from #blacklist evbug to blacklist evbug
   ```
   </details>
 

@@ -3,10 +3,7 @@
 
 Solutions Mock Exam 2
 
-- A pod called redis-backend has been created in the prod-x12cs namespace. It has been exposed as a service of type ClusterIP. Using a network policy called allow-redis-access, lock down access to this pod only to the following:
-  1. Any pod in the same namespace with the label backend=prod-x12cs.
-  2. All pods in the prod-yx13cs namespace.
-  All other incoming connections should be blocked.
+- 1
   <details>
 
   ```
@@ -37,7 +34,8 @@ Solutions Mock Exam 2
   ```
   </details>
 
-- A few pods have been deployed in the apps-xyz namespace. There is a pod called redis-backend which serves as the backend for the apps app1 and app2. The pod called app3 on the other hand, does not need access to this redis-backend pod. Create a network policy called allow-app1-app2 that will only allow incoming traffic from app1 and app2 to the redis-pod.
+
+- 2
   <details>
 
   ```
@@ -66,7 +64,9 @@ Solutions Mock Exam 2
   ```
   </details>
 
-- A pod has been created in the gamma namespace using a service account called cluster-view. This service account has been granted additional permissions as compared to the default service account and can view resources cluster-wide on this Kubernetes cluster. While these permissions are important for the application in this pod to work, the secret token is still mounted on this pod.
+
+- 3
+
   <details>
 
   ```
@@ -89,11 +89,9 @@ Solutions Mock Exam 2
   ```
   </details>
 
-- A pod in the sahara namespace has generated alerts that a shell was opened inside the container.
- Change the format of the output so that it looks like below:
- ALERT timestamp of the event without nanoseconds,User ID,the container id,the container image repository
- Make sure to update the rule in such a way that the changes will persists across Falco updates.
- You can refer the falco documentation Here
+
+- 4
+
   <details>
 
   ```
@@ -113,7 +111,9 @@ Solutions Mock Exam 2
   ```
   </details>
 
-- martin is a developer who needs access to work on the dev-a, dev-b and dev-z namespace. He should have the ability to carry out any operation on any pod in dev-a and dev-b namespaces. However, on the dev-z namespace, he should only have the permission to get and list the pods.
+
+- 5
+
   <details>
 
   ```
@@ -136,7 +136,9 @@ Solutions Mock Exam 2
   ```
   </details>
 
-- On the node01 of the cluster, an unknown process is bound to port 8088. Identify the process and prevent it from running again by stopping and disabling any associated services. Finally, remove the package that was responsible for starting this process.
+
+- 6
+
   <details>
 
   ```
@@ -172,7 +174,9 @@ Solutions Mock Exam 2
   ```
   </details>
 
-- A pod has been created in the omega namespace using the pod definition file located at /root/CKS/omega-app.yaml. However, there is something wrong with it and the pod is not in a running state.
+
+- 7
+
   <details>
 
   ```
@@ -219,8 +223,9 @@ Solutions Mock Exam 2
   ```
   </details>
 
-- A pod definition file has been created at /root/CKS/simple-pod.yaml .
-  Using the kubesec tool, generate a report for this pod definition file and fix the major issues so that the subsequent scan report no longer fails.
+
+- 8
+
   <details>
 
   ```
@@ -240,17 +245,10 @@ Solutions Mock Exam 2
   ```
   </details>
 
-- Create a new pod called secure-nginx-pod in the seth namespace. Use one of the images from the below which has no HIGH or CRITICAL vulnerabilities.
-
-  - nginx
-  - nginx:1.19
-  - nginx:1.17
-  - nginx:alpine
-  - gcr.io/google-containers/nginx
-  - bitnami/nginx:latest
+- 9
 
 
-  <details>
+<details>
 
   ```
   # Run trivy image scan on all of the images and check which one does not have HIGH or CRITICAL vulnerabilities.

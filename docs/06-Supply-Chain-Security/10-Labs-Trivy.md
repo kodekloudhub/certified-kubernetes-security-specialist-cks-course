@@ -3,7 +3,7 @@
 
 Solutions to Labs Trivy
 
-  - Install the trivy vulnerability scanner on controlplane host.
+  - 1
 
       <details>
 
@@ -20,7 +20,7 @@ Solutions to Labs Trivy
       </details>
 
 
-  - Which of the following commands can be used to scan container images using trivy?
+  - 2
 
     <details>
 
@@ -30,42 +30,34 @@ Solutions to Labs Trivy
     </details>
 
 
-  - Can we scan tarball archives using trivy ?
+  - 3
 
       Answer: Yes
 
-  - Which of the following artifacts cannot be scanned by trivy for security vulnerabilities?
+  - 4
 
     Answer: Network
 
-  - Which version of trivy have you installed on the controlplane node?
+  - 5
 
     Answer: 0.17.2
 
-  - Important Note: From version 0.8.0 and newer, trivy images are scanned using the trivy image subcommand.
-
-  However, in older versions, to carry out a scan use the syntax: trivy image_name. In these versions, the image sub-command will not work.
-
-  For example, notice the differences in scanning the nginx image:
-
-    Version. 0.16: trivy image nginx
-
-    Version: 0.8.0 and above: trivy nginx
+  - 6
 
   Answer: Ok
 
 
-  - Pull python:3.10.0a4-alpine image on controlplane host and scan the same using trivy. Save the scan results in /root/python_alpine.txt file on controlplane host.
+  - 7
 
         docker pull python:3.10.0a4-alpine
 
         trivy image --output /root/python_alpine.txt python:3.10.0a4-alpine
 
-  - We have a docker image python:3.6.12-alpine3.11 on controlplane host. Scan this image using trivy and filter out only high severity vulnerabilities in the report, finally save the report in /root/python.txt file on controlplane host itself.
+  - 8
 
         trivy image --severity HIGH --output /root/python.txt python:3.10.0a4-alpine
 
 
-  - There is a docker image file /root/alpine.tar on controlplane host, scan this archive file using trivy and save the results in /root/alpine.json file in json format.
+  - 9
 
         trivy image --input alpine.tar --format json --output /root/alpine.json
