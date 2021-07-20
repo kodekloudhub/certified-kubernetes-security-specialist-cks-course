@@ -1,6 +1,6 @@
 # Certified Kubernetes Security Specialist (CKS) Course
 
-These are notes from the [Certified Kubernetes Security Specialist (CKS)](https://kodekloud.com/courses/enrolled/1378608) hosted on KodeKloud.
+These are notes from the [Certified Kubernetes Security Specialist (CKS)](https://kodekloud.com/courses/certified-kubernetes-security-specialist-cks/) hosted on KodeKloud.
 
 # Sections
 - [01-Introduction](docs/01-Introduction)
@@ -54,7 +54,7 @@ These are notes from the [Certified Kubernetes Security Specialist (CKS)](https:
   - [39-Labs-Cluster-Upgrade-Process](docs/03-Cluster-Setup-and-Hardening/39-Labs-Cluster-Upgrade-Process.md)
   - [40-Network-Policy](docs/03-Cluster-Setup-and-Hardening/40-Network-Policy.md)
   - [41-Developing-Network-Policies](docs/03-Cluster-Setup-and-Hardening/41-Developing-Network-Policies.md)
-  - [42-Labs-Developing-Network-Policies](docs/03-Cluster-Setup-and-Hardening/42-Labs-Developing-Network-Policies.md)
+  - [42-Labs-Network-Policies](docs/03-Cluster-Setup-and-Hardening/42-Labs-Network-Policies.md)
   - [43-Ingress](docs/03-Cluster-Setup-and-Hardening/43-Ingress.md)
   - [44-Labs-Ingress-1](docs/03-Cluster-Setup-and-Hardening/44-Labs-Ingress-1.md)
   - [45-Ingress-Annotations-and-rewrite-target](docs/03-Cluster-Setup-and-Hardening/45-Ingress-Annotations-and-rewrite-target.md)

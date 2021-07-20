@@ -1,7 +1,8 @@
-# Labs OPA
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704505)
+# Lab - OPEN POLICY AGENT (OPA)
 
-Solutions for Labs OPA
+  - Take me to [Lab](https://kodekloud.com/topic/labs-opa/)
+
+Solutions for Lab - OPA
 
 - OPA stands for **`Open Policy Agent`**
 

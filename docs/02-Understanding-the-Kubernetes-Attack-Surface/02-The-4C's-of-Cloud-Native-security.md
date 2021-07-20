@@ -1,5 +1,6 @@
 # The 4C's of Cloud Native security
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31703361)
+
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/the-4cs-of-cloud-native-security/)
 
   In this section, we will take a look at The 4C's of Cloud Native security
 

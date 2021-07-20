@@ -1,8 +1,9 @@
 # Developing Network Policies
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704411)
 
-  In this section, we will take a look at Developing Network Policies
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/developing-network-policies-3/)
 
-  ## Create network policy
+In this section, we will take a look at Developing Network Policies.
 
-    -   ![NP](../../images/k8sNP.png)
+## Create network policy
+
+  -   ![NP](../../images/k8sNP.png)

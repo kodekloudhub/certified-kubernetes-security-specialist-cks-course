@@ -1,5 +1,6 @@
-# Labs Certificates-API
-  - Take me to [Lab](https://kodekloud.com/courses/certified-kubernetes-security-specialist-cks/lectures/31704337 )
+# Lab - Certificates-API
+
+  - Take me to [Lab](https://kodekloud.com/topic/labs-certificates-api/)
 
 Solutions Lab Certificates API
 

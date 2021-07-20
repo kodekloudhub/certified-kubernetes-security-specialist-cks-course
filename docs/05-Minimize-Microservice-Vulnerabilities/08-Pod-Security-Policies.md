@@ -1,7 +1,8 @@
-# Pods Security Policies
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704476)
+# Pod Security Policies
 
-In this section, we will take a look at Pods Security Policies
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/pod-security-policies/)
+
+In this section, we will take a look at Pod Security Policies.
 
  - Pod security policies help in defining policies to restrict pods from being created with specific capabilities or privileges.
 

@@ -1,7 +1,8 @@
 # gVisor
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704726)
 
-In this section, we will take a look at gVisor
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/gvisor/)
+
+In this section, we will take a look at gVisor.
 
   - Gvisoris a tool from google that allows an additional layer of isolation between the container and the kernel.
 

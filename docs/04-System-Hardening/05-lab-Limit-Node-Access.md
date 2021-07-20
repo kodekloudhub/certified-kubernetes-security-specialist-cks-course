@@ -1,7 +1,8 @@
-# Lab Limit Node Access
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704432
+# Lab - Limit Node Access
+  
+  - Take me to [Lab](https://kodekloud.com/topic/lab-limit-node-access/)
 
-Solutions Lab Limit Node Access
+Solutions Lab - Limit Node Access
 
 - **`0`** is the UID of superuser - root
 

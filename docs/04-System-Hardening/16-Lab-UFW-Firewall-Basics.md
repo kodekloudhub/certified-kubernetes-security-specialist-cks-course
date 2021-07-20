@@ -1,7 +1,8 @@
-# Lab UFW Firewall Basics
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704444)
+# Lab - UFW Firewall Basics
 
-Solutions to Lab UFW Firewall Basics
+  - Take me to [Lab](https://kodekloud.com/topic/lab-ufw-firewall/)
+
+Solutions to Lab - UFW Firewall Basics
 
 - To get the status of ufw tool on the nodes, Run
   <details>

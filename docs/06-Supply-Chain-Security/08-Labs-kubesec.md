@@ -1,7 +1,8 @@
-# Labs Kubesec
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704755)
+# Lab - Kubesec
+  
+  - Take me to [Lab](https://kodekloud.com/topic/labs-kubesec/)
 
-Solution to Labs Kubesec
+Solution to Lab - Kubesec.
 
 - What is the kubesec plugin used for?
 

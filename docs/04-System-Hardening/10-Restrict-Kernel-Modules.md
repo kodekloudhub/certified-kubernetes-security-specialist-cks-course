@@ -1,7 +1,8 @@
 # Restrict Kernel Modules
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704437)
 
-In this section, we will take a look at Restrict Kernel Modules
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/restrict-kernel-modules/)
+
+In this section, we will take a look at Restrict Kernel Modules.
 
   - The Linux Kernel has a modular design that allows the Kernel to extend its capabilities by the means of dynamically loaded kernel modules.
 

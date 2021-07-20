@@ -1,7 +1,8 @@
-# Lab Identify and Disable Open Ports
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704440)
+# Lab - Identify and Disable Open Ports
 
-Solutions to Lab Identify and Disable Open Ports
+  - Take me to [Lab](https://kodekloud.com/topic/lab-identify-open-ports-remove-packages-services/)
+
+Solutions to Lab - Identify and Disable Open Ports.
 
   - **`apt list --installed`**  is used to list all installed packages on an ubuntu system
 

@@ -1,7 +1,8 @@
 # Network Policy
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704410)
 
-In this section, we will take a look at Network Policy
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/network-policy/)
+
+In this section, we will take a look at Network Policy.
 
 #### Trafic flowing through a webserver serving frontend to users an app server serving backend API and a database server
 

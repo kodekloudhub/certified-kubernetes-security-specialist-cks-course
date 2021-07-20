@@ -1,5 +1,6 @@
-# Labs View-Certificates
-- Take me to [Lab](https://kodekloud.com/courses/certified-kubernetes-security-specialist-cks/lectures/31704335)
+# Lab - View Certificates
+
+- Take me to [Lab](https://kodekloud.com/topic/labs-view-certificates/)
 
 
   Solutions to practice test - view certificates

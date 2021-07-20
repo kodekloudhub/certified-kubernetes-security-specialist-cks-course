@@ -1,7 +1,8 @@
-# Lab Security Contexts
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704471)
+# Lab - Security Contexts
 
-Solutions to Lab Security Contexts
+  - Take me to [Lab](https://kodekloud.com/topic/labs-security-contexts/)
+
+Solutions to Lab Security Contexts.
 
 - Run the command 'kubectl exec ubuntu-sleeper whoami' and count the number of pods.
 

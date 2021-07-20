@@ -1,5 +1,6 @@
-# Labs Service-Accounts
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31703385)
+# Lab - Service Accounts
+
+  - Take me to [Lab](https://kodekloud.com/topic/lab-service-accounts/)
 
 
   - There is **`1`** Service Account in the default namespace.

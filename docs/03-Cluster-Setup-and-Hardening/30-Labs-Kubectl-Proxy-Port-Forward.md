@@ -1,7 +1,8 @@
-# Labs-Kubectl-Proxy-Port-Forward
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704387)
+# Lab - Kubectl-Proxy-&-Port-Forward
 
-Solutions Lab Kubectl-Proxy-Port-Forward
+  - Take me to [Lab](https://kodekloud.com/topic/labs-kubectl-proxy-port-forward/)
+
+Solutions Lab Kubectl-Proxy-&-Port-Forward
 
   - **`kubectl`** command line utility can be used to interact with the Kubernetes API server directly.
 

@@ -1,5 +1,6 @@
-# Labs-KubeConfig
-  - Take me to [Lab](https://kodekloud.com/courses/certified-kubernetes-security-specialist-cks/lectures/31704340 )
+# Lab - KubeConfig
+
+  - Take me to [Lab](https://kodekloud.com/topic/labs-kubeconfig/)
 
 Solutions Lab KubeConfig
 

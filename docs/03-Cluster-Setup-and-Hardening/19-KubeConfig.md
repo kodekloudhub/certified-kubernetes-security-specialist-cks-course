@@ -1,5 +1,6 @@
 # KubeConfig
-  - Take me to [video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704338)
+
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/kubeconfig-2/)
 
 In this section, we will take a look at KubeConfig.
 

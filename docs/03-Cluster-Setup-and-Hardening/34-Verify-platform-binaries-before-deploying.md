@@ -1,6 +1,9 @@
 # Verify platform binaries before deploying
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704392)
 
-  In this section, we will take a look at Verify platform binaries before deploying
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/verify-platform-binaries-before-deploying/)
 
-    - Reference https://kubernetes.io/docs/setup/release/notes/
+In this section, we will take a look at Verify platform binaries before deploying.
+
+  - Reference docs
+    - https://kubernetes.io/docs/setup/release/notes/
+    - https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG

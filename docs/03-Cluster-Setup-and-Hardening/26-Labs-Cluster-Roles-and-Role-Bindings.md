@@ -1,7 +1,8 @@
-# Labs-Cluster-Roles-and-Role-Bindings
-  - Take me to [Lab](https://kodekloud.com/courses/certified-kubernetes-security-specialist-cks/lectures/31704351 )
+# Lab - Cluster-Roles-and-Role-Bindings
 
-Solutions Lab Cluster-Roles-and-Role-Bindings
+  - Take me to [Lab](https://kodekloud.com/topic/labs-cluster-roles-and-role-bindings/)
+
+Solutions Lab ClusterRoles and RoleBindings
 
 - Run the command kubectl get clusterroles --no-headers | wc -l or kubectl get clusterroles --no-headers -o json | jq '.items | length'
 

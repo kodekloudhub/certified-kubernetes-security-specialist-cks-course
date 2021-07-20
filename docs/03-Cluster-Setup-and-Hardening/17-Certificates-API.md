@@ -1,5 +1,6 @@
 # Certificates API
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704336)
+
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/certificates-api-2/)
 
 In this section, we will take a look at Certificates API
 

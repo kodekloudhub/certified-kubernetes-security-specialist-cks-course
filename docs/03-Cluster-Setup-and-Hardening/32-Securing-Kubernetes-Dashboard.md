@@ -1,5 +1,6 @@
 # Securing Kubernetes Dashboard
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704389)
+
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/securing-kubernetes-dashboard/)
 
 In this section, we will take a look at Securing Kubernetes Dashboard
 

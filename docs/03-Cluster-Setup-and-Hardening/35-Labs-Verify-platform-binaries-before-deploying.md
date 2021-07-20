@@ -1,7 +1,9 @@
-# Labs Verify Platform Binaries before deploying
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704395)
+# Lab - Verify Platform Binaries before deploying
 
-Solutions to Labs Verify Platform Binaries before deploying
+  - Take me to [Lab](https://kodekloud.com/topic/labs-verify-platform-binaries/)
+
+Solutions to Lab - Verify Platform Binaries before deploying.
+
 - Run command
 
   <details>
@@ -44,3 +46,4 @@ Solutions to Labs Verify Platform Binaries before deploying
 
   ```
   </details>
+  

@@ -1,5 +1,6 @@
-# Labs-RBAC
-  - Take me to [Lab](https://kodekloud.com/courses/certified-kubernetes-security-specialist-cks/lectures/31704346 )
+# Lab - RBAC
+
+  - Take me to [Lab](https://kodekloud.com/topic/labs-rbac/)
 
 Solutions Lab RBAC
 
