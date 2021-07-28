@@ -10,11 +10,11 @@ Solutions to Lab - Whitelist Allowed Registries Image Policy Webhook.
   OK
   ```
   </details>
-
 - Deploy the ReplicaSet defined in the file /root/nginx-latest.yml and validate that the pod is running.
 This YAML file uses the latest nginx image from DockerHub.
   <details>
   ```
+
   Run
 
   $ kubectl apply -f /root/nginx-latest.yml
@@ -24,7 +24,6 @@ This YAML file uses the latest nginx image from DockerHub.
   $ kubectl get po -l tier=nginx-latest
   ```
   </details>
-
 - Deploy an Image Policy Webhook server.
   <details>
   ```
@@ -34,7 +33,6 @@ This YAML file uses the latest nginx image from DockerHub.
 
   ```
   </details>
-
 - **`docker.io`** is the value passed to registry-whitelist parameter by the command running inside the webhook pods
   <details>
   ```
@@ -48,8 +46,6 @@ This YAML file uses the latest nginx image from DockerHub.
 
   ```
 </details>
-
-
 - Fix those two YAML files so that it works with ImagePolicyWebhook.
 
   <details>
@@ -80,41 +76,41 @@ This YAML file uses the latest nginx image from DockerHub.
 
   ```
   </details>
-
 - Enable the ImagePolicyWebhook admission controller as final step so that our image policy validation can take place in API server.
   <details>
-  ```
-  $ vi /etc/kubernetes/manifests/kube-apiserver.yaml
+    ```
+      $ vi /etc/kubernetes/manifests/kube-apiserver.yaml
 
-  Edit those lines:
+      Edit those lines:
 
-    - --enable-admission-plugins=NodeRestriction,ImagePolicyWebhook
+        - --enable-admission-plugins=NodeRestriction,ImagePolicyWebhook
 
-    - --admission-control-config-file=/etc/kubernetes/pki/admission_configuration.yaml
-  ```
-  </details>
+        - --admission-control-config-file=/etc/kubernetes/pki/admission_configuration.yaml
+      ```
+    </details>
 
 - Now delete and create pod in /root/nginx-latest.yml and validate that there is an error reported when we use the latest image tag.
   <details>
-  ```
-  Run
-  $ kubectl delete -f /root/nginx-latest.yml
-  $ kubectl apply -f /root/nginx-latest.yml
-  Note:
-  You should see an error message when you run:
-  $ kubectl describe replicaset nginx-latest
-  ```
-  </details>
+    ```
 
+      Run
+      $ kubectl delete -f /root/nginx-latest.yml
+      $ kubectl apply -f /root/nginx-latest.yml
+      Note:
+      You should see an error message when you run:
+      $ kubectl describe replicaset nginx-latest
+    ```
+  </details>
 - Fix the error for untrusted registry in /root/nginx-latest.yml using the 1.19 image.
   <details>
-  ```
-  $ vi /root/nginx-latest.yml
-  Edit the line below:
-          image: nginx:1.19
-  $ kubectl apply -f /root/nginx-untrusted.yml
-  Check the pod created by running:
-  $ kubectl describe replicaset nginx-latest
-  $ kubectl get pod | grep nginx-latest
-  ```
+    ```
+
+      $ vi /root/nginx-latest.yml
+      Edit the line below:
+              image: nginx:1.19
+      $ kubectl apply -f /root/nginx-untrusted.yml
+      Check the pod created by running:
+      $ kubectl describe replicaset nginx-latest
+      $ kubectl get pod | grep nginx-latest
+      ```
   </details>

@@ -14,8 +14,6 @@ Solutions to Lab Ensure Immutability of Containers at Runtime.
 
   ```
   </details>
-
-
 - 2
 
     Answer **`it can write to the root filesystem`**
@@ -28,20 +26,20 @@ Solutions to Lab Ensure Immutability of Containers at Runtime.
 
 
 
-      apiVersion: v1
-      kind: Pod
-      metadata:
-        labels:
-          name: triton
-          namespace: alpha
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      labels:
         name: triton
         namespace: alpha
-      spec:
-        containers:
-        - image: httpd
-          name: triton
-          securityContext:
-            readOnlyRootFilesystem: true
+      name: triton
+      namespace: alpha
+    spec:
+      containers:
+      - image: httpd
+        name: triton
+        securityContext:
+          readOnlyRootFilesystem: true
 
 
 - 4

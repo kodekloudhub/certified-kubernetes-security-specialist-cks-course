@@ -9,12 +9,14 @@ Solutions to Lab - Identify and Disable Open Ports.
   - Check if python2.7 package is installed on the controlplane host
   <details>
   ```
+
   Run
+
   $ apt list --installed | grep python2.7
+
   You will find that is is not installed
   ```
   </details>
-
   - **`systemctl list-units --type service`**  can be used to list only active services on a system.
 
   - **`lsmod`**  can be used to list the kernel modules currently loaded on a system.
@@ -35,7 +37,7 @@ Solutions to Lab - Identify and Disable Open Ports.
   - We want to blacklist the evbug kernel module on controlplane host.
   <details>
   ```
-  
+
         Edit in this file to blacklist a kernel module.
         $ vim /etc/modprobe.d/blacklist.conf
         Edit this line from #blacklist evbug to blacklist evbug
@@ -44,17 +46,21 @@ Solutions to Lab - Identify and Disable Open Ports.
   - Remove the nginx package from controlplane host.
   <details>
   ```
+
   Run
   $ apt remove nginx -y
   ```
   </details>
-
   - We have a service running on controlplane host which is listening on port 9090. Identify the service and kill the same to free the 9090 port.
   <details>
   ```
+
   Identify the service listening on port 9090
+
   $ netstat -natp | grep 9090
+
   Kill/Stop the service to free the port
+
   $ systemctl stop apache2
   ```
   </details>
