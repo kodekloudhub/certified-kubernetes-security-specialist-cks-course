@@ -113,13 +113,22 @@ Solutions Lab KubeConfig
 
  <details>
   $ kubectl get pods
+
   master $ ls
+
   dev-user.crt  dev-user.csr  dev-user.key
+
   master $ vi /root/.kube/config
+
   master $ grep dev-user.crt /root/.kube/config
+
     client-certificate: /etc/kubernetes/pki/users/dev-user/dev-user.crt
+
   master $ pwd
+  
   /etc/kubernetes/pki/users/dev-user
+
   master $ kubectl get pods
+
   No resources found in default namespace.
  </details>
