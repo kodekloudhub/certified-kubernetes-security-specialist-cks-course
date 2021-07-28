@@ -1,7 +1,8 @@
-# Labs Trivy
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704758)
+# Lab - Trivy
+  
+  - Take me to [Lab](https://kodekloud.com/topic/labs-trivy/)
 
-Solutions to Labs Trivy
+Solutions to Lab - Trivy
 
   - 1
 

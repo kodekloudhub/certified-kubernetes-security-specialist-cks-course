@@ -1,5 +1,6 @@
 # TLS in Kubernetes
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704331)
+
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/tls-in-kubernetes-2/)
 
 In this section, we will take a look at TLS in Kubernetes.
 

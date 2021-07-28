@@ -1,7 +1,8 @@
-# Labs Whitelist Allowed Registries Image Policy Webhook
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704751)
+# Lab - Whitelist Allowed Registries Image Policy Webhook
+  
+  - Take me to [Lab](https://kodekloud.com/topic/labs-whitelist-allowed-registries-imagepolicywebhook/)
 
-Solutions to Labs Whitelist Allowed Registries Image Policy Webhook
+Solutions to Lab - Whitelist Allowed Registries Image Policy Webhook.
 
 - For this lab we are going to deploy a ImagePolicyWebhook which will deny us from using images with latest tag and ensure that all images have tags.
   <details>

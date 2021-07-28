@@ -1,5 +1,6 @@
 # What-are-CIS-Benchmarks
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31703363)
+
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/what-are-cis-benchmarks/)
 
   In this section, we will take a look at What are CIS Benchmarks
 

@@ -1,8 +1,8 @@
-# One Way SSL s Mutual SSL
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704731)
+# One Way SSL vs Mutual SSL
 
-In this section, we will take a look at One Way SSL s Mutual SSL
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/one-way-ssl-vs-mutual-ssl/)
 
+In this section, we will take a look at One Way SSL vs Mutual SSL.
 
 ## Certificate
 - A certificate is used to guarantee trust between 2 parties during a transaction.

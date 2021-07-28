@@ -1,7 +1,8 @@
 # Use Falco to Detect Threats
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704764)
 
-In this section, we will take a look at Use Falco to Detect Threats
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/use-falco-to-detect-threats-2/)
+
+In this section, we will take a look at Use Falco to Detect Threats.
 
   - Falco implements several rules by default -one of which alerted us that a shell was opened inside a  container and  another one that warned us that sensitive files read inside the container.
 

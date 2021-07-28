@@ -1,5 +1,6 @@
-#  Labs Run-CIS-Benchmark-Assessment-tool-on-Ubuntu
-  - Take me to [Lab](https://kodekloud.com/courses/certified-kubernetes-security-specialist-cks/lectures/31703364)
+#  Lab - Run-CIS-Benchmark-Assessment-tool-on-Ubuntu
+
+  - Take me to [Lab](https://kodekloud.com/topic/lab-run-cis-benchmark-assessment-tool-on-ubuntu/)
 
 Solutions Lab Run-CIS-Benchmark-Assessment-tool-on-Ubuntu
 

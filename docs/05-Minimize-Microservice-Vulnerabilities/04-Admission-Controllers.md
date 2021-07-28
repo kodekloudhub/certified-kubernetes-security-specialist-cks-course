@@ -1,7 +1,8 @@
 # Admission Controllers
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704472)
 
-In this section, we will take a look at Admission Controllers
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/admission-controllers/)
+
+In this section, we will take a look at Admission Controllers.
 
   - When a request comes in , say to create a pod, it goes through authentication, authorization and then through admission controllers before being created.
 

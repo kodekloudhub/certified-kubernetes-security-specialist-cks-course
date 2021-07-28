@@ -1,7 +1,8 @@
-# Lab Manage Kubernetes Secrets
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31808498)
+# Lab - Manage Kubernetes Secrets
 
-Solutions for Lab Manage Kubernetes Secrets
+  - Take me to [Lab](https://kodekloud.com/topic/lab-manage-kubernetes-secrets/)
+
+Solutions for Lab - Manage Kubernetes Secrets.
 
 - To get the Secrets exist on the system, Run
   <details>

@@ -1,7 +1,8 @@
 # TLS in Kubernetes Certificate Creation
-  - Take me to [Video Tutoria](https://kodekloud.com/courses/1378608/lectures/31704332)
 
-  In this section we will take a look at TLS in Kubernetes Certificate Creation
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/tls-in-kubernetes-certificate-creation-2/)
+
+In this section we will take a look at TLS in Kubernetes Certificate Creation
 
   ## Generate Certificates
 - There are different tools available such as easyrsa, openssl or cfssl etc. or many others for generating certificates.

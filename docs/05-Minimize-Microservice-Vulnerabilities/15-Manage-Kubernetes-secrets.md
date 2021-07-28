@@ -1,8 +1,8 @@
 # Manage Kubernetes Secrets
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704676)
 
-In this section, we will take a look at Manage Kubernetes Secrets
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/manage-kubernetes-secrets/)
 
+In this section, we will take a look at Manage Kubernetes Secrets.
 
 ## Web-Mysql Application
 
@@ -137,7 +137,7 @@ In this section, we will take a look at Manage Kubernetes Secrets
 
 
 
-#### Additional Notes: [A Note on Secrets](https://kodekloud.com/courses/certified-kubernetes-administrator-with-practice-tests/lectures/10589148)
+#### Additional Notes: [A Note on Secrets](https://kodekloud.com/topic/article-note-on-secrets/)
 
 #### K8s Reference Docs
 - https://kubernetes.io/docs/concepts/configuration/secret/

@@ -1,7 +1,8 @@
 # API-Groups
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704342)
-  In this section, we will take a look at API-Groups
 
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/api-groups-2/)
+  
+In this section, we will take a look at API-Groups
 
   ## To return version and list pods via API's
 

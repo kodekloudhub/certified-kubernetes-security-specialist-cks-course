@@ -1,6 +1,8 @@
-# Kubectl Proxy Port Forward
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704367)
-In this section, we will take a look at Kubectl Proxy Port Forward
+# Kubectl Proxy & Port Forward
+
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/kubectl-proxy-port-forward/)
+
+In this section, we will take a look at `Kubectl Proxy` & `Port Forward`.
 
 Kubectl handles locating and authenticating to the apiserver. If you want to directly access the REST API with an http client like curl or wget, or a browser, there are several ways to locate and authenticate:
 

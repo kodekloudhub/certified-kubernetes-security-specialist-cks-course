@@ -1,7 +1,8 @@
 # Whitelist Allowed Registries Image Policy Webhook
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704748)
 
-In this section, we will take a look at Whitelist Allowed Registries Image Policy Webhook
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/whitelist-allowed-registries-image-policy-webhook/)
+
+In this section, we will take a look at Whitelist Allowed Registries Image Policy Webhook.
 
 
 - As a user with access to the Kubernetes cluster I could deploy any application in the form of a pod in the cluster. And with no-one to stop me from doing that, that vulnerable image could risk the security of all other applications running on the cluster. If hackers gain access to that image, they may exploit vulnerabilities in the image and access other applications running on the cluster  or even crack down into the underlying operating system. So its important to have governance in place to ensure images are pulled from approved registries only.

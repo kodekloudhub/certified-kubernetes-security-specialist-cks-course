@@ -1,7 +1,8 @@
 # Restrict Syscalls using Seccomp
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704447)
 
-In this section, we will take a look at Restrict Syscalls using Seccomp
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/restrict-syscalls-using-seccomp/)
+
+In this section, we will take a look at Restrict Syscalls using Seccomp.
 
   - By default, the Linux kernel would allow any syscallto be invoked by programs running in the user space which can increase the attack surface.
 

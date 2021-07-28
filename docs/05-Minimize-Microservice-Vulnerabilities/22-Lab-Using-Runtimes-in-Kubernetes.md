@@ -1,7 +1,8 @@
-# Labs Using Runtimes in Kubernetes
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704730)
+# Lab - Using Runtimes in Kubernetes
+  
+  - Take me to [Lab](https://kodekloud.com/topic/lab-using-runtimes-in-kubernetes/)
 
-Solutions for Labs Using Runtimes in Kubernetes
+Solutions for Labs Using Runtimes in Kubernetes.
 
 - **`runc`** is the default runtime used by this cluster
 

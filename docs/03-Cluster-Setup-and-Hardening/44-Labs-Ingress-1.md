@@ -1,6 +1,6 @@
-# Ingress 1
+# Lab - Ingress 1
 
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704418)
+  - Take me to [Lab](https://kodekloud.com/topic/labs-ingress-1/)
 
 #### Solution 
 

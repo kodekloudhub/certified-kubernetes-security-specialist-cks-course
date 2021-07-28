@@ -1,7 +1,8 @@
-# Lab SSH Hardening and sudo
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704435)
+# Lab - SSH Hardening and sudo
+  
+  - Take me to [Lab](https://kodekloud.com/topic/lab-ssh-hardening-and-sudo/)
 
-Solutions lab SSH Hardening and sudo
+Solutions lab - SSH Hardening and sudo
 
   - **`All of These`** are the authentication methods used by SSH
 

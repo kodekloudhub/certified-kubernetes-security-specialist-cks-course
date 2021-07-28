@@ -1,7 +1,8 @@
 # Perform behavioral analytics of syscall process
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704762)
 
-In this section, we will take a look at Perform behavioral analytics of syscall process
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/perform-behavioral-analytics-of-syscall-process/)
+
+In this section, we will take a look at Perform behavioral analytics of syscall process.
 
   - It might seem that if an attacker already got into our systems, it's already too late and all is lost. However, this may not necessarily be true.
 

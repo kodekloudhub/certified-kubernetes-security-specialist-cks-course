@@ -1,12 +1,8 @@
-# Labs Admission Controllers
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704473)
+# Lab - Admission Controllers
 
-Solutions Labs Admission Controllers
+  - Take me to [Lab](https://kodekloud.com/topic/labs-admission-controllers/)
 
-# Labs Admission Controllers
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704473)
-
-Solutions Labs Admission Controllers
+Solutions Lab Admission Controllers.
 
 - **`authenticate user`** is not a function of admission controller
 

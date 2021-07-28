@@ -1,5 +1,6 @@
 # Implement pod to pod encryption by use of mTLS
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704732)
+
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/implement-pod-to-pod-encryption-by-use-of-mtls/)
 
 In this section, we will take a look at Implement pod to pod encryption by use of mTLS
 

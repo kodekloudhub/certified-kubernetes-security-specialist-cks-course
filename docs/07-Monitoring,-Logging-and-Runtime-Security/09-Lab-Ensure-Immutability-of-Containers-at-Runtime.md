@@ -1,7 +1,8 @@
-# Lab Ensure Immutability of Containers at Runtime
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704777)
+# Lab - Ensure Immutability of Containers at Runtime
 
-Solutions to Lab Ensure Immutability of Containers at Runtime
+  - Take me to [Lab](https://kodekloud.com/topic/labs-ensure-immutability-of-containers-at-runtime/)
+
+Solutions to Lab Ensure Immutability of Containers at Runtime.
 
 - 1
 
@@ -103,3 +104,4 @@ Solutions to Lab Ensure Immutability of Containers at Runtime
 - 8
 
     Answer: **`kubectl -n alpha delete pod solaris`**
+

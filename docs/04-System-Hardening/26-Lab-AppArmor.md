@@ -1,7 +1,8 @@
-# Lab AppArmor
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704459)
+# Lab - AppArmor
 
-Solutions Lab AppArmor
+  - Take me to [Lab](https://kodekloud.com/topic/lab-apparmor-2/)
+
+Solutions Lab - AppArmor
 
 - AppArmor is in beta **`beta`** state as of version 1.20
 

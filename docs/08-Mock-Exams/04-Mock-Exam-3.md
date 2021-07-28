@@ -1,5 +1,6 @@
 # Mock Exam 3
-  - Take me to [Mock Exam 3](https://kodekloud.com/courses/1378608/lectures/31704782)
+
+  - Take me to [Mock Exam 3](https://kodekloud.com/topic/mock-exam-3-4/)
 
 Solutions Mock Exam 3
 

@@ -1,10 +1,10 @@
 # Runtime Classes
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704728)
 
-In this section, we will take a look at Runtime Classes
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/runtime-classes/)
 
+In this section, we will take a look at Runtime Classes.
 
-  ### What will happen when you run **`docker run -d nginx`** ?
+### What will happen when you run **`docker run -d nginx`** ?
 
  - The Docker client converts the command into a RESTful API which is then passed to the Docker Daemon.
 

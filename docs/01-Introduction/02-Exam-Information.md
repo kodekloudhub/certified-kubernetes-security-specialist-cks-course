@@ -1,7 +1,8 @@
-# Certification
+# Exam Information
 
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31703284)
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/exam-information/)
     ![Exam Info](../../images/examInfo.png)
+    
 ## Certification Details
    - CKA certification is required to sit for this exam.
 

@@ -1,7 +1,8 @@
-# Labs PSP
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704504)
+# Lab - PSP
+  
+  - Take me to [Lab](https://kodekloud.com/topic/labs-psp/)
 
-Solutions to Labs PSP
+Solutions to Lab PSP.
 
 - By analyzing **`/root/pod.yaml`**, the security risks are in that pod are **`All of the above`**
 
