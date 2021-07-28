@@ -31,7 +31,6 @@ Solutions to Lab Identify and Disable Open Ports
         $ rm /lib/systemd/system/nginx.service
   ```
   </details>
-
   - We want to blacklist the evbug kernel module on controlplane host.
   <details>
   ```
@@ -41,7 +40,6 @@ Solutions to Lab Identify and Disable Open Ports
         Edit this line from #blacklist evbug to blacklist evbug
   ```
   </details>
-
   - Remove the nginx package from controlplane host.
   <details>
   ```
@@ -59,7 +57,6 @@ Solutions to Lab Identify and Disable Open Ports
   $ systemctl stop apache2
   ```
   </details>
-
   - Check for updates available for wget package v1.18 and update to the latest version available in the apt repos.
   <details>
   ```
