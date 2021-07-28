@@ -14,18 +14,19 @@ Solutions to Labs Security Kubernetes Dashboard
 
 - Now run kubectl proxy with the command kubectl proxy --address=0.0.0.0 --disable-filter &
 
-Click on Kubernetes API on top left to open a new tab and you will see API endpoints.
+    Click on Kubernetes API on top left to open a new tab and you will see API endpoints.
 
-Append /api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login to URL to check login UI
+    Append /api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login to URL to check login UI
 
-
-Note: From a security perspective do not use --disable-filter option as it can leave you vulnerable to XSRF attacks, when used with an accessible port. We have used this option to make our lab environment work with the kubernetes dashboard so you can access it through a browser. Ideally you would be accessing it through a kubectl proxy on your localhost only. So in actual environments do not use --disable-filter option as its a major security risk
+    Note: From a security perspective do not use --disable-filter option as it can leave you vulnerable to XSRF attacks, when used with an accessible port. We have used this option to make our lab environment work with the kubernetes dashboard so you can access it through a browser. Ideally you would be accessing it through a kubectl proxy on your localhost only. So in actual environments do not use --disable-filter option as its a major security risk
 
   <details>
   ```
   OK
   ```
   </details>
+
+- `Username and Password` is not a way of logging into Kubernetes dashboard
 
 - **`The cluster-admin ClusterRole`**  provides access to entire cluster
 
@@ -35,10 +36,10 @@ Get token by running below and login to UI with that token
   <details>
   ```
   $ kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/admin-user -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}"
+
   OK
   ```
   </details>
-
 - What namespaces can you see from the UI?  
   <details>
   ```
@@ -67,7 +68,49 @@ Clusterrole name : view
 ClusterRoleBinding name :readonly-user-binding
   <details>
   ```
-  Check
+
+      cat <<EOF | kubectl apply -f -
+
+      apiVersion: v1
+
+      kind: ServiceAccount
+
+      metadata:
+
+        name: readonly-user
+
+        namespace: kubernetes-dashboard
+
+      EOF
+
+      cat <<EOF | kubectl apply -f -
+
+      apiVersion: rbac.authorization.k8s.io/v1
+
+      kind: ClusterRoleBinding
+
+      metadata:
+
+        name: readonly-user-binding
+
+      roleRef:
+
+        apiGroup: rbac.authorization.k8s.io
+
+        kind: ClusterRole
+
+        name: view
+
+      subjects:
+
+      - kind: ServiceAccount
+
+        name: readonly-user
+
+        namespace: kubernetes-dashboard
+
+      EOF
+
   ```
   </details>
 - Logout the admin-user from the Kubernetes Dashboard UI. Get the token of readonly-user and login into UI.
@@ -95,15 +138,56 @@ ClusterRoleBinding name: dashboard-admin-list-namespace-binding
 
   <details>
   ```
-  Check
-  ```
+
+      cat <<EOF | kubectl apply -f -
+      apiVersion: v1
+      kind: ServiceAccount
+      metadata:
+        name: dashboard-admin
+        namespace: kubernetes-dashboard
+      EOF
+      # admin RoleBinding
+      cat <<EOF | kubectl apply -f -
+      apiVersion: rbac.authorization.k8s.io/v1
+      kind: RoleBinding
+      metadata:
+        name: dashboard-admin-binding
+        namespace: kubernetes-dashboard
+      roleRef:
+        apiGroup: rbac.authorization.k8s.io
+        kind: ClusterRole
+        name: admin
+      subjects:
+      - kind: ServiceAccount
+        name: dashboard-admin
+        namespace: kubernetes-dashboard
+      EOF
+
+      ## list-namespace ClusterRoleBinding
+
+      cat <<EOF | kubectl apply -f -
+      apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      metadata:
+        name: dashboard-admin-list-namespace-binding
+      roleRef:
+        apiGroup: rbac.authorization.k8s.io
+        kind: ClusterRole
+        name: list-namespace
+      subjects:
+      - kind: ServiceAccount
+        name: dashboard-admin
+        namespace: kubernetes-dashboard
+      EOF
+   ```
   </details>
 - Get the token of dashboard-admin and login into UI. Confirm only dashboard-admin namespace resources can be updated with dashboard-admin user.
 
-In UI namespace dropdown select kubernetes-dashboard namespace to see its resources. Confirm that other namespace resources are not visible to this user.
+  In UI namespace dropdown select kubernetes-dashboard namespace to see its resources. Confirm that other namespace resources are not visible to this user.
 -
 Run below command to get token
-$ kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/dashboard-admin -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}"
+
+    $ kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/dashboard-admin -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}"
   <details>
   ```
   OK

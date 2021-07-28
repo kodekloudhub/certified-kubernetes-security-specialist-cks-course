@@ -30,14 +30,23 @@ Solutions Lab Kubectl-Proxy-Port-Forward
   - We deployed nginx app in default namespace.Wait few seconds for pod to spinup.Forward port 8005 of localhost to port 80 of nginx pods. Run port-forward process in background.Try accessing port 8005 after port forwarding.
   <details>
   ```
+
   $ kubectl get all
+
   $ kubectl port-forward pods/{POD_NAME} 8005:80 &
+
   OR
+
   $ kubectl port-forward deployment/{DEPLOYMENT_NAME} 8005:80 &
+
   OR
+
   $ kubectl port-forward service/{SERVICE_NAME} 8005:80 &
+
   OR
+
   $ kubectl port-forward replicaset/{REPLICASET_NAME} 8005:80 &
+
   then try curl localhost:8005 to check nginx response
   ```
   </details>
