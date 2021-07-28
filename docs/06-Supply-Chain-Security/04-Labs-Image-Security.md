@@ -1,7 +1,8 @@
-# Labs Image Security
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704747)
+# Lab - Image Security
+  
+  - Take me to [Lab](https://kodekloud.com/topic/labs-image-security/)
 
-Solutions Labs Image Security
+Solutions Lab - Image Security.
 
 - The **`nginx:alpine`** image is the application using
 

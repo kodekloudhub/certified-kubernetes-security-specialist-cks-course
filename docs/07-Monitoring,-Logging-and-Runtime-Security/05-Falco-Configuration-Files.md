@@ -1,7 +1,8 @@
 # Falco Configuration Files
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31792759)
 
-In this section, we will take a look at Falco Configuration Files
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/falco-configuration-files/)
+
+In this section, we will take a look at Falco Configuration Files.
 
 - The main falcoconfiguration file is a YAML file which is located at **`/etc/falco/falco.yaml`**. And it is this configuation file that falco uses when it starts up.
 

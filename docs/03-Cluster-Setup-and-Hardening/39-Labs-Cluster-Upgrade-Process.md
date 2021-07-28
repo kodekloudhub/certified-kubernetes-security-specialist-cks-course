@@ -1,7 +1,8 @@
-# Labs Cluster Upgrade Process
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704408)  
+# Lab - Cluster Upgrade Process
 
-Solutions to practice test cluster upgrade process
+  - Take me to [Lab](https://kodekloud.com/topic/labs-cluster-upgrade/)  
+
+Solutions to practice test cluster upgrade process.
 
 - What is the current version of the cluster?
 

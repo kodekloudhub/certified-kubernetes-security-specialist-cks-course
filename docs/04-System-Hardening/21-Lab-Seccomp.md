@@ -1,7 +1,8 @@
-# Lab Seccomp
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704451)
+# Lab - Seccomp
 
-Solutions to Lab Seccomp
+  - Take me to [Lab](https://kodekloud.com/topic/lab-seccomp/)
+
+Solutions to Lab - Seccomp
 
 # Lab Seccomp
   - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704451)

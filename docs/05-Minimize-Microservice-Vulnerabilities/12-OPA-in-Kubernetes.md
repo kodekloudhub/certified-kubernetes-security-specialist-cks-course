@@ -1,7 +1,8 @@
 # OPA in Kubernetes
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704506)
 
-In this section, we will take a look at OPA in Kubernetes
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/opa-in-kubernetes/)
+
+In this section, we will take a look at OPA in Kubernetes.
 
 -  instead of building our own admission controller server and writing the logic for validations, we now have OPA running and all our policies in it. So instead we connect our mutating or validating webhooks now to OPA.
 
@@ -21,4 +22,4 @@ https://www.openpolicyagent.org/docs/latest/kubernetes-tutorial/
 
 https://www.openpolicyagent.org/docs/v0.11.0/guides-kubernetes-admission-control/
 
-Good watch:https://www.youtube.com/watch?v=QU9BGPf0hBw
+Good watch: https://www.youtube.com/watch?v=QU9BGPf0hBw

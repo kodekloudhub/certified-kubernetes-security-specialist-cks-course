@@ -1,7 +1,9 @@
-# Labs Security Kubernetes Dashboard
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704391)
+# Lab - Security Kubernetes Dashboard
+  
+  - Take me to [Lab](https://kodekloud.com/topic/labs-secure-kubernetes-dashboard/)
 
-Solutions to Labs Security Kubernetes Dashboard
+Solutions to Lab Security Kubernetes Dashboard
+
 - **`Kubernetes Dashboard`** is a Web UI tool for managing kubernetes cluster
 
 - Install kubernetes dashboard following the installing guides in the kubernetes documentation site.

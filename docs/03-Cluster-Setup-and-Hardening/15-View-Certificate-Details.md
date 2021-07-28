@@ -1,7 +1,8 @@
 # View Certificate Details
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704333)
 
-In this section, we will take a look at View Certificate Details
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/view-certificate-details-2/)
+
+In this section, we will take a look at View Certificate Details.
 
 ## View Certs
  ![hrd](../../images/hrd.PNG)

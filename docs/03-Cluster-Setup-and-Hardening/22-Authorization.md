@@ -1,5 +1,7 @@
 # Authorization
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704343)
+
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/authorization-2/)
+
 In this section, we will take a look at Authorization
 
 ## Why do you need Authorization in your cluster?

@@ -1,5 +1,6 @@
-# Labs-Kube-bench
-- Take me to the [Lab](https://kodekloud.com/courses/1378608/lectures/31703368)
+# Lab - Kube-bench
+
+- Take me to the [Lab](https://kodekloud.com/topic/lab-kube-bench/)
 
 Solutions Lab Kube-bench
 

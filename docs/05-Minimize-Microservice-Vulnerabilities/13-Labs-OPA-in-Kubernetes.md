@@ -1,9 +1,10 @@
-# Labs OPA in Kubernetes
-  - Take me to [Lab](https://kodekloud.com/courses/1378608/lectures/31704507)
+# Lab - OPA in Kubernetes
+  
+  - Take me to [Lab](https://kodekloud.com/topic/labs-opa-in-kubernetes/)
 
-Solutions for Labs OPA in Kubernetes
+Solutions for Lab - OPA in Kubernetes.
 
-- **`Manage kubernetes objects via OPA`** is not a function of Kube-mgmt
+- **`Manage kubernetes objects via OPA`** is not a function of Kube-mgmt.
 
 - **`Create configmaps on Kubernetes with the label openpolicyagent.org/policy set to rego`** needs to be done to enable kube-mgmt to automatically identify policies defined in kubernetes and load them into OPA
 

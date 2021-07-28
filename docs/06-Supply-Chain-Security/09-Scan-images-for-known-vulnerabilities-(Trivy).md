@@ -1,7 +1,8 @@
 # Scan images for known vulnerabilities (Trivy)
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704757)
 
-In this section, we will take a look at Scan images for known vulnerabilities (Trivy)
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/scan-images-for-known-vulnerabilities-trivy/)
+
+In this section, we will take a look at Scan images for known vulnerabilities (Trivy).
 
 
   - CVE is short for Common Vulnerabilities and Exposures.

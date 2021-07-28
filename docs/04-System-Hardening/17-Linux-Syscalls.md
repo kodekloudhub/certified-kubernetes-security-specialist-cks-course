@@ -1,13 +1,14 @@
 # Linux Syscalls
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704445)
 
-In this section, we will take a look at Linux Syscalls
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/linux-syscalls/)
+
+In this section, we will take a look at Linux Syscalls.
 
   - A kernel is the major component of an operating system and is the core interface between a computer’s hardware and its processes.
 
   - The Kernel can be divided in to two memory areas, user space and kernel space.
-  ![kernel](../../images/kernel.png)
 
+  ![kernel](../../images/kernel.png)
 
 
   - Applications running in user space get access to data on devices by making special requests to the kernel called system calls.

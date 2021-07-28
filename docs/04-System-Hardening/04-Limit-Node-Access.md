@@ -1,9 +1,10 @@
 # Limit Node Access
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704431)
 
-In this section, we will take a look at Limit Node Access
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/limit-node-access/)
 
- ### The Four types of user accounts in linux
+In this section, we will take a look at Limit Node Access.
+
+### The Four types of user accounts in linux
 
   - The user account refers to individuals who need access to the Linux system.
 

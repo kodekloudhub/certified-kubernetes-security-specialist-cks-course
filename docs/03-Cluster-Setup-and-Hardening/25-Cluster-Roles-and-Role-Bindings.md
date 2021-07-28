@@ -1,7 +1,8 @@
 # Cluster-Roles-and-Role-Bindings
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704349)
-In this section, we will take a look at Cluster-Roles-and-Role-Bindings
 
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/cluster-roles-and-role-bindings/)
+
+In this section, we will take a look at Cluster-Roles-and-Role-Bindings.
 
 ## Roles
 - Roles and Rolebindings are namespaced meaning they are created within namespaces.

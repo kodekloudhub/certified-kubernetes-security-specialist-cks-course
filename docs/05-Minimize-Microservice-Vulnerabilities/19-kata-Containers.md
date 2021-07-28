@@ -1,5 +1,6 @@
 # Kata Containers
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/1378608/lectures/31704727)
+
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/kata-containers/)
 
 In this section, we will take a look at Kata Containers.
 
