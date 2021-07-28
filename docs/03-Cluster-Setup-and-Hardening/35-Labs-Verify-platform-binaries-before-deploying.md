@@ -15,27 +15,30 @@ Solutions to Labs Verify Platform Binaries before deploying
   <details>
   ```
   $ shasum -a512 /opt/kubernetes.tar.gz
-
+  
   ```
   </details>
-
 - Run
 
-  <details>
+ <details>
   ```
-
-      $ cd /opt/
-
-      $ tar -xf kubernetes.tar.gz
-      $ cd kubernetes
-      $ echo "v1.20.0-modified" > version
-      $ cd ..
-      $ tar -czf kubernetes-modified.tar.gz kubernetes
-      $ shasum -a512 kubernetes-modified.tar.gz
+  
+  $ cd /opt/
+  
+  $ tar -xf kubernetes.tar.gz
+  
+  $ cd kubernetes
+  
+  $ echo "v1.20.0-modified" > version
+  
+  $ cd ..
+  
+  $ tar -czf kubernetes-modified.tar.gz kubernetes
+  
+  $ shasum -a512 kubernetes-modified.tar.gz
+      
   ```
   </details>
-
-
 - Run command
 
   <details>
