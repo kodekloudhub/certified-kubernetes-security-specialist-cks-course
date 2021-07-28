@@ -12,8 +12,6 @@ In this section, we will take a look at Labs Use Falco to detect threats
     kubectl get pods --all-namespaces or systemctl status falco
     ```
   </details>  
-
-
 - 2
 
     Answer: As Package on the node
@@ -22,15 +20,14 @@ In this section, we will take a look at Labs Use Falco to detect threats
 
 - 3
   <details>
-  ```
+    ```
+
   Use systemctl status falco and inspect the status.
 
   Answer: Running
 
-  ```
+    ```
   </details>
-
-
 - 4
   <details>
   ```
@@ -38,8 +35,6 @@ Since falco is running as a service, we can make use of journalctl -u falco on n
 
   ```
   </details>
-
-
 - 5
 
   <details>
@@ -50,8 +45,6 @@ Look for the message that starts with Falco initialized with configuration file.
   Answer: /etc/falco/falco.yaml
   ```
   </details>
-
-
 - 6
 
   Answer: **`/etc/falco/custom_rules.yaml`**
@@ -78,16 +71,15 @@ Look for the message that starts with Falco initialized with configuration file.
 
   <details>
   ```
-  on node01# systemctl status falco  and check the container_id.
 
-   this container_id is a part of `simple-webapp-1` pod and name space critical-apps.
+        on node01# systemctl status falco  and check the container_id.
 
-    then on the controlplane, Run  echo "critical-apps,simple-webapp-1" > /root/compromised_pods.txt
+         this container_id is a part of `simple-webapp-1` pod and name space critical-apps.
+
+          then on the controlplane, Run  echo "critical-apps,simple-webapp-1" > /root/compromised_pods.txt
 
   ```
   </details>
-
-
 - 10
 
     Answer: **`Error`**
@@ -113,10 +105,10 @@ Look for the message that starts with Falco initialized with configuration file.
 - 14
 
 
-  Change the output so that it now prints the events in the following sample format:
+      Change the output so that it now prints the events in the following sample format:
 
-  Error Package Management Tools Executed (user=root command=apt update container_id=6b1aeedc093a)
+      Error Package Management Tools Executed (user=root command=apt update container_id=6b1aeedc093a)
 
-To override, place the updated rule in /etc/falco/falco_rules.local.yaml. Then reload the Falco configuration and restart the engine without restarting the service.
+    To override, place the updated rule in /etc/falco/falco_rules.local.yaml. Then reload the Falco configuration and restart the engine without restarting the service.
 
-Finally, try running kubectl exec simple-webapp-1 -- apt update on the controlplane node and see if the changed rule is seen in the falco logs.
+    Finally, try running kubectl exec simple-webapp-1 -- apt update on the controlplane node and see if the changed rule is seen in the falco logs.

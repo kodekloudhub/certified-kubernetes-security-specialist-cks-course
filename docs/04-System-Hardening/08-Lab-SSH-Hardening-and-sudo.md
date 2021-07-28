@@ -22,7 +22,6 @@ Solutions lab SSH Hardening and sudo
         $ ssh jim@node01
   ```
   </details>
-
   - To change the password of user jim, Run
   <details>
   ```
@@ -38,20 +37,25 @@ Solutions lab SSH Hardening and sudo
         jim ALL=(ALL:ALL) ALL
   ```
   </details>
-
   - update user jim on node01 host so that jim can run sudo commands without entering the sudo password.
   <details>
   ```
+
   ssh into node01 by running
+
   $ ssh node01
+
   $ vi /etc/sudoers
+
   change this line from
+
   jim ALL=(ALL:ALL) ALL
+
   To
+
   jim ALL=(ALL) NOPASSWD:ALL
   ```
   </details>
-
   - Add a new user rob on node01 host and set password to jid345kjf. Make user rob member of the admin
   <details>
   ```
@@ -64,7 +68,6 @@ Solutions lab SSH Hardening and sudo
         $ usermod rob -G admin
   ```
   </details>
-
   - To investigate and fix this issue of sudo, Run
   <details>
   ```
@@ -75,7 +78,6 @@ Solutions lab SSH Hardening and sudo
         %admin ALL=(ALL) ALL
   ```
   </details>
-
   - To disable ssh root login and disable password authentication, Run
   <details>
   ```

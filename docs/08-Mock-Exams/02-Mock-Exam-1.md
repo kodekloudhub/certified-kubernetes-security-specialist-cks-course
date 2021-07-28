@@ -174,8 +174,6 @@ In this section, we will take a look at Mock Exam 1
          $ kill -1 $(cat /var/run/falco.pid)
    ```
    </details>
-
-
 - 7
 
    <details>

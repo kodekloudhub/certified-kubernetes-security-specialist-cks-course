@@ -16,28 +16,29 @@ Solutions for Labs OPA
   $ ./opa run -s &
   ```
   </details>
-
 - **`8181`** is the default port on which OPA runs
 
 - **`Rego`** is the language used to write policies in OPA
 
 - Fix the error in the policy given at /root/example.rego
-
   <details>
-  ```
-  $ vi /root/example.rego
-  Set "default allow = false"
-  Run the below command to test policy
-  $ ./opa test example.rego
+    ```
 
-  ```
-  </details>
+      $ vi /root/example.rego
 
- - Load policy /root/sample.rego to OPA with the name samplepolicy
+      Set "default allow = false"
 
+      Run the below command to test policy
+
+      $ ./opa test example.rego
+
+      ```
+    </details>
+- Load policy /root/sample.rego to OPA with the name samplepolicy
   <details>
   ```
   Run Below command to import sample.rego in OPA
+
   $ curl -X PUT --data-binary @sample.rego http://localhost:8181/v1/policies/samplepolicy
   ```
   </details>
