@@ -5,7 +5,7 @@
 
 In this section, we will take a look at Section Introduction:
 
-  - We will discuss cluster Setup & Hardening.
+  - Cluster Setup & Hardening
   - CIS Benchmarks
   - Authentication
   - Authorization
