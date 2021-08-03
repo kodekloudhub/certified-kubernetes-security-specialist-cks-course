@@ -42,7 +42,7 @@ Solutions for Lab - Manage Kubernetes Secrets:
 - **`Type`** is not a secret data defined in default-token secret.
 
 
--  Create a new secret named db-secret.
+- Create a new secret named db-secret.
   <details>
 
   ```
@@ -51,7 +51,7 @@ Solutions for Lab - Manage Kubernetes Secrets:
   ```
   </details>
 
--  Configure webapp-pod to load environment variables from the newly created secret.
+- Configure webapp-pod to load environment variables from the newly created secret.
   <details>
 
   ```
