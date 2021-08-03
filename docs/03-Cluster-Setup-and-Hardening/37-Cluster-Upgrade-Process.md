@@ -1,10 +1,10 @@
 # Cluster Upgrade Process
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/cluster-upgrade-process/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/cluster-upgrade-process/)
 
-In this section, we will take a look at Cluster Upgrade Process.
+In this section, we will take a look at `Cluster Upgrade Process`.
 
-  #### Is it mandatory for all of the kubernetes components to have the same versions?
+#### Is it mandatory for all of the kubernetes components to have the same versions?
 - No, The components can be at different release versions.
 
 #### At any time, kubernetes supports only up to the recent 3 minor versions

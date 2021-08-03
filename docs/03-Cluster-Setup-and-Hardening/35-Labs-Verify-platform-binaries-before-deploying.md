@@ -1,28 +1,33 @@
 # Lab - Verify Platform Binaries before deploying
 
-  - Take me to [Lab](https://kodekloud.com/topic/labs-verify-platform-binaries/)
+  - Take me to the [Lab](https://kodekloud.com/topic/labs-verify-platform-binaries/)
 
 Solutions to Lab - Verify Platform Binaries before deploying.
 
 - Run command
 
   <details>
+
   ```
   $ wget -O /opt/kubernetes.tar.gz https://dl.k8s.io/v1.20.0/kubernetes.tar.gz
 
   ```
   </details>
+
 - Run command
 
   <details>
+
   ```
   $ shasum -a512 /opt/kubernetes.tar.gz
   
   ```
   </details>
+
 - Run
 
- <details>
+  <details>
+
   ```
   
   $ cd /opt/
@@ -41,12 +46,16 @@ Solutions to Lab - Verify Platform Binaries before deploying.
       
   ```
   </details>
+
 - Run command
 
   <details>
+  
   ```
   $ shasum -a512 /opt/kubernetes.tar.gz
 
   ```
   </details>
   
+
+

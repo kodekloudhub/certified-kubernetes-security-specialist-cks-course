@@ -1,8 +1,8 @@
 # Ingress
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/ingress-2/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/ingress-2/)
 
-In this section, we will take a look at Ingress.
+In this section, we will take a look at `Ingress`.
 
 - Ingress Controller
 - Ingress Resources

@@ -1,22 +1,24 @@
 # Lab - Limit Node Access
   
-  - Take me to [Lab](https://kodekloud.com/topic/lab-limit-node-access/)
+  - Take me to the [Lab](https://kodekloud.com/topic/lab-limit-node-access/)
 
-Solutions Lab - Limit Node Access
+Solutions Lab - Limit Node Access:
 
 - **`0`** is the UID of superuser - root
 
-- **`/etc/passwd`** is the file containing details about users in Linux
+- **`/etc/passwd`** is the file containing details about users in Linux.
 
-- We have a user account named mail on controlplane host. What kind of user account is it
+- We have a user account named mail on the controlplane host. What kind of user account is it
   <details>
+
   ```
   System account
   ```
   </details>
 
-- We have created a user named david on controlplane host. What is the uid of this user?
+- We have created a user named david on the controlplane host. What is the uid of this user?
   <details>
+
   ```
   Look at the file /etc/passwd and identify ID of david
   OR
@@ -28,6 +30,7 @@ Solutions Lab - Limit Node Access
 
 - Run
   <details>
+
   ```
   As a root run
 
@@ -38,6 +41,8 @@ Solutions Lab - Limit Node Access
   </details>
 
 - Run
+  <details>
+
   ```
   use those commands
   $ userdel ray
@@ -48,16 +53,19 @@ Solutions Lab - Limit Node Access
 
 - To suspend the user account, Run
   <details>
+
   ```
-  $ uermod -s /usr/sbin/nologin himanshi
+  $ usermod -s /usr/sbin/nologin himanshi
   ```
   </details>
 
 
 - Run
   <details>
+
   ```
-  Run
   $ useradd -d /opt/sam -s /bin/bash -G admin -u 2328 sam
   ```
   </details>
+
+

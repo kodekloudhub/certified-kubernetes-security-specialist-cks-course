@@ -1,14 +1,14 @@
 # Certificates API
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/certificates-api-2/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/certificates-api-2/)
 
-In this section, we will take a look at Certificates API
+In this section, we will take a look at `Certificates API`.
 
 ## CA (Certificate Authority)
 - The CA is really just the pair of key and certificate files that we have generated, whoever gains access to these pair of files can sign any certificate for the kubernetes environment.
 
 #### Kubernetes has a built-in certificates API that can do this for you.
-- With the certificate API, we now send a certificate signing request (CSR) directly to kubernetes through an API call.
+- With the certificate API, now we send a certificate signing request (CSR) directly to kubernetes through an API call.
 
   ![csr](../../images/csr.PNG)
 
@@ -21,7 +21,8 @@ In this section, we will take a look at Certificates API
   ```
   $ openssl req -new -key jane.key -subj "/CN=jane" -out jane.csr
   ```
-- Sends the request to the administrator and the adminsitrator takes the key and creates a CSR object, with kind as "CertificateSigningRequest" and a encoded "jane.csr"
+- Sends the request to the administrator and the administrator takes the key and creates a CSR object, with kind as "CertificateSigningRequest" and an encoded "jane.csr".
+
   ```
   apiVersion: certificates.k8s.io/v1beta1
   kind: CertificateSigningRequest
@@ -37,8 +38,9 @@ In this section, we will take a look at Certificates API
     request:
       <certificate-goes-here>
   ```
-  $ cat jane.csr |base64
-  $ kubectl create -f jane.yaml
+  ```
+  $ cat jane.csr | base64
+  $ kubectl create -f jane-csr.yaml
   ```
  ![csr1](../../images/csr1.PNG)
 
@@ -56,12 +58,12 @@ In this section, we will take a look at Certificates API
   ```
 - To decode it
   ```
-  $ echo "<certificate>" |base64 --decode
+  $ echo "<certificate>" | base64 --decode
   ```
 
   ![csr2](../../images/csr2.PNG)
 
-#### All the certificate releated operations are carried out by the controller manager.
+#### All the certificate related operations are carried out by the controller manager.
 - If anyone has to sign the certificates they need the CA Servers, route certificate and private key. The controller manager configuration has two options where you can specify this.
 
   ![csr3](../../images/csr3.PNG)
@@ -70,5 +72,6 @@ In this section, we will take a look at Certificates API
 
 
 #### K8s Reference Docs
+
 - https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
 - https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/

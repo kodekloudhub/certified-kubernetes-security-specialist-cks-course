@@ -1,8 +1,8 @@
 # UFW Firewall Basics
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/ufw-firewall-basics/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/ufw-firewall-basics/)
 
-In this section, we will take a look at UFW Firewall Basics.
+In this section, we will take a look at `UFW Firewall Basics`.
 
 - UFW which stands for Uncomplicated Firewall. UFW is a simple frontend interface for Iptables, which as the name suggests provides a simple and easy to use interface to set up firewall rules.
 

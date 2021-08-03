@@ -1,8 +1,8 @@
 # TLS in Kubernetes
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/tls-in-kubernetes-2/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/tls-in-kubernetes-2/)
 
-In this section, we will take a look at TLS in Kubernetes.
+In this section, we will take a look at `TLS in Kubernetes`.
 
  The two primary requirements are to have all the various services within the cluster to use server certificates and all clients to use client certificates to verify they are who they say they are.
 - Server Certificates for Servers

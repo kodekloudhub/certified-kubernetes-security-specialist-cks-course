@@ -1,29 +1,32 @@
 # Lab - KubeConfig
 
-  - Take me to [Lab](https://kodekloud.com/topic/labs-kubeconfig/)
+  - Take me to the [Lab](https://kodekloud.com/topic/labs-kubeconfig/)
 
-Solutions Lab KubeConfig
+Solutions for Lab - KubeConfig:
 
 
-- Look for the kube config file under /root/.kube
+- Look for the kube config file under the `/root/.kube` directory.
 
   <details>
+
   ```
   $ ls -l /root/.kube
   ```
   </details>
 
-- Run the kubectl config view command and count the number of clusters
+- Run the `kubectl config view` command and count the number of clusters.
 
   <details>
+
   ```
   $ kubectl config view
   ```
   </details>
 
-- Run the command 'kubectl config view' and count the number of users
+- Run the command `kubectl config view` and count the number of users.
 
   <details>
+
   ```
   $ kubectl config view
   ```
@@ -32,14 +35,16 @@ Solutions Lab KubeConfig
 - How many contexts are defined in the default kubeconfig file?
 
   <details>
+
   ```
   $ kubectl config view
   ```
   </details>
 
-- Run the command 'kubectl config view' and look for the user name.
+- Run the command `kubectl config view` and look for the user name.
 
   <details>
+
   ```
   $ kubectl config view
   ```
@@ -48,14 +53,16 @@ Solutions Lab KubeConfig
 - What is the name of the cluster configured in the default kubeconfig file?
 
   <details>
+
   ```
   $ kubectl config view
   ```
   </details>
 
-- Run the command 'kubectl config view --kubeconfig my-kube-config'
+- Run the command `kubectl config view --kubeconfig my-kube-config`.
 
   <details>
+
   ```
   $ kubectl config view --kubeconfig my-kube-config
   ```
@@ -64,6 +71,7 @@ Solutions Lab KubeConfig
 - How many contexts are configured in the 'my-kube-config' file?
 
   <details>
+
   ```
   $ kubectl config view --kubeconfig my-kube-config
   ```
@@ -72,6 +80,7 @@ Solutions Lab KubeConfig
 - What user is configured in the 'research' context?
 
   <details>
+
   ```
   $ kubectl config view --kubeconfig my-kube-config
   ```
@@ -80,22 +89,25 @@ Solutions Lab KubeConfig
 - What is the name of the client-certificate file configured for the 'aws-user'?
 
   <details>
+
   ```
   $ kubectl config view --kubeconfig my-kube-config
   ```
   </details>
 
-- What is the current context set to in the 'my-kube-config' file?
+- What is the current context set in the 'my-kube-config' file?
 
   <details>
+
   ```
   $ kubectl config view --kubeconfig my-kube-config
   ```
   </details>
 
-- Run the command kubectl config --kubeconfig=/root/my-kube-config use-context research
+- Run the command `kubectl config --kubeconfig=/root/my-kube-config use-context research` 
 
   <details>
+
   ```
   $ kubectl config --kubeconfig=/root/my-kube-config use-context research
   ```
@@ -104,32 +116,37 @@ Solutions Lab KubeConfig
 - Replace the contents in the default kubeconfig file with the content from my-kube-config file.
 
   <details>
+
   ```
-  $ mv .kube/config .kube/config.bak
-  $ cp /root/my-kube-config .kube/config
+  $ mv ~/.kube/config ~/.kube/config.bak
+
+  $ cp /root/my-kube-config ~/.kube/config
   ```
   </details>
 
-- The path to certificate is incorrect in the kubeconfig file. Fix it. All users certificates are stored at /etc/kubernetes/pki/users
+- The path to certificate is incorrect in the kubeconfig file. Fix it. All users certificates are stored at `/etc/kubernetes/pki/users`.
 
- <details>
+  <details>
+  
+  ```
   $ kubectl get pods
 
-  master $ ls
+  $ ls
 
   dev-user.crt  dev-user.csr  dev-user.key
 
-  master $ vi /root/.kube/config
+  $ vi /root/.kube/config
 
-  master $ grep dev-user.crt /root/.kube/config
+  $ grep dev-user.crt /root/.kube/config
 
-    client-certificate: /etc/kubernetes/pki/users/dev-user/dev-user.crt
+  client-certificate: /etc/kubernetes/pki/users/dev-user/dev-user.crt
 
-  master $ pwd
+  $ pwd
   
   /etc/kubernetes/pki/users/dev-user
 
-  master $ kubectl get pods
+  $ kubectl get pods
 
   No resources found in default namespace.
+  ```
  </details>
