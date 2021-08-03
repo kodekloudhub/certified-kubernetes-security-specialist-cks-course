@@ -1,26 +1,49 @@
 # Lab - Use Audit Logs to monitor access
 
-  - Take me to [Lab](https://kodekloud.com/topic/labs-use-audit-logs-to-monitor-access/)
+  - Take me to the [Lab](https://kodekloud.com/topic/labs-use-audit-logs-to-monitor-access/)
 
-Solutions to Labs Use Audit Logs to monitor access.
+Solutions to Lab - Use Audit Logs to monitor access:
 
 - 1
+<details>
 
-    Answer: **`kubeapi server`**
+```
+kube api-server
+```
+</details>
 
 - 2
+<details>
 
-    Answer: `No`
+```
+No
+```
+</details>
 
 - 3
+<details>
 
-    Answer: `ResponseComplete`
-
+```
+ResponseComplete
+```
+</details>
 
 - 4
+<details>
 
-    Answer: `RequestResponse`
+```
+RequestResponse
+```
+</details>
 
 - 5
+<details>
 
-    Answer: `logs all requests at the metadata level`
+```
+logs all requests at the metadata level
+```
+</details>
+
+
+
+
