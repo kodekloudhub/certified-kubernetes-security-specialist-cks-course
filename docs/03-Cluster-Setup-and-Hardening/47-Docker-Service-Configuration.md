@@ -1,8 +1,8 @@
 # Docker Service Configuration
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/docker-service-configuration-2/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/docker-service-configuration-2/)
 
-In this section, we will take a look at Docker Service Configuration.
+In this section, we will take a look at `Docker Service Configuration`.
 
 ### Check Docker service status
 

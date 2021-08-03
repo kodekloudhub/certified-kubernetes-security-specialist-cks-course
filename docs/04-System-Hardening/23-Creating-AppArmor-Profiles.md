@@ -1,8 +1,8 @@
 # Creation AppArmor Profiles
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/creating-apparmor-profiles/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/creating-apparmor-profiles/)
 
-In this section, we will take a look at Creation AppArmor Profiles.
+In this section, we will take a look at `Creation AppArmor Profiles`.
 
 ### A simple bash script
 
@@ -28,6 +28,6 @@ In this section, we will take a look at Creation AppArmor Profiles.
 ![apparmorprofileBash](../../images/apparmorprofileBash.png)
 
 
-### Run a bash script form a different window
+### Run a bash script from a different window
 
-      ./add_data.sh
+    ./add_data.sh

@@ -1,8 +1,8 @@
 # SSH Hardening
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/ssh-hardening/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/ssh-hardening/)
 
-In this section, we will take a look at SSH Hardening.
+In this section, we will take a look at `SSH Hardening`.
 
  - SSH is used for logging into a remote machine and for executing commands on a remote machine.
 
@@ -10,7 +10,7 @@ In this section, we will take a look at SSH Hardening.
  
     ![k8sSSH](../../images/k8sSSH.png)
 
- - A more secure way is to make use of a cryptographic key pair that uses a private and public keys to authenticate to the system.
+ - A more secure way is to make use of a cryptographic key pair that uses private and public keys to authenticate to the system.
 
  - To improve the security of the system:
 

@@ -1,11 +1,11 @@
 # Role Based Access Control
 
- - Take me to [Video Tutorial](https://kodekloud.com/topic/rbac/)
+ - Take me to the [Video Tutorial](https://kodekloud.com/topic/rbac/)
 
-In this section, we will take a look at RBAC
+In this section, we will take a look at `RBAC`.
 
 ## How do we create a role?
-- Each role has 3 sections
+- Each role has 3 sections.
   - apiGroups
   - resources
   - verbs
@@ -109,5 +109,6 @@ In this section, we will take a look at RBAC
   ![rbac4](../../images/rbac4.PNG)
 
 #### K8s Reference Docs
+
 - https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 - https://kubernetes.io/docs/reference/access-authn-authz/rbac/#command-line-utilities

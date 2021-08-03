@@ -1,12 +1,13 @@
 # Lab - Certificates-API
 
-  - Take me to [Lab](https://kodekloud.com/topic/labs-certificates-api/)
+  - Take me to the [Lab](https://kodekloud.com/topic/labs-certificates-api/)
 
-Solutions Lab Certificates API
+Solutions for lab Certificates API:
 
 - A new member akshay joined our team. He requires access to our cluster. The Certificate Signing Request is at the /root location.
 
   <details>
+
   ```
   $ ls -l /root
   ```
@@ -15,6 +16,7 @@ Solutions Lab Certificates API
 - View the answer at /var/answers/akshay-csr.yaml
 
   <details>
+
   ```
   $ kubectl create -f /var/answers/akshay-csr.yaml
   ```
@@ -23,6 +25,7 @@ Solutions Lab Certificates API
 - Run the command kubectl get csr
 
   <details>
+
   ```
   $ kubectl get csr
   ```
@@ -31,6 +34,7 @@ Solutions Lab Certificates API
 - Run the command kubectl certificate approve akshay
 
   <details>
+
   ```
   $ kubectl certificate approve akshay
   ```
@@ -39,6 +43,7 @@ Solutions Lab Certificates API
 - Run the command kubectl get csr
 
   <details>
+
   ```
   $ kubectl get csr
   ```
@@ -47,6 +52,7 @@ Solutions Lab Certificates API
 - Run the command kubectl get csr and look at the Requestor column
 
   <details>
+
   ```
   $ kubectl get csr
   ```
@@ -57,6 +63,7 @@ Solutions Lab Certificates API
 - Run the command kubectl get csr
 
   <details>
+
   ```
   $ kubectl get csr
   ```
@@ -65,6 +72,7 @@ Solutions Lab Certificates API
 - Run the command kubectl get csr agent-smith -o yaml
 
   <details>
+
   ```
   $ kubectl get csr agent-smith -o yaml
   ```
@@ -73,6 +81,7 @@ Solutions Lab Certificates API
 - Run the command kubectl certificate deny agent-smith
 
   <details>
+
   ```
   $ kubectl certificate deny agent-smith
   ```
@@ -81,7 +90,10 @@ Solutions Lab Certificates API
 - Run the command kubectl delete csr agent-smith
 
   <details>
+
   ```
   $ kubectl delete csr agent-smith
   ```
   </details>
+
+

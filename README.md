@@ -10,7 +10,7 @@ These are notes from the [Certified Kubernetes Security Specialist (CKS)](https:
 
 - [02-Understanding-the-Kubernetes-Attack-Surface](docs/02-Understanding-the-Kubernetes-Attack-Surface)
   - [01-The-Attack](docs/02-Understanding-the-Kubernetes-Attack-Surface/01-The-Attack.md)
-  - [02-The-4C's-of-Cloud-Native-security](docs/02-Understanding-the-Kubernetes-Attack-Surface/02-The-4C's-of-Cloud-Native-security].md)
+  - [02-The-4C's-of-Cloud-Native-security](docs/02-Understanding-the-Kubernetes-Attack-Surface/02-The-4C's-of-Cloud-Native-security.md)
 
 - [03-Cluster-Setup-and-Hardening](docs/03-Cluster-Setup-and-Hardening)
   - [01-Section-Introduction](docs/03-Cluster-Setup-and-Hardening/01-Section-Introduction.md)

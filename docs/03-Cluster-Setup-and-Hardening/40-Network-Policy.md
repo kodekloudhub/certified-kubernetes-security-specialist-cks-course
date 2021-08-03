@@ -1,10 +1,10 @@
 # Network Policy
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/network-policy/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/network-policy/)
 
-In this section, we will take a look at Network Policy.
+In this section, we will take a look at `Network Policy`.
 
-#### Trafic flowing through a webserver serving frontend to users an app server serving backend API and a database server
+#### Traffic flowing through a webserver serving frontend to users an app server serving backend API and a database server
 
   ![traffic](../../images/traffic.PNG)
 
@@ -56,6 +56,7 @@ In this section, we will take a look at Network Policy.
       ports:
       - protocol: TCP
         port: 3306
+  ```
   ```
   $ kubectl create -f policy-definition.yaml
   ```

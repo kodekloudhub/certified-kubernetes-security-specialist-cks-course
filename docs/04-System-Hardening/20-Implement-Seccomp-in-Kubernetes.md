@@ -1,8 +1,8 @@
 # Implement Seccomp in Kubernetes
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/implement-seccomp-in-kubernetes/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/implement-seccomp-in-kubernetes/)
 
-In this section, we will take a look at Implement Seccomp in Kubernetes.
+In this section, we will take a look at `Implement Seccomp in Kubernetes`.
 
 ### Seccomp in Docker
 
@@ -38,6 +38,6 @@ In this section, we will take a look at Implement Seccomp in Kubernetes.
 ![seccompk8sPod](../../images/seccompk8sPod.png)
 
 
-### Reference
+### References
 
-https://kubernetes.io/docs/tutorials/clusters/seccomp/
+- https://kubernetes.io/docs/tutorials/clusters/seccomp/

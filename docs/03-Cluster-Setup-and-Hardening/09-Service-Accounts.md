@@ -1,6 +1,6 @@
 # Service Accounts
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/service-accounts/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/service-accounts/)
   
-In this section we will take a look at Service Accounts
+In this section we will take a look at `Service Accounts` in Kubernetes.
 

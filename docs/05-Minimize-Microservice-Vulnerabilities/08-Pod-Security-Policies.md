@@ -1,12 +1,13 @@
 # Pod Security Policies
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/pod-security-policies/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/pod-security-policies/)
 
-In this section, we will take a look at Pod Security Policies.
+In this section, we will take a look at `Pod Security Policies`.
 
  - Pod security policies help in defining policies to restrict pods from being created with specific capabilities or privileges.
 
  - PodSecurityPolicy plugin is not enabled by default.
+
  - When enabled the pod security policy admission controller observes all pod creation requests and validates the configuration against a set of pre-configured rules. If it detects a match that we have configured the request is rejected.
 
 
@@ -28,6 +29,6 @@ In this section, we will take a look at Pod Security Policies.
       fsGroup:
         rule: RunAsAny
 
-### Reference
+### References
 
-https://kubernetes.io/docs/concepts/policy/pod-security-policy/
+- https://kubernetes.io/docs/concepts/policy/pod-security-policy/

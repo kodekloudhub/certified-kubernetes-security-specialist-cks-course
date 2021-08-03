@@ -1,8 +1,8 @@
 # Mock Exam 3
 
-  - Take me to [Mock Exam 3](https://kodekloud.com/topic/mock-exam-3-4/)
+  - Take me to the [Mock Exam 3](https://kodekloud.com/topic/mock-exam-3-4/)
 
-Solutions Mock Exam 3
+Solutions for lab - Mock Exam 3:
 
 - 1
   <details>
@@ -255,3 +255,5 @@ Solutions Mock Exam 3
   readOnlyRootFilesystem: true so both break the concept of immutability and should be deleted.
   ```
   </details>
+
+

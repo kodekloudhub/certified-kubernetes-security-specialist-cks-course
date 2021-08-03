@@ -1,6 +1,6 @@
 # Mock Exams Introduction
 
-  - Take me to [Mock Exams Introduction](https://kodekloud.com/topic/mock-exams-introduction/)
+  - Take me to the [Mock Exams Introduction](https://kodekloud.com/topic/mock-exams-introduction/)
 
 In this section, we will take a look at `Mock Exams` Introduction.
 

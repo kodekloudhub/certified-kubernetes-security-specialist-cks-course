@@ -1,14 +1,15 @@
 # Lab - OPEN POLICY AGENT (OPA)
 
-  - Take me to [Lab](https://kodekloud.com/topic/labs-opa/)
+  - Take me to the [Lab](https://kodekloud.com/topic/labs-opa/)
 
-Solutions for Lab - OPA
+Solutions for Lab - OPA:
 
-- OPA stands for **`Open Policy Agent`**
+- OPA stands for **`Open Policy Agent`**.
 
-- Install and run latest OPA on the system in the background.
+- Install and run the latest OPA on the system in the background.
 
   <details>
+
   ```
   Update VERSION below with the latest version available in the release page
   $ export VERSION=v0.27.1
@@ -18,13 +19,14 @@ Solutions for Lab - OPA
   ```
   </details>
 
-- **`8181`** is the default port on which OPA runs
+- **`8181`** is the default port on which OPA runs.
 
-- **`Rego`** is the language used to write policies in OPA
+- **`Rego`** is the language used to write policies in OPA.
 
-- Fix the error in the policy given at /root/example.rego
+- Fix the error in the policy given at `/root/example.rego`
 
   <details>
+
   ```
   $ vi /root/example.rego
   Set "default allow = false"
@@ -34,9 +36,10 @@ Solutions for Lab - OPA
   ```
   </details>
 
- - Load policy /root/sample.rego to OPA with the name samplepolicy
+ - Load policy `/root/sample.rego` to OPA with the name samplepolicy.
 
   <details>
+
   ```
   Run Below command to import sample.rego in OPA
   $ curl -X PUT --data-binary @sample.rego http://localhost:8181/v1/policies/samplepolicy

@@ -1,8 +1,8 @@
 # Image Security
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/image-security-2/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/image-security-2/)
 
-In this section, we will take a look at Image Security.
+In this section, we will take a look at `Image Security`.
 
 nginx-pod.yml
 
@@ -16,7 +16,7 @@ nginx-pod.yml
         name: nginx
 
 
-from the previous nginx-pod.yml:
+From the previous `nginx-pod.yml`:
 
   - the name of the image/repository is nginx
 
@@ -28,9 +28,9 @@ from the previous nginx-pod.yml:
 
 
 
-there are many registries like google gcr **`gcr.io`**
+There are many registries like google gcr **`gcr.io`**
 
-When you have an application build in house, you should hosting internal private registry.
+When you have an application built in house, you should host an internal private registry.
 
 GCP, Azure provide a private registry for your cloud account by default
 
@@ -47,7 +47,7 @@ GCP, Azure provide a private registry for your cloud account by default
       ![privateReg](../../images/privateReg.png)
 
 
-### From Kubernetes Respective, Pull an image from private registry:
+### From Kubernetes respective, Pull an image from private registry:
 
   Create a secret object with the Creds
 

@@ -1,8 +1,8 @@
 # Minimize host OS footprint Intro
 
-  - Take me to [Video Tutuorial](https://kodekloud.com/topic/minimize-host-os-footprint-intro/)
+  - Take me to the [Video Tutuorial](https://kodekloud.com/topic/minimize-host-os-footprint-intro/)
 
-In this section, we will take a look at Minimize host OS footprint Intro.
+In this section, we will take a look at `Minimize host OS footprint Intro`.
 
 ### Reducing the attack surface on host
 

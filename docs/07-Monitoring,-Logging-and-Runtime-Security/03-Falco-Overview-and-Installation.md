@@ -1,23 +1,23 @@
 # Falco Overview and Installation
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/falco-overview-and-installation-2/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/falco-overview-and-installation-2/)
 
-In this section, we will take a look at Falco Overview and Installation.
+In this section, we will take a look at `Falco Overview and Installation`.
 
-  - Falco needs to see what system calls are coming though from the applications in the user space into the Linux kernel. That means it somehow has to insert itself into the kernel, to "sit in the middle" and see what's coming in. One way Falco does this is by making use of a **`Kernel Module`**.
+  - Falco needs to see what system calls are coming through from the applications in the user space into the Linux kernel. That means it somehow has to insert itself into the kernel, to "sit in the middle" and see what's coming in. One way Falco does this is by making use of a **`Kernel Module`**.
 
-  -  Falco can also interact with the kernel through what is called **`eBPF`** or the extended berkely packet filter.
+  -  Falco can also interact with the kernel through what is called **`eBPF`** or the extended berkeley packet filter.
 
-  - The system calls are then analyzed by the sysdig libraries in the userspace.
+  - The system calls are then analyzed by the sysdig libraries in the user space.
 
-  - The events are then filtered by the **`Falco Policy engine`** by making use of pre-defined rules that can detect whether the event was suspicious or not.
+  - The events are then filtered by the **`Falco Policy engine`** by making use of predefined rules that can detect whether the event was suspicious or not.
 
-  Such an event is then alerted via outputs such as syslog files, standard output or alerts to other programs email alerts. Slack channel alerts,...etc.
+  Such an event is then alerted via outputs such as syslog files, standard output or alerts to other programs' email alerts. Slack channel alerts,...etc.
 
   ![falco2](../../images/falco2.png)
 
 
-  ### Installing Falco as a package
+### Installing Falco as a package
 
   Trust the falcosecurity GPG key, configure the apt repository, and update the package list:
 
@@ -49,6 +49,6 @@ In this section, we will take a look at Falco Overview and Installation.
 
 ### References
 
-https://falco.org/docs/getting-started/installation/
+- https://falco.org/docs/getting-started/installation/
 
-https://github.com/falcosecurity/charts/tree/master/falco#introduction
+- https://github.com/falcosecurity/charts/tree/master/falco#introduction

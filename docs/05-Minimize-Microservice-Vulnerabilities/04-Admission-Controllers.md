@@ -1,8 +1,8 @@
 # Admission Controllers
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/admission-controllers/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/admission-controllers/)
 
-In this section, we will take a look at Admission Controllers.
+In this section, we will take a look at `Admission Controllers`.
 
   - When a request comes in , say to create a pod, it goes through authentication, authorization and then through admission controllers before being created.
 
@@ -13,10 +13,10 @@ In this section, we will take a look at Admission Controllers.
 
 ### With Admission Controllers, you can
 
-- Only permit images from certain registry.
+- Only permit images from a certain registry.
 - Don't permit runAs root user.
 - Only permit certain capabilities.
-- Pods always has labels.
+- Pods always have labels.
 
 
 ### To see which admission plugins are enabled:
@@ -33,9 +33,9 @@ In this section, we will take a look at Admission Controllers.
       with --enable-admission-plugins=NodeRestriction,NamespaceAutoProvision
 
 
-  - --admission-control was deprecated in 1.10 and replaced with --enable-admission-plugins.
+  - `--admission-control` was deprecated in 1.10 and replaced with `--enable-admission-plugins`.
 
 
-### Reference
+### References
 
-https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/
+- https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/

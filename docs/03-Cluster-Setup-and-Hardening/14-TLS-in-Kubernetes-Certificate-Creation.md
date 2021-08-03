@@ -1,10 +1,10 @@
 # TLS in Kubernetes Certificate Creation
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/tls-in-kubernetes-certificate-creation-2/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/tls-in-kubernetes-certificate-creation-2/)
 
-In this section we will take a look at TLS in Kubernetes Certificate Creation
+In this section, we will take a look at `TLS in Kubernetes Certificate Creation`.
 
-  ## Generate Certificates
+## Generate Certificates
 - There are different tools available such as easyrsa, openssl or cfssl etc. or many others for generating certificates.
 
 ## Certificate Authority (CA)
@@ -43,7 +43,7 @@ In this section we will take a look at TLS in Kubernetes Certificate Creation
 
   ![ca2](../../images/ca2.PNG)
 
-- Certificate with admin privilages
+- Certificate with admin privileges
   ```
   $ openssl req -new -key admin.key -subj "/CN=kube-admin/O=system:masters" -out admin.csr
   ```
@@ -60,22 +60,22 @@ In this section we will take a look at TLS in Kubernetes Certificate Creation
 
 ## Generating Server Certificates
 
-## ETCD Server certificate
+### ETCD Server certificate
 
   ![etc1](../../images/etc1.PNG)
 
   ![etc2](../../images/etc2.PNG)
 
-## Kube-apiserver certificate
+### Kube-apiserver certificate
 
   ![api1](../../images/api1.PNG)
 
   ![api2](../../images/api2.PNG)
 
-## Kubectl Nodes (Server Cert)
+### Kubectl Nodes (Server Cert)
 
    ![kctl1](../../images/kctl1.PNG)
 
-## Kubectl Nodes (Client Cert)
+### Kubectl Nodes (Client Cert)
 
    ![kctl2](../../images/kctl2.PNG)

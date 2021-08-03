@@ -1,12 +1,12 @@
 # Falco Configuration Files
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/falco-configuration-files/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/falco-configuration-files/)
 
-In this section, we will take a look at Falco Configuration Files.
+In this section, we will take a look at `Falco Configuration Files`.
 
-- The main falcoconfiguration file is a YAML file which is located at **`/etc/falco/falco.yaml`**. And it is this configuation file that falco uses when it starts up.
+- The main falco configuration file is a YAML file which is located at **`/etc/falco/falco.yaml`**. And it is this configuration file that falco uses when it starts up.
 
-- This YAML file consists of all the configuration options used by Falco -such as the location of the rules that it uses, various formatting options used for log and output messages, the output channels to be configured e.t.c
+- This YAML file consists of all the configuration options used by Falco - such as the location of the rules that it uses, various formatting options used for log and output messages, the output channels to be configured e.t.c
 
 - The built-in rules that we saw in action in the previous lecture are stored inside the **`/etc/falco/falco_rules.yaml`** file and you can see that it is first in this list
 
@@ -14,7 +14,7 @@ In this section, we will take a look at Falco Configuration Files.
 
 ### Some of **`/etc/falco/falco.yaml`** options
 
-- The JSON Output field when enabled, logs the events in JSON. By default this field is set to false and logs events as text.
+- The JSON Output field, when enabled, logs the events in JSON. By default this field is set to false and logs events as text.
 
 - Then we have configuration options related to Falco itself. Such as logging options for the falco process such as whether to log to standard error   or to syslog and the log level to be used for falcos logs. These are not to be confused with the PRIORITY that we used for individual rules.
 
@@ -28,6 +28,6 @@ In this section, we will take a look at Falco Configuration Files.
 
 
 
-### Reference
+### References
 
-https://falco.org/docs/configuration/
+- https://falco.org/docs/configuration/

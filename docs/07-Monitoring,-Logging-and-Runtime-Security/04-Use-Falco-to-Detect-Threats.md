@@ -1,10 +1,10 @@
 # Use Falco to Detect Threats
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/use-falco-to-detect-threats-2/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/use-falco-to-detect-threats-2/)
 
-In this section, we will take a look at Use Falco to Detect Threats.
+In this section, we will take a look at `Use Falco to Detect Threats`.
 
-  - Falco implements several rules by default -one of which alerted us that a shell was opened inside a  container and  another one that warned us that sensitive files read inside the container.
+  - Falco implements several rules by default - one of which alerted us that a shell was opened inside a  container and another one that warned us that sensitive files read inside the container.
 
   - A Falco rules file is a YAML.
 
@@ -18,7 +18,7 @@ rules.yaml
       output: Bash opened (user=%user.name container=%container.id)
       priority: WARNING
 
- - The **`container.id`** and **`proc.name`** are known as **`Sysdig filters`** and they are extensively used by Falco. The Falco Policy engine makes use if these filters to extract information about an event such as the container ID, process name and several other.
+ - The **`container.id`** and **`proc.name`** are known as **`Sysdig filters`** and they are extensively used by Falco. The Falco Policy engine makes use of these filters to extract information about an event such as the container ID, process name and several other.
 
     - Container.id filters the name of the container.
 
@@ -32,6 +32,6 @@ rules.yaml
 
 
 
-### Reference
+### References
 
-https://falco.org/docs/rules/supported-fields/
+- https://falco.org/docs/rules/supported-fields/

@@ -1,10 +1,10 @@
 # Using Runtimes in Kubernetes
 
-  - Take me to [Video Tutoral](https://kodekloud.com/topic/using-runtimes-in-kubernetes/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/using-runtimes-in-kubernetes/)
 
-In this section, we will take a look at Using Runtimes in Kubernetes.
+In this section, we will take a look at Using `Runtimes in Kubernetes`.
 
-### How to  instruct the pods to specifically make use of the gvisor runtime?
+### How to instruct the pods to specifically make use of the gvisor runtime?
 
   gvisor.yaml
 
