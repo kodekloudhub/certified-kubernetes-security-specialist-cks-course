@@ -1,8 +1,8 @@
 # Mock Exam 2
 
-  - Take me to [Mock Exam 2](https://kodekloud.com/topic/mock-exam-2-6/)
+  - Take me to the [Mock Exam 2](https://kodekloud.com/topic/mock-exam-2-6/)
 
-Solutions Mock Exam 2
+Solutions for lab - Mock Exam 2:
 
 - 1
   <details>
@@ -248,8 +248,7 @@ Solutions Mock Exam 2
 
 - 9
 
-
-<details>
+  <details>
 
   ```
   # Run trivy image scan on all of the images and check which one does not have HIGH or CRITICAL vulnerabilities.
@@ -266,3 +265,5 @@ Solutions Mock Exam 2
   controlplane $ kubectl -n seth run secure-nginx-pod --image nginx:alpine
   ```
   </details>
+
+

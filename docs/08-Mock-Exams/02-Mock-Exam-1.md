@@ -1,8 +1,8 @@
 # Mock Exam 1
 
-  - Take me to [Mock Exam 1](https://kodekloud.com/topic/mock-exam-1-6/)
+  - Take me to the [Mock Exam 1](https://kodekloud.com/topic/mock-exam-1-6/)
 
-In this section, we will take a look at `Mock Exam 1`.
+Solutions for lab - Mock Exam 1:
 
 - 1
   <details>
@@ -91,9 +91,12 @@ In this section, we will take a look at `Mock Exam 1`.
   ```
   Get all the images of pods running in the 'delta' namespace:
   $ kubectl -n delta get pods -o json | jq -r '.items[].spec.containers[].image'
+
   Scan each image using 'trivy image scan'. Example:
   $ trivy image --severity HIGH,CRITICAL kodekloud/webapp-delayed-start
+  
   If the image has HIGH or CRITICAL vulnerabilities, delete the associated pod.
+
   For example, if 'kodekloud/webapp-delayed-start', 'httpd' and 'nginx:1.16' have these vulnerabilities:
   $ kubectl -n delta delete pod simple-webapp-1
   $ kubectl -n delta delete pod simple-webapp-3
@@ -132,6 +135,7 @@ In this section, we will take a look at `Mock Exam 1`.
 - 5
 
    <details>
+
    ```
    # The fixes are mentioned in the same report.
    # Update the kube-apiserver static pod definition file under "/etc/kubernetes/manifests/kube-apiserver.yaml" as per the recommendations.
@@ -143,6 +147,7 @@ In this section, we will take a look at `Mock Exam 1`.
 
 - 6
    <details>
+
     ```
     # Create /opt/security_incidents on node01
 
@@ -202,12 +207,9 @@ In this section, we will take a look at `Mock Exam 1`.
 
 
 - 8
+   <details>
 
-
-
- <details>
-
-```
+   ```
    # Create the below admission-configuration inside /root/CKS/ImagePolicy directory in the controlplane  
 
    # use this YAML file:
