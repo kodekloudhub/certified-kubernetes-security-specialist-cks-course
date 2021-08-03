@@ -46,12 +46,12 @@ Manifest file for `nginx.yaml` as follows:
         - name: runtime-volume
           emptyDir: {}
 
-  create resource from `nginx.yaml` file:
+create resource from `nginx.yaml` file:
 
       kubectl create -f nginx.yaml
 
 
-  Test the immutability
+Test the immutability
 
     kubectl exec -it nginx -- apt update
 
