@@ -57,8 +57,11 @@ Solutions for Lab - Manage Kubernetes Secrets:
   ```
   Run
   $ kubectl delete pod webapp-pod
+  
+  # Open YAML file in vi editor
   $ vi pod.yaml
-    apiVersion: v1
+
+  apiVersion: v1
   kind: Pod
   metadata:
     labels:
@@ -73,6 +76,7 @@ Solutions for Lab - Manage Kubernetes Secrets:
       envFrom:
       - secretRef:
           name: db-secret
+
   $ kubectl apply -f pod.yaml
   ```
   </details>
