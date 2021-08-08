@@ -1,12 +1,12 @@
 # AppArmor
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/apparmor/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/apparmor/)
 
-In this section, we will take a look at AppArmor.
+In this section, we will take a look at `AppArmor`.
 
 - **`AppArmor ("Application Armor")`** is a Linux kernel security module that allows the system administrator to restrict programs' capabilities with per-program profiles. Profiles can allow capabilities like network access, raw socket access, and the permission to read, write, or execute files on matching paths.
 
-- AppAromr is installed by default on the most Linux distribution
+- AppArmor is installed by default on the most Linux distribution.
 
   **`systemctl status apparmor`**
 

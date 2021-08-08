@@ -1,8 +1,8 @@
 # Privilege Escalation in Linux
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/privilege-escalation-in-linux/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/privilege-escalation-in-linux/)
 
-In this section, we will take a look at Privilege Escalation in Linux.
+In this section, we will take a look at `Privilege Escalation in Linux`.
 
 - The sudo command offers another approach to giving users administrative access. When trusted users precede an administrative command with sudo, they are prompted for their own password.
 

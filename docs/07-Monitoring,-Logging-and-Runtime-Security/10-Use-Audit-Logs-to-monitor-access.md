@@ -1,8 +1,8 @@
 # Use Audit Logs to monitor access
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/use-audit-logs-to-monitor-access/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/use-audit-logs-to-monitor-access/)
 
-In this section, we will take a look at how to Use Audit Logs to monitor access.
+In this section, we will take a look at `how to use Audit Logs to monitor access`.
 
 
 - Auditing events would allow us to detect suspicious or abnormal operations within the kubernetes cluster.
@@ -37,9 +37,9 @@ In this section, we will take a look at how to Use Audit Logs to monitor access.
           resourceNames: ["webapp-pod "]
         level: RequestResponse
 
-  - **`omitStages`** Don't generate audit events for all requests in RequestReceived stage.
+  - **`omitStages`** Don't generate audit events for all requests in the RequestReceived stage.
 
-  - **`namespaces`** is an optional field and if it is unspecified, the policy will consider objects across all namespaces whereever applicable.
+  - **`namespaces`** is an optional field and if it is unspecified, the policy will consider objects across all namespaces wherever applicable.
 
   - **`verbs`** field which decides the specific operations on the objects the policy needs to match. This field is optional as well, if it is not declared, every operation, such as create/update and delete will be logged by default.
 
@@ -49,8 +49,11 @@ In this section, we will take a look at how to Use Audit Logs to monitor access.
 
     - **`None`** implies that events will not be logged for this specific rule. So in this case no events will be logged if the pod called web-app is deleted in the prod-namespace.
 
-    - **`Metadata`** in this case if the event matches the rule –only the metadata such as the timestamp, user, resources, verbs e.t.cwill be logged.
+    - **`Metadata`** in this case if the event matches the rule –only the metadata such as the timestamp, user, resources, verbs e.t.c will be logged.
 
     - **`Request`** to get more details which will include the metadata as well as the request body. This is more verbose compared to the Metadata.
 
     - **`RequestResponse`** to log the metadata, the request body as well as the response body.
+
+
+

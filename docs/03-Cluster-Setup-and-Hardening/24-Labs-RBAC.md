@@ -2,7 +2,7 @@
 
   - Take me to [Lab](https://kodekloud.com/topic/labs-rbac/)
 
-Solutions Lab RBAC
+Solutions for Lab - RBAC:
 
 - Run the command kubectl describe pod kube-apiserver-master -n kube-system and look for --authorization-mode
 
@@ -47,6 +47,7 @@ Solutions Lab RBAC
 - Check the verbs associated to the kube-proxy role
 
   <details>
+
   ```
   $ kubectl describe role kube-proxy -n kube-system
   ```
@@ -55,6 +56,7 @@ Solutions Lab RBAC
 - Which of the following statements are true?
 
   <details>
+
   ```
   kube-proxy role can get details of configmap object by the name kube-proxy
   ```
@@ -63,6 +65,7 @@ Solutions Lab RBAC
 - Run the command kubectl describe rolebinding kube-proxy -n kube-system
 
   <details>
+
   ```
   $ kubectl describe rolebinding kube-proxy -n kube-system
   ```
@@ -71,6 +74,7 @@ Solutions Lab RBAC
 - Run the command kubectl get pods --as dev-user
 
   <details>
+
   ```
   $ kubectl get pods --as dev-user
   ```
@@ -107,3 +111,5 @@ Solutions Lab RBAC
   ```
 
   </details>
+
+

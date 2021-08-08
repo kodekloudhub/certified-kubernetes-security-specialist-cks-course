@@ -1,8 +1,8 @@
 # Authorization
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/authorization-2/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/authorization-2/)
 
-In this section, we will take a look at Authorization
+In this section, we will take a look at `Authorization`.
 
 ## Why do you need Authorization in your cluster?
 - As an admin, you can do all operations
@@ -47,5 +47,8 @@ In this section, we will take a look at Authorization
   ![mode1](../../images/mode1.PNG)
 
 
-  #### K8s Reference Docs
-  - https://kubernetes.io/docs/reference/access-authn-authz/authorization/
+#### K8s Reference Docs
+  
+- https://kubernetes.io/docs/reference/access-authn-authz/authorization/
+
+

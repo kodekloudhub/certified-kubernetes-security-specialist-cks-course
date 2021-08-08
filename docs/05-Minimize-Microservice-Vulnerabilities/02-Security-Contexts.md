@@ -1,8 +1,8 @@
 # Security Contexts
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/security-contexts-4/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/security-contexts-4/)
 
-In this section, we will take a look at Security Contexts.
+In this section, we will take a look at `Security Contexts`.
 
 ## Container Security
  ```
@@ -34,7 +34,7 @@ In this section, we will take a look at Security Contexts.
   ```
   ![sxc1](../../images/sxc1.PNG)
 
-- To set the same context at the container level, then move the whole section under container section.
+- To set the same context at the container level, then move the whole section under the container section.
 
   ```
   apiVersion: v1
@@ -71,4 +71,5 @@ In this section, we will take a look at Security Contexts.
 
 
 ### K8s Reference Docs
+
 - https://kubernetes.io/docs/tasks/configure-pod-container/security-context/

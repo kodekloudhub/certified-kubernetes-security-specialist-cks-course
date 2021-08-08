@@ -1,15 +1,16 @@
 # Lab - OPA in Kubernetes
   
-  - Take me to [Lab](https://kodekloud.com/topic/labs-opa-in-kubernetes/)
+  - Take me to the [Lab](https://kodekloud.com/topic/labs-opa-in-kubernetes/)
 
-Solutions for Lab - OPA in Kubernetes.
+Solutions for Lab - OPA in Kubernetes:
 
 - **`Manage kubernetes objects via OPA`** is not a function of Kube-mgmt.
 
-- **`Create configmaps on Kubernetes with the label openpolicyagent.org/policy set to rego`** needs to be done to enable kube-mgmt to automatically identify policies defined in kubernetes and load them into OPA
+- **`Create configmaps on Kubernetes with the label openpolicyagent.org/policy set to rego`** needs to be done to enable kube-mgmt to automatically identify policies defined in kubernetes and load them into OPA.
 
-- We have placed rego policies under /root/untrusted-registry.rego and /root/unique-host.rego. View the contents of these files and identify which kubernetes resources will be validated by these rego policies?
+- We have placed rego policies under `/root/untrusted-registry.rego` and `/root/unique-host.rego`. View the contents of these files and identify which kubernetes resources will be validated by these rego policies?
   <details>
+
   ```
   By analyzing the contents of /root/untrusted-registry.rego and /root/unique-host.rego
   Answer:
@@ -17,8 +18,9 @@ Solutions for Lab - OPA in Kubernetes.
   ```
   </details>
 
- - If we were to implement the policy under /root/untrusted-registry.rego and create a pod as defined in /root/test.yaml, which of the 2 containers will error out
+ - If we were to implement the policy under `/root/untrusted-registry.rego` and create a pod as defined in `/root/test.yaml`, which of the 2 containers will error out?
   <details>
+  
   ```
   untrusted-registry.rego policy denies pods with image name that does not start with hooli.com/
   Answer:
@@ -31,14 +33,16 @@ Use below files:
 configmap file: /root/untrusted-registry.rego
 configmap name : untrusted-registry
   <details>
+
   ```
   Run
   $ kubectl create configmap untrusted-registry --from-file=untrusted-registry.rego
   ```
   </details>
 
-- Create a pod defined under /root/test.yaml in the namespace dev. Fix the OPA validation issue while creating the pod.
+- Create a pod defined under `/root/test.yaml` in the namespace dev. Fix the OPA validation issue while creating the pod.
   <details>
+
   ```
   Run
   $ kubectl apply -n dev -f /root/test.yaml
@@ -59,8 +63,9 @@ configmap name : untrusted-registry
   ```
   </details>
 
-- As per policy in /root/unique-host.rego, which ingress resources will be denied for creation
+- As per policy in `/root/unique-host.rego`, which ingress resources will be denied for creation?
   <details>
+
   ```
   Run
   $ /root/unique-host.rego
@@ -70,8 +75,9 @@ configmap name : untrusted-registry
   ```
   </details>
 
-- Create a configmap named unique-host using the rego file /root/unique-host.rego for OPA
+- Create a configmap named unique-host using the rego file `/root/unique-host.rego` for OPA.
   <details>
+
   ```
   Run
   $ kubectl create configmap unique-host --from-file=/root/unique-host.rego
@@ -83,6 +89,7 @@ configmap name : untrusted-registry
 /root/ingress-test-2.yaml
 Check if you can create both resources
   <details>
+    
   ```
   Run
   $ kubectl apply -f /root/ingress-test-1.yaml

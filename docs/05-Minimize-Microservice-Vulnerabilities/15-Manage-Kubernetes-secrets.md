@@ -1,14 +1,14 @@
 # Manage Kubernetes Secrets
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/manage-kubernetes-secrets/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/manage-kubernetes-secrets/)
 
-In this section, we will take a look at Manage Kubernetes Secrets.
+In this section, we will take a look at `Manage Kubernetes Secrets`.
 
 ## Web-Mysql Application
 
  ![web](../../images/web.PNG)
 
-- One way is to move the app properties/envs into a configmap. But the configmap stores data into a plain text format. It is definitely not a right place to store a password.
+- One way is to move the app properties/envs into a configmap. But the configmap stores data into a plain text format. It is definitely not the right place to store a password.
   ```
   apiVersion: v1
   kind: ConfigMap
@@ -39,7 +39,7 @@ In this section, we will take a look at Manage Kubernetes Secrets.
 
 - The Declarative way
   ```
-  Generate a hash value of the password and pass it to secret-data.yaml definition value as a value to DB_Password varaible.
+  Generate a hash value of the password and pass it to secret-data.yaml definition value as a value to DB_Password variable.
   $ echo -n "mysql" |base64
   $ echo -n "root" |base64
   $ echo -n "paswrd"|base64

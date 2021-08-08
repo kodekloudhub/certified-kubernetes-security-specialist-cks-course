@@ -1,13 +1,13 @@
 # Lab - Image Security
   
-  - Take me to [Lab](https://kodekloud.com/topic/labs-image-security/)
+  - Take me to the [Lab](https://kodekloud.com/topic/labs-image-security/)
 
-Solutions Lab - Image Security.
+Solutions Lab - Image Security:
 
-- The **`nginx:alpine`** image is the application using
+- The **`nginx:alpine`** image is the application using.
 
 
-- Use the kubectl edit deployment command to edit the image name to myprivateregistry.com:5000/nginx:alpine
+- Use the `kubectl edit deployment` command to edit the image name to `myprivateregistry.com:5000/nginx:alpine`.
 
   <details>
 
@@ -17,7 +17,7 @@ Solutions Lab - Image Security.
 
   </details>
 
-- Run the command kubectl get pods command and check the status of the pods
+- Run the command `kubectl get pods` command and check the status of the pods.
 
   <details>
 
@@ -27,7 +27,7 @@ Solutions Lab - Image Security.
 
   </details>
 
-- Create a secret object with the credentials required to access the registry
+- Create a secret object with the credentials required to access the registry.
 
   <details>
 
@@ -36,8 +36,6 @@ Solutions Lab - Image Security.
   $ kubectl create secret docker-registry private-reg-cred --docker-username=dock_user --docker-password=dock_password --docker-server=myprivateregistry.com:5000 --docker-email=dock_user@myprivateregistry.com
   ```
   </details>
-
-
 
 - Configure the deployment to use credentials from the new secret to pull images from the private registry
 

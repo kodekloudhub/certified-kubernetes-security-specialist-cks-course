@@ -1,6 +1,6 @@
 # Restrict Kernel Modules
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/restrict-kernel-modules/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/restrict-kernel-modules/)
 
 In this section, we will take a look at Restrict Kernel Modules.
 
@@ -9,3 +9,4 @@ In this section, we will take a look at Restrict Kernel Modules.
   - The sctp kernel module is not commonly used in Kubernetes cluster and can be black listed on the nodes by adding the following entry to the blacklist configuration file.
 
       ![restrictKernel](../../images/restrictKernel.png)
+

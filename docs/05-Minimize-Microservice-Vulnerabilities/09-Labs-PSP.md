@@ -1,23 +1,25 @@
 # Lab - PSP
   
-  - Take me to [Lab](https://kodekloud.com/topic/labs-psp/)
+  - Take me to the [Lab](https://kodekloud.com/topic/labs-psp/)
 
-Solutions to Lab PSP.
+Solutions to Lab - PSP:
 
-- By analyzing **`/root/pod.yaml`**, the security risks are in that pod are **`All of the above`**
+- By analyzing **`/root/pod.yaml`**, the security risks are in that pod are **`All of the above`**.
 
-- Create a pod using the file /root/pod.yaml
+- Create a pod using the file `/root/pod.yaml`.
 
   <details>
+
   ```
   Run
   $ kubectl apply -f /root/pod.yaml
   ```
   </details>
 
-- What is the state of PodSecurityPolicy admission controller plugin now?
+- What is the state of the PodSecurityPolicy admission controller plugin now?
 
   <details>
+
   ```
   Run
   $ kubectl exec -it kube-apiserver-controlplane -n kube-system -- kube-apiserver -h | grep 'admission-plugins'
@@ -29,6 +31,7 @@ Solutions to Lab PSP.
 - Enable PodSecurityPolicy in Kubernetes API server
 
   <details>
+
   ```
   $ vi /etc/kubernetes/manifests/kube-apiserver.yaml
   Add PodSecurityPolicy admission controller to --enable-admission-plugins list like below
@@ -38,27 +41,30 @@ Solutions to Lab PSP.
   ```
   </details>
 
-- Which of the following statements are incorrect for the policy defined in /root/psp.yaml
+- Which of the following statements are incorrect for the policy defined in `/root/psp.yaml`?
 
   <details>
+
   ```
   Allows pod to run only if they have some capabilities defined
 
   ```
   </details>
 
-- Deploy policy under /root/psp.yaml
+- Deploy policy under `/root/psp.yaml`
 
   <details>
+
   ```
   Run
   $ kubectl apply -f /root/psp.yaml  
   ```
   </details>
 
-- Delete the pod from /root/pod.yaml and try to create again
+- Delete the pod from `/root/pod.yaml` and try to create again
 
   <details>
+
   ```
   Run
   $ kubectl delete -f /root/pod.yaml
@@ -67,9 +73,10 @@ Solutions to Lab PSP.
   ```
   </details>
 
-- Fix /root/pod.yaml for security policies and try to create it again
+- Fix `/root/pod.yaml` for security policies and try to create it again
 
   <details>
+
   ```
   $ vi /root/pod.yaml
   Edit the file, it should looks like below:
@@ -105,6 +112,7 @@ Solutions to Lab PSP.
     rule: 'MustRunAsNonRoot'
 
   <details>
+
   ```
   CAP_SYS_BOOT capability will be ignored if specified in pod definition and pod will be created
   ```

@@ -1,5 +1,7 @@
 # OPA Gatekeeper in Kubernetes
 
-  - Take me to [OPA Gate Keeper](https://kodekloud.com/topic/opa-gatekeeper-in-kubernetes/)
+  - Take me to the [OPA Gate Keeper](https://kodekloud.com/topic/opa-gatekeeper-in-kubernetes/)
 
-In this section, we will take a look at OPA Gatekeeper in Kubernetes.
+In this section, we will take a look at `OPA Gatekeeper in Kubernetes`.
+
+

@@ -1,8 +1,8 @@
 # Open Policy Agent (OPA)
 
-  - Take me to [Video Tutorials](https://kodekloud.com/topic/open-policy-agent-opa/)
+  - Take me to the [Video Tutorials](https://kodekloud.com/topic/open-policy-agent-opa/)
 
-In this section, we will take a look at Open Policy Agent (OPA).
+In this section, we will take a look at `Open Policy Agent (OPA)`.
 
  - OPA is an open source, general-purpose policy engine that unifies policy enforcement across the stack. OPA provides a high-level declarative language that lets you specify policy as code and simple APIs to offload policy decision-making from your software. You can use OPA to enforce policies in microservices, Kubernetes, CI/CD pipelines, API gateways, and more.
 
@@ -14,7 +14,7 @@ In this section, we will take a look at Open Policy Agent (OPA).
     $ ./opa run -s &
 
 
-### Reference
+### References
 
 How Netflix Is Solving Authorization Across Their Cloud [I] -Manish Mehta & TorinSandall, Netflix
 

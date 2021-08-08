@@ -1,8 +1,8 @@
-# Minimize base image footprint
+# Minimize Base Image Footprint
 
   - Take me to [Video Tutorial](https://kodekloud.com/topic/minimize-base-image-footprint/)
 
-In this section, we will take a look at Minimize base image footprint.
+In this section, we will take a look at `Minimize Base Image Footprint`.
 
 ### Base VS parent image
 
@@ -16,11 +16,11 @@ In this section, we will take a look at Minimize base image footprint.
 
 ### Some of the best practices to be followed while building an image
 
-  - Do not build images that combine multiple applications –such as a web server, database, other services all into one image.
+  - Do not build images that combine multiple applications – such as a web server, database or other services all into one image.
 
-  - Not storing store data or state inside a container. This is because, containers are ephemeral in nature.
+  - Not storing stored data or state inside a container. This is because containers are ephemeral in nature.
 
-  - You must look for images with authenticity.  The official image or verified publisher tag indicates the image is from official sources.
+  - You must look for images with authenticity. The official image or verified publisher tag indicates the image is from an official sources.
 
   - Create slim/minimal images.
 
@@ -34,7 +34,7 @@ In this section, we will take a look at Minimize base image footprint.
   - Use multi-stage builds.
 
 
-A minimal image is also less vulnerable to attack. For example a quick scan of vulnerability run on an httpd image using the trivytool shows that there are atleast124 known vulnerabilities in it. But when run on an httpd alpine based image, we see that there are 0 vulnerabilities. The lesser packages there are within an image, the fewer vulnerabilities are.
+A minimal image is also less vulnerable to attack. For example a quick scan of vulnerability run on an httpd image using the trivy tool shows that there are atleast124 known vulnerabilities in it. But when run on an httpd alpine based image, we see that there are 0 vulnerabilities. The lesser packages there are within an image, the fewer vulnerabilities are.
 
     trivy image httpd
 

@@ -1,8 +1,8 @@
 # Validating and Mutating Admission Controllers
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/validating-and-mutating-admission-controllers/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/validating-and-mutating-admission-controllers/)
 
-In this section, we will take a look at Validating and Mutating Admission Controllers.
+In this section, we will take a look at `Validating and Mutating Admission Controllers`.
 
   - Admission controllers may be "validating", "mutating", or both.
 
@@ -12,7 +12,7 @@ In this section, we will take a look at Validating and Mutating Admission Contro
 
   - DefaultStorageClass plugin is enabled by default.
 
-  - When you are submitting a request to create a PVC. The request goes through authentication, authorization and finally the admission controller. The defaultstorageclassadmission controller will watch for requests to create a PVC and check if it has a storage class mentioned in it. If not, it will modify your request to add the default storage class to your request. This could be whatever storage class is configured as the default storage class in your cluster. So when the pvcis created and you inspect it you’ll see that a storage class default is added to it, even though you hadn’t specified it during creation. So this type of admission controller is known as a mutating admission controller. It can change or mutate the object itself before it is created.
+  - When you are submitting a request to create a PVC. The request goes through authentication, authorization and finally the admission controller. The defaultStorageClass admission controller will watch for requests to create a PVC and check if it has a storage class mentioned in it. If not, it will modify your request to add the default storage class to your request. This could be whatever storage class is configured as the default storage class in your cluster. So when the pvc is created and you inspect it you’ll see that a storage class default is added to it, even though you hadn’t specified it during creation. So this type of admission controller is known as a mutating admission controller. It can change or mutate the object itself before it is created.
 
 myclaim.yaml
 
@@ -45,6 +45,6 @@ myclaim.yaml
  - Mutating admission webhooks are invoked first, and can modify objects sent to the API server to enforce custom defaults. After all object modifications are complete, and after the incoming object is validated by the API server, validating admission webhooks are invoked and can reject requests to enforce custom policies.
 
 
- # Reference
+## References
 
- https://github.com/kubernetes/kubernetes/tree/v1.13.0/test/images/webhook
+- https://github.com/kubernetes/kubernetes/tree/v1.13.0/test/images/webhook

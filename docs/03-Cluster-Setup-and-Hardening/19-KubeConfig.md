@@ -1,15 +1,15 @@
 # KubeConfig
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/kubeconfig-2/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/kubeconfig-2/)
 
-In this section, we will take a look at KubeConfig.
+In this section, we will take a look at `KubeConfig`.
 
 #### Client uses the certificate file and key to query the kubernetes Rest API for a list of pods using curl.
 - You can specify the same using kubectl
 
   ![kc1](../../images/kc1.PNG)
 
-- We can move these information to a configuration file called kubeconfig. And the specify this file as the kubeconfig option in the command.
+- We can move this information to a configuration file called kubeconfig. And then specify this file as the kubeconfig option in the command.
   ```
   $ kubectl get pods --kubeconfig config
   ```
@@ -18,7 +18,7 @@ In this section, we will take a look at KubeConfig.
 - The kubeconfig file has 3 sections
   - Clusters
   - Contexts
-  - USers
+  - Users
 
   ![kc4](../../images/kc4.PNG)
 
@@ -62,5 +62,6 @@ In this section, we will take a look at KubeConfig.
   ![kc11](../../images/kc11.PNG)
 
 #### K8s Reference Docs
+
 - https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/
 - https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#config

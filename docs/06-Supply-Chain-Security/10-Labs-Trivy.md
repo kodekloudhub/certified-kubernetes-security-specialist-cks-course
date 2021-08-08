@@ -1,64 +1,91 @@
 # Lab - Trivy
   
-  - Take me to [Lab](https://kodekloud.com/topic/labs-trivy/)
+  - Take me to the [Lab](https://kodekloud.com/topic/labs-trivy/)
 
-Solutions to Lab - Trivy
+Solutions to Lab - Trivy:
 
-  - 1
+1. 
+  <details>
 
-      <details>
+  ```
+  apt-get  update
+  apt-get install -y wget apt-transport-https gnupg lsb-release
+  wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+  echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
 
-        ```
-        apt-get  update
-        apt-get install -y wget apt-transport-https gnupg lsb-release
-        wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
-        echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
-
-        #Update Repo and Install trivy
-        apt-get update
-        apt-get install trivy -y
-        ```
-      </details>
-
-
-  - 2
-
-    <details>
-
-      ```
-        trivy image <image-name>
-      ```
-    </details>
+   #Update Repo and Install trivy
+   apt-get update
+   apt-get install trivy -y
+   ```
+   </details>
 
 
-  - 3
+2.
+  <details>
 
-      Answer: Yes
+  ```
+  trivy image <image-name>
+  ```
+  </details>
 
-  - 4
+3.
+  <details>
+  
+  ```
+  Yes
+  ```
+  </details>
 
-    Answer: Network
+4.
+  <details>
 
-  - 5
+  ```
+  Network
+  ```
+  </details>
+  
+5.
+  <details>
+  
+  ```
+  0.17.2
+  ```
+  </details>
+  
+6.
+  <details>
+  
+  ```
+  Ok
+  ```
+  </details>
 
-    Answer: 0.17.2
+7.
+  <details>
 
-  - 6
+  ```
+  docker pull python:3.10.0a4-alpine
 
-  Answer: Ok
+  trivy image --output /root/python_alpine.txt python:3.10.0a4-alpine
+  ```
+  </details>
+
+8.
+  <details>
+
+  ``` 
+  trivy image --severity HIGH --output /root/python.txt python:3.10.0a4-alpine
+  ```
+  </details>
+
+9.
+  <details>
+  
+  ```
+  trivy image --input alpine.tar --format json --output /root/alpine.json
+  ```
+ </details>
 
 
-  - 7
 
-        docker pull python:3.10.0a4-alpine
-
-        trivy image --output /root/python_alpine.txt python:3.10.0a4-alpine
-
-  - 8
-
-        trivy image --severity HIGH --output /root/python.txt python:3.10.0a4-alpine
-
-
-  - 9
-
-        trivy image --input alpine.tar --format json --output /root/alpine.json
+ 

@@ -1,10 +1,10 @@
 # gVisor
 
-  - Take me to [Video Tutorial](https://kodekloud.com/topic/gvisor/)
+  - Take me to the [Video Tutorial](https://kodekloud.com/topic/gvisor/)
 
-In this section, we will take a look at gVisor.
+In this section, we will take a look at `gVisor`.
 
-  - Gvisoris a tool from google that allows an additional layer of isolation between the container and the kernel.
+  - gVisor is a tool from google that allows an additional layer of isolation between the container and the kernel.
 
   - When a program in a container wants to make a system call to the Linux kernel, it actually makes a call to gVisor now.
 
@@ -19,3 +19,6 @@ In this section, we will take a look at gVisor.
   - Since system calls are received and processed via a middleman, this means there are more instructions the CPU has to go through. This can make the applications slightly slower as compared to traditional containers.
 
   ![gadvisor](../../images/gadvisor.png)
+
+
+
