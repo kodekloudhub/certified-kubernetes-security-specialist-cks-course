@@ -203,14 +203,14 @@ Solutions for lab - Mock Exam 2:
           localhostProfile: custom-profile.json
           type: Localhost
 
-  # Next, on node01, update the custom-profile.json to allow 'read' and 'write' syscalls.
+  # Next, update the custom-profile.json to allow 'read' and 'write' syscalls.
   Once done, you should see an output similar to below:
 
-  node01 $ cat /var/lib/kubelet/seccomp/custom-profile.json | jq -r '.syscalls[].names[]' | grep -w write
+  controlplane $ cat /var/lib/kubelet/seccomp/custom-profile.json | jq -r '.syscalls[].names[]' | grep -w write
 
   write
 
-  node01 $ cat /var/lib/kubelet/seccomp/custom-profile.json | jq -r '.syscalls[].names[]' | grep -w read
+  controlplane $ cat /var/lib/kubelet/seccomp/custom-profile.json | jq -r '.syscalls[].names[]' | grep -w read
 
   read
 
