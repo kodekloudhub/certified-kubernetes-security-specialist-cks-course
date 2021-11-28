@@ -216,7 +216,9 @@ Solutions for lab - Mock Exam 2:
 
   # Finally, re-create the pod
 
-  controlplane $ kubectl replace -f /root/CKS/omega-app.yaml
+  controlplane $ kubectl replace -f /root/CKS/omega-app.yaml --force
+  pod "omega-app" deleted
+  pod/omega-app replaced
 
   # The POD should now run successfully.
   NOTE:
