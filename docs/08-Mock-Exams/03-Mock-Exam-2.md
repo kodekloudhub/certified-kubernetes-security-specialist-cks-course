@@ -96,7 +96,7 @@ Solutions for lab - Mock Exam 2:
   <details>
 
   ```
-  # Add the below rule to /etc/falco/falco_rules.local.yaml node01 and restart falco using "systemctl restart falco.service" to override the currentrule
+  # Add the below rule to /etc/falco/falco_rules.local.yaml controlplane and restart falco using "systemctl restart falco.service" to override the currentrule
 
   - rule: Terminal shell in container
     desc: A shell was used as the entrypoint/exec point into a container with an attached terminal.
