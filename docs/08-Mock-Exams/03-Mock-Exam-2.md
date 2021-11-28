@@ -253,16 +253,17 @@ Solutions for lab - Mock Exam 2:
   ```
   # Run trivy image scan on all of the images and check which one does not have HIGH or CRITICAL vulnerabilities.
 
-  controlplane $ trivy image nginx:alpine
+  controlplane $ trivy image nginx:1-alpine
 
-  2021-04-26T03:41:49.033Z        INFO    Detecting Alpine vulnerabilities...
-  2021-04-26T03:41:49.041Z        INFO    Trivy skips scanning programming language libraries because no supported file was detected
-  nginx:alpine (alpine 3.13.5)
-  ============================
-  Total: 0 (HIGH: 0, CRITICAL: 0)
+  2021-11-28T01:16:05.576Z        INFO    Detecting Alpine vulnerabilities...
+  2021-11-28T01:16:05.586Z        INFO    Trivy skips scanning programming language libraries because no supported file was detected
+
+  nginx:1-alpine (alpine 3.14.3)
+  ==============================
+  Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
   Next, use this image to create the pod
 
-  controlplane $ kubectl -n seth run secure-nginx-pod --image nginx:alpine
+  controlplane $ kubectl -n seth run secure-nginx-pod --image nginx:1-alpine
   ```
   </details>
 
