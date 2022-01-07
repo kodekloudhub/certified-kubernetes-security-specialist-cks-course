@@ -10,7 +10,6 @@ Solutions for lab - Mock Exam 1:
   ```
 
   AppArmor Profile: First load the AppArmor module to the Kernel   
-  Run on Node01    
   $ apparmor_parser -q /etc/apparmor.d/frontend  
   Service Account: The pod should use the service account called 'frontend-default' as it has the least   privileges of all the service accounts in the 'omni' namespace (excluding default)
   The other service accounts, 'fe' and 'frontend' have additional permissions (check the roles and rolebindings associated with these accounts)
@@ -93,7 +92,7 @@ Solutions for lab - Mock Exam 1:
   $ kubectl -n delta get pods -o json | jq -r '.items[].spec.containers[].image'
 
   Scan each image using 'trivy image scan'. Example:
-  $ trivy image --severity HIGH,CRITICAL kodekloud/webapp-delayed-start
+  $ trivy image --severity CRITICAL kodekloud/webapp-delayed-start | grep Total
   
   If the image has HIGH or CRITICAL vulnerabilities, delete the associated pod.
 
@@ -110,8 +109,7 @@ Solutions for lab - Mock Exam 1:
   <details>
 
   ```
-  Copy the audit.json seccomp profile to /var/lib/kubelet/seccomp/profiles in node01:
-  $ ssh node01
+  Copy the audit.json seccomp profile to /var/lib/kubelet/seccomp/profiles:
   $ cp /root/CKS/audit.json /var/lib/kubelet/seccomp/profiles
   Recreate the pod using the below YAML File
   apiVersion: v1
@@ -210,7 +208,7 @@ Solutions for lab - Mock Exam 1:
    <details>
 
    ```
-   # Create the below admission-configuration inside /root/CKS/ImagePolicy directory in the controlplane  
+   # Create the below admission-configuration inside /root/CKS/ImagePolicy directory
 
    # use this YAML file:
 
