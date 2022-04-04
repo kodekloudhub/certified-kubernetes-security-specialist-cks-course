@@ -147,7 +147,7 @@ Solutions for lab - Mock Exam 1:
    <details>
 
     ```
-    # Create /opt/security_incidents on node01
+    # Create /opt/security_incidents
 
           $ mkdir -p /opt/security_incidents
           #Enable file_output in /etc/falco/falco.yaml
@@ -157,9 +157,9 @@ Solutions for lab - Mock Exam 1:
             keep_alive: false
             filename: /opt/security_incidents/alerts.log
 
-      #Add the updated rule under the /etc/falco/falco_rules.local.yaml and hot reload the #Falco service on node01:
+      #Add the updated rule under the /etc/falco/falco_rules.local.yaml :
 
-         - rule: Write below binary dir
+       - rule: Write below binary dir
          desc: an attempt to write to any file below a set of binary directories
          condition: >
            bin_dir and evt.dir = < and open_write
