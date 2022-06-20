@@ -173,7 +173,7 @@ Solutions for lab - Mock Exam 1:
          priority: CRITICAL
          tags: [filesystem, mitre_persistence]
 
-         # To perform hot-reload falco use 'kill -1 /SIGHUP' on node01:
+         # To perform hot-reload falco use 'kill -1 /SIGHUP' on controlplane node:
 
          $ kill -1 $(cat /var/run/falco.pid)
    ```
