@@ -4,116 +4,103 @@
 
 Solutions Lab - AppArmor:
 
-- AppArmor is in beta **`beta`** state as of version 1.20.
+1. AppArmor is in beta **`beta`** state as of version 1.20.
 
-- Is the AppArmor module loaded in node01?
-  <details>
+1.  <details>
+    <summary>Is the AppArmor module loaded in controlplane?</summary>
 
-  ```
-  Run
-  $ ssh node01
-  $ aa-status
-  ```
-  </details>
+    ```
+    aa-status
+    ```
 
-- How many AppArmor profiles have been loaded in total currently?
-  <details>
-  
-  ```
-  Run
-  $ ssh node01
-  $ aa-status
-    
-  52
-  ```
-  </details>
+    </details>
 
-- How many AppArmor profiles have been loaded in enforce mode currently?
-  <details>
-  
-  ```
-  Run
-  $ ssh node01
-  $ aa-status
+1.  <details>
+    <summary>How many AppArmor profiles have been loaded in total currently?</summary>
 
-  15
-  ```
-  </details>
+    From the output of `aa-status` in the previous question, answer is on the second line of output.
 
-- A pod called nginx has been deployed in the default namespace.
-What is the status of this pod?
-  <details>
-  
-  ```
-  Run
-  Exit from node01 using
-  $ exit
-  Then get the pods using and examine the status
-  $ kubectl get pods
-  Blocked
-  ```
-  </details>
+    </details>
 
-- Why is this pod in a blocked state?
-  <details>
-  
-  ```
-  Inspect the error message for this pod by running
-  $ kubectl describe pod nginx
-  AppArmor profile not loaded
-  ```
-  </details>
+1.  <details>
+    <summary>How many AppArmor profiles have been loaded in enforce mode currently?</summary>
 
-- What is the name of the AppArmor profile used by this pod?
-  <details>
-  
-  ```
-  Inspect the failure message for this pod by running
-  $ kubectl describe pod nginx
-  Custom nginx
-  ```
-  </details>
+    From the output of `aa-status` in Q2, answer is on the third line of output.
 
-- Load the AppArmor profile called custom-nginx on node01 and make sure that it is in enforced mode.
-The profile file is called usr.sbin.nginx located in the default AppArmor profiles directory.
-  <details>
-  
-  ```
-  $ ssh node01
-  $ apparmor_parser -q /etc/apparmor.d/usr.sbin.nginx
-  Custom nginx
-  ```
-  </details>
+    </details>
 
-- Recreate the nginx pod. The pod definition file is created at `/root/CKS/custom-nginx.yaml`.
-  <details>
-  
-  ```
-  $ exit
-  $ kubectl apply -f /root/CKS/custom-nginx.yaml
-  ```
-  </details>
+1.  <details>
+    <summary>A pod called nginx has been deployed in the default namespace.</br>What is the status of this pod?</summary>
 
-- Which tabs are you able to access?
-  <details>
 
-  ```
-  Public and restricted site
-  ```
-  </details>
+    ```
+    kubectl get pods
+    ```
 
-- Let's fix that. Another profile is created at `/etc/apparmor.d/usr.sbin.nginx-updated` which prevents reads on the restricted directory inside the container.
-Use this AppArmor profile and recreate this container.
-  <details>
-  
-  ```
-  make sure restricted-nginx is loaded by running
-  $ ssh node01
-  $ aa-status
-  Run it using
-  $ apparmor_parser -q /etc/apparmor.d/usr.sbin.nginx-updated
-  Validate that it is running using
-  $ aa-status
-  Update the pod YAML file's annotation with the restricted-nginx apparmor profile and then recreate the pod.
-  ```
-  </details>
+    Check `STATUS` column.
+    </details>
+
+1.  <details>
+    <summary>Why is this pod in a blocked state?</summary>
+
+    Inspect the error message for this pod by running
+
+    ```
+    kubectl describe pod nginx
+    ```
+    </details>
+
+1.  <details>
+    <summary>What is the name of the AppArmor profile used by this pod?</summary>
+
+    From the output of the command run for the previous question, get the profile name from the error message.
+    </details>
+
+1.  <details>
+    <summary>Load the AppArmor profile called custom-nginx on controlplane and make sure that it is in enforced mode.</summary>
+
+    The profile file is called `usr.sbin.nginx` located in the default AppArmor profiles directory.
+
+    The default profiles directory is `/etc/apparmor.d`
+
+    ```
+    apparmor_parser -q /etc/apparmor.d/usr.sbin.nginx
+    ```
+    </details>
+
+1. Information only.
+
+1.  <details>
+    <summary>This custom nginx pod serves static web pages at two urls... Which tabs are you able to access?</summary>
+
+    Press the Site button. A browser tab will open on the root directory of the site. Duplicate the tab and  append `/allowed/` to one and `/restricted/` to the other.
+    </details>
+
+1. Information only.
+
+1.  <details>
+    <summary>Let's fix that. Another profile is created at <b>/etc/apparmor.d/usr.sbin.nginx-updated</b> which prevents reads on the restricted directory inside the container.</summary>
+
+    Use this AppArmor profile and recreate this container.
+
+    Make sure restricted-nginx is loaded by running
+
+    ```
+    aa-status
+    ```
+
+    If not loaded, then run
+
+    ```
+    apparmor_parser -q /etc/apparmor.d/usr.sbin.nginx-updated
+    ```
+
+    If you re-run `aa-status` you should now see the new profile `restricted-nginx` in the list of enforce mode profiles.
+
+    The pod definition file is present at `/root/CKS/custom-nginx.yaml`
+
+    Update the pod YAML file's annotation with the restricted-nginx apparmor profile and then recreate the pod.
+
+    </details>
+
+1. Retry the site.
