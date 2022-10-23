@@ -4,7 +4,7 @@
 
 Solutions Lab - AppArmor:
 
-1. AppArmor is in beta **`beta`** state as of version 1.20.
+1. AppArmor is in **`beta`** state as of version 1.20.
 
 1.  <details>
     <summary>Is the AppArmor module loaded in controlplane?</summary>
@@ -83,7 +83,7 @@ Solutions Lab - AppArmor:
 
     Use this AppArmor profile and recreate this container.
 
-    Make sure restricted-nginx is loaded by running
+    Make sure `restricted-nginx` is loaded by running
 
     ```
     aa-status
