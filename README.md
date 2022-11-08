@@ -115,7 +115,6 @@ These are notes from the [Certified Kubernetes Security Specialist (CKS)](https:
   - [22-Lab-Using-Runtimes-in-Kubernetes](docs/05-Minimize-Microservice-Vulnerabilities/22-Lab-Using-Runtimes-in-Kubernetes.md)
   - [23-One-way-SSL-vs-Mutual-SSL](docs/05-Minimize-Microservice-Vulnerabilities/23-One-way-SSL-vs-Mutual-SSL.md)
   - [24-Implement-pod-to-pod-encryption-by-use-of-mTLS](docs/05-Minimize-Microservice-Vulnerabilities/24-Implement-pod-to-pod-encryption-by-use-of-mTLS.md)
-  - [25-Labs-mTLS-with-Istio](docs/05-Minimize-Microservice-Vulnerabilities/25-Labs-mTLS-with-Istio.md)
 
 
 - [06-Supply-Chain-Security](docs/06-Supply-Chain-Security)
