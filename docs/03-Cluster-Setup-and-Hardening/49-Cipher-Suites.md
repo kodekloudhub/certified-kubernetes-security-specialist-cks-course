@@ -11,7 +11,7 @@ Each time a new cipher is discovered, it has to work its way into general usage,
 * Kubernetes components (API server, controller manager, kubelet, scheduler)
 * etcd
 
-When a TLS connection is establised, the cipher to use is negitiated between the two ends, and usually the strongest possible cipher that both ends know is selected. The ciphers available to each end of the connection depend on how old that software is, and thus which ciphers are known to it.
+When a TLS connection is established, the cipher to use is negitiated between the two ends, and usually the strongest possible cipher that both ends know is selected. The ciphers available to each end of the connection depend on how old that software is, and thus which ciphers are known to it.
 
 Most TLS aware sofware packages, and for the purpose of CKS, this includes all the control plane components and etcd, have the ability to limit which ciphers should be available for negotiation when a connection is being established. Limiting the available ciphers to the newer (stronger) ones prevents older clients that do not have the newer ciphers from establishing a connection which may be able to be comprimised due to use of an older (weaker) cipher for which a known exploit is available.
 
