@@ -1,4 +1,4 @@
-# Cipher Suites
+# Securing Control Plane Communications with Ciphers
 
 As we have already covered in previous lectures, communication between clients and API server, and also between the Kubernetes components is by way of Mutual TLS (mTLS). TLS works by use of Public Key Encryption, and the encryption is peformed by cryptographic mathematical algorithms known as _ciphers_. Mathematicians discover new ciphers form time to time that are more secure than their predecessors.
 
