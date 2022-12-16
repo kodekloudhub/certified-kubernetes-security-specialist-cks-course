@@ -5,8 +5,9 @@ As we have already covered in previous lectures, communication between clients a
 Each time a new cipher is discovered, it has to work its way into general usage, that is, that the software libraries that implement encryption need to be updated with the new cipher, whilst remaining compatible with the existing well-known ciphers. These updates have to find their way into all software that makes use of HTTPS (TLS) protocols including, but not limited to
 
 * Browsers
+* Web clients (e.g. curl, wget)
 * Web servers (e.g. IIS, nginx, apache etc)
-* Layer 7 load balancers (e.g. AWS Application Load Balancer)
+* Layer 7 appliances (e.g. AWS Application Load Balancer, Web Application Firewalls)
 * Kubernetes components (API server, controller manager, kubelet, scheduler)
 * etcd
 
