@@ -66,74 +66,7 @@ Solutions for lab - Mock Exam 3:
   ```
   </details>
 
-
 - 3
-
-  <details>
-
-  ```
-  # Add PodSecurityPolicy admission controller to --enable-admission-plugins list to /etc/kubernetes/manifests/kube-apiserver.yaml It should look like below:
-
-      - --enable-admission-plugins=NodeRestriction,PodSecurityPolicy
-
-  # API server will pickup this config automatically without need of restart
-  Create PSP as below:
-
-  $ cat <<EOF > /root/psp.yaml
-
-  apiVersion: policy/v1beta1
-  kind: PodSecurityPolicy
-  metadata:
-    name: pod-psp
-  spec:
-    privileged: false
-    seLinux:
-      rule: RunAsAny
-    runAsUser:
-      rule: RunAsAny
-    supplementalGroups:
-      rule: RunAsAny
-    fsGroup:
-      rule: RunAsAny
-    volumes:
-    - configMap
-    - secret
-    - emptyDir
-    - hostPath
-  EOF
-
-  $ kubectl apply -f /root/psp.yaml
-
-  # Update pod definition by making privileged: # False and removing capabilities
-
-  $ cat <<EOF > /root/pod.yaml
-
-  apiVersion: v1
-  kind: Pod
-  metadata:
-      name: psp-app
-  spec:
-      containers:
-          -
-              name: example-app
-              image: ubuntu
-              command: ["sleep" , "3600"]
-              securityContext:
-                privileged: False
-                runAsUser: 0
-      volumes:
-      -   name: data-volume
-          hostPath:
-            path: '/data'
-            type: Directory
-  EOF
-
-  $ kubectl apply -f /root/pod.yaml
-  ```
-  </details>
-
-
-- 4
   <details>
 
   ```
@@ -154,7 +87,7 @@ Solutions for lab - Mock Exam 3:
   </details>
 
 
-- 5
+- 4
 
   <details>
 
@@ -199,7 +132,7 @@ Solutions for lab - Mock Exam 3:
   </details>
 
 
-- 6
+- 5
 
   <details>
 
@@ -215,7 +148,7 @@ Solutions for lab - Mock Exam 3:
   </details>
 
 
-- 7
+- 6
 
   <details>
 
@@ -244,7 +177,7 @@ Solutions for lab - Mock Exam 3:
   </details>
 
 
-- 8
+- 7
   <details>
 
   ```
