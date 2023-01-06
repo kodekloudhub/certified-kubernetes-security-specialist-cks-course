@@ -2,6 +2,13 @@
 
 These are notes from the [Certified Kubernetes Security Specialist (CKS)](https://kodekloud.com/courses/certified-kubernetes-security-specialist-cks/) hosted on KodeKloud.
 
+Please note that the CKS is an advanced level course. There are concepts within this course where some knowledge is assumed you know, and is not taught in bite-sized pieces. This includes:
+
+* You hold a valid (not expired) CKA certificate. You cannot take the exam without it.
+* Any concepts that were taught in the CKA will not necessarily be repeated here, including things like knowing when to edit or replace a running pod. In some lectures and lab solutions, it is assumed that you know these concepts already.</br>On this basis and the fact that you should be reasonably confident with Kubernetes by now, we don't provide lab/mock exam solution walkthrough videos. All lab solutions may be found as text documents in this repo. These solutions also don't always provide detailed explanations as you should be able to see from what is given why it is the correct solution.
+* Reasonable proficiency with Linux, and the standard tools it provides such as `find`, `grep`, `sed`, `cut`, `tr` and the like. If you're not comfortable with these concepts, you should first take our [Linux Basics](https://kodekloud.com/courses/the-linux-basics-course/) course.
+* Proficiency with JSON, YAML, jsonpath and tools like `jq`. If you need a refresher on this, check our [JSONPath](https://kodekloud.com/courses/json-path-quiz/) course.
+
 # Sections
 - [01-Introduction](docs/01-Introduction)
   - [01-Course-Introduction](docs/01-Introduction/01-Course-Introduction.md)
