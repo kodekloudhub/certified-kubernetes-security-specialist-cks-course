@@ -1,6 +1,6 @@
 # Securing Control Plane Communications with Ciphers
 
-As we have already covered in previous lectures, communication between clients and API server, and also between the Kubernetes components is by way of Mutual TLS (mTLS). TLS works by use of Public Key Encryption, and the encryption is peformed by cryptographic mathematical algorithms known as _ciphers_. Mathematicians discover new ciphers from time to time that are more secure than their predecessors.
+As we have already covered in previous lectures, communication between clients and API server, and also between the Kubernetes components is by way of Mutual TLS (mTLS). TLS works by use of Public Key Encryption, and the encryption is performed by cryptographic mathematical algorithms known as _ciphers_. Mathematicians discover new ciphers from time to time that are more secure than their predecessors.
 
 Each time a new cipher is discovered, it has to work its way into general usage, that is, that the software libraries that implement encryption need to be updated with the new cipher, whilst remaining compatible with the existing well-known ciphers. These updates have to find their way into all software that makes use of HTTPS (TLS) protocols including, but not limited to
 
@@ -11,9 +11,9 @@ Each time a new cipher is discovered, it has to work its way into general usage,
 * Kubernetes components (API server, controller manager, kubelet, scheduler)
 * etcd
 
-When a TLS connection is established, the cipher to use is negitiated between the two ends, and usually the strongest possible cipher that both ends know is selected. The ciphers available to each end of the connection depend on how old that software is, and thus which ciphers are known to it.
+When a TLS connection is established, the cipher to use is negotiated between the two ends, and usually the strongest possible cipher that both ends know is selected. The ciphers available to each end of the connection depend on how old that software is, and thus which ciphers are known to it.
 
-Most TLS aware sofware packages, and for the purpose of CKS, this includes all the control plane components and etcd, have the ability to limit which ciphers should be available for negotiation when a connection is being established. Limiting the available ciphers to the newer (stronger) ones prevents older clients that do not have the newer ciphers from establishing a connection which may be able to be comprimised due to use of an older (weaker) cipher for which a known exploit is available.
+Most TLS aware software packages, and for the purpose of CKS, this includes all the control plane components and etcd, have the ability to limit which ciphers should be available for negotiation when a connection is being established. Limiting the available ciphers to the newer (stronger) ones prevents older clients that do not have the newer ciphers from establishing a connection which may be able to be compromised due to use of an older (weaker) cipher for which a known exploit is available.
 
 ## Ciphers and the Kubernetes Control Plane
 
