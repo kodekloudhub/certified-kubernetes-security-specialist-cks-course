@@ -4,6 +4,9 @@
 
 Solutions for lab - Mock Exam 2:
 
+With questions where you need to modify API server, you can use [this resource](https://github.com/kodekloudhub/community-faq/blob/main/docs/diagnose-crashed-apiserver.md) to diagnose a failure of the API server to restart.
+
+
 - 1
   <details>
 
