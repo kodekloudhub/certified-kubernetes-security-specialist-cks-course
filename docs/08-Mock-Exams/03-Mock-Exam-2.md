@@ -149,46 +149,41 @@ With questions where you need to modify API server, you can use [this resource](
 
   <details>
 
-  First SSH to node01 from controlplane:
+  Check the process which is bound to port 8088 on this node using netstat"
 
   ```
-  controlplane $ ssh node01
+  $ netstat -natulp | grep 8088
   ```
 
-  Next, check the process which is bound to port 8088 on this node using netstat"
-
-  ```
-  node01 $ netstat -natulp | grep 8088
-  ```
-
-  This shows that the the process openlitespeed is the one which is using this port.
+  This shows that the the process `openlitespeed` is the one which is using this port.
 
   Check if any service is running with the same name
 
   ```
-  node01 $ systemctl list-units  -t service --state active | grep -i openlitespeed
-  lshttpd.service
-  loaded active running OpenLiteSpeed HTTP Server
+  $ systemctl list-units  -t service --state active | grep -i openlitespeed
   ```
+  >  `lshttpd.service     loaded active running OpenLiteSpeed HTTP Server`
 
-  This shows that a service called openlitespeed is managed by lshttpd.service which is currently active.
+
+  This shows that a service called `openlitespeed` is managed by `lshttpd.service` which is currently active.
 
   Stop the service and disable it
 
   ```
-  node01 $ systemctl stop lshttpd
-  node01 $ systemctl disable lshttpd
+  $ systemctl stop lshttpd
+  $ systemctl disable lshttpd
   ```
 
   Finally, check for the package by the same name
 
   ```
-  node01 $ apt list --installed | grep openlitespeed
+  $ apt list --installed | grep openlitespeed
   ```
+
   Uninstall the package
 
   ```
-  node01 $ apt remove openlitespeed -y
+  $ apt remove openlitespeed -y
   ```
   </details>
 
@@ -216,7 +211,7 @@ With questions where you need to modify API server, you can use [this resource](
   ```
 
   Fix the seccomp profile path in the POD Definition file `/root/CKS/omega-app.yaml`</br>
-  
+
 
   ```yaml
   securityContext:
