@@ -202,7 +202,7 @@ With questions where you need to modify API server, you can use [this resource](
   As per the question, the profile is created at `/var/lib/kubelet/seccomp/custom-profiles.json`
 
   ```
-  controlplane $ kubectl -n omega describe omega-app
+  controlplane $ kubectl -n omega describe pod omega-app
   ```
 
   Output:
@@ -215,8 +215,8 @@ With questions where you need to modify API server, you can use [this resource](
     Warning  Failed  5s (x3 over 7s)  kubelet, node01  Error: failed to generate security options for container "test-container": failed to generate seccomp security options for container: cannot load seccomp profile "/var/lib/kubelet/seccomp/profiles/custom-profile.json": open /var/lib/kubelet/seccomp/profiles/custom-profile.json: no such file or directory
   ```
 
-  Fix the seccomp profile path in the POD Definition file</br>
-  Fix `omega-app.yaml`
+  Fix the seccomp profile path in the POD Definition file `/root/CKS/omega-app.yaml`</br>
+  
 
   ```yaml
   securityContext:
@@ -225,7 +225,7 @@ With questions where you need to modify API server, you can use [this resource](
       type: Localhost
   ```
 
-  Next, update the custom-profile.json to allow `read` and `write` syscalls.</br>
+  Next, update the `custom-profile.json` to allow `read` and `write` syscalls.</br>
   Once done, you should see an output similar to below:
 
   ```
