@@ -134,7 +134,7 @@ With questions where you need to modify API server, you can use [this resource](
   $ cp /root/CKS/audit.json /var/lib/kubelet/seccomp/profiles
   ```
 
-  Recreate the pod using the below YAML File
+  Create the pod using the below YAML File
 
   ```yaml
   apiVersion: v1
@@ -237,7 +237,7 @@ With questions where you need to modify API server, you can use [this resource](
 - 8
   <details>
 
-  1. Create the below admission-configuration inside /root/CKS/ImagePolicy directory
+  1. Create the below admission-configuration inside `/root/CKS/ImagePolicy` directory
 
       use this YAML file:
 
