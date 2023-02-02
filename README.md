@@ -68,6 +68,7 @@ Please note that the CKS is an advanced level course. There are concepts within 
   - [46-Labs-Ingress-2](docs/03-Cluster-Setup-and-Hardening/46-Labs-Ingress-2.md)
   - [47-Docker-Service-Configuration](docs/03-Cluster-Setup-and-Hardening/47-Docker-Service-Configuration.md)
   - [48-Docker-Securing-the-Daemon](docs/03-Cluster-Setup-and-Hardening/48-Docker-Securing-the-Daemon.md)
+  - [49-Cipher-Suites](./docs/03-Cluster-Setup-and-Hardening/49-Cipher-Suites.md)
 
 - [04-System-Hardening](docs/04-System-Hardening)
   - [01-Section-Introduction](docs/04-System-Hardening/01-Section-Introduction.md)
