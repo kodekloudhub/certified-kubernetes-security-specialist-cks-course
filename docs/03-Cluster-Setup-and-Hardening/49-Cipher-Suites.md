@@ -26,6 +26,8 @@ All the control plane components (API server, controller manager, kubelet, sched
 
 * `--cipher-suites` - This argument sets a comma-separated list of cipher suites that may be used during connection negotiation. If this argument is omitted, the default value is the list provided by the [GoLang cipher suites package](https://go.dev/src/crypto/tls/cipher_suites.go#L53).
 
+Be aware that not all combinations of cipher suites and TLS versions are compatible with each other. If you set `--tls-min-version` to `VersionTLS13`, there will be certain ciphers that can't be used so explicitly specifying an incompatible cipher with `--tls-cipher-suites` would cause API server to not come back up.
+
 Should you encounter an exam question relating to ciphers, you will be told which one(s) to use by the question.
 
 ## Example
