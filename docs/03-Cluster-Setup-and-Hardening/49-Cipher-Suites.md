@@ -48,3 +48,5 @@ Restrict communication between `etcd` and `api server` to the cipher `TLS_ECDHE_
     ```
 
 1. Wait for both pods to restart. This may take a minute or more.
+
+If for some reason one or both pods don't come back up, you should diagnose the cause [like this](https://github.com/kodekloudhub/community-faq/blob/main/docs/diagnose-crashed-apiserver.md).
