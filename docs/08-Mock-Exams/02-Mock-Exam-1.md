@@ -12,8 +12,8 @@ With questions where you need to modify API server, you can use [this resource](
 
   AppArmor Profile: First load the AppArmor module to the Kernel
 
-  ```
-  $ apparmor_parser -q /etc/apparmor.d/frontend
+  ```bash
+  apparmor_parser -q /etc/apparmor.d/frontend
   ```
 
   Service Account: The pod should use the service account called `frontend-default` as it has the least privileges of all the service accounts in the `omni` namespace (excluding default)
@@ -48,9 +48,9 @@ With questions where you need to modify API server, you can use [this resource](
 
   Delete the unused service accounts in the `omni` namespace.
 
-  ```
-  $ kubectl -n omni delete sa frontend
-  $ kubectl -n omni delete sa fe
+  ```bash
+  kubectl -n omni delete sa frontend
+  kubectl -n omni delete sa fe
   ```
   </details>
 
@@ -61,9 +61,9 @@ With questions where you need to modify API server, you can use [this resource](
 
   To extract the secret, run:
 
-  ```
-  $ mkdir -p /root/CKS/secrets/
-  $ kubectl -n orion get secrets a-safe-secret -o jsonpath='{.data.CONNECTOR_PASSWORD}' | base64 --decode > /root/CKS/secrets/CONNECTOR_PASSWORD
+  ```bash
+  mkdir -p /root/CKS/secrets/
+  kubectl -n orion get secrets a-safe-secret -o jsonpath='{.data.CONNECTOR_PASSWORD}' | base64 --decode > /root/CKS/secrets/CONNECTOR_PASSWORD
   ```
 
   One way that is more secure to distribute secrets is to mount it as a read-only volume.
@@ -102,24 +102,30 @@ With questions where you need to modify API server, you can use [this resource](
 
   Get all the images of pods running in the `delta` namespace:
 
-  ```
-  $ kubectl -n delta get pods -o json | jq -r '.items[].spec.containers[].image'
+  ```bash
+  kubectl -n delta get pods -o json | jq -r '.items[].spec.containers[].image'
   ```
 
-  Scan each image using `trivy image scan . Example:
+  Scan each image using `trivy image scan` . Example:
 
+  ```bash
+  trivy image --severity CRITICAL kodekloud/webapp-delayed-start | grep Total
   ```
-  $ trivy image --severity CRITICAL kodekloud/webapp-delayed-start | grep Total
+
+  Or, do the above two steps in a single line
+
+  ```bash
+  for i in $(kubectl -n delta get pods -o json | jq -r '.items[].spec.containers[].image') ; do echo $i ; trivy image --severity CRITICAL $i 2>&1 | grep Total ; done
   ```
 
   If the image has HIGH or CRITICAL vulnerabilities, delete the associated pod.
 
   For example, if 'kodekloud/webapp-delayed-start', 'httpd' and 'nginx:1.16' have these vulnerabilities:
 
-  ```
-  $ kubectl -n delta delete pod simple-webapp-1
-  $ kubectl -n delta delete pod simple-webapp-3
-  $ kubectl -n delta delete pod simple-webapp-4
+  ```bash
+  kubectl -n delta delete pod simple-webapp-1
+  kubectl -n delta delete pod simple-webapp-3
+  kubectl -n delta delete pod simple-webapp-4
   ```
   </details>
 
@@ -130,8 +136,8 @@ With questions where you need to modify API server, you can use [this resource](
 
   Copy the `audit.json` seccomp profile to `/var/lib/kubelet/seccomp/profiles`:
 
-  ```
-  $ cp /root/CKS/audit.json /var/lib/kubelet/seccomp/profiles
+  ```bash
+  cp /root/CKS/audit.json /var/lib/kubelet/seccomp/profiles
   ```
 
   Create the pod using the below YAML File
@@ -143,6 +149,7 @@ With questions where you need to modify API server, you can use [this resource](
     labels:
       run: nginx
     name: audit-nginx
+    namespace : default
   spec:
     securityContext:
       seccompProfile:
@@ -159,9 +166,11 @@ With questions where you need to modify API server, you can use [this resource](
 
    <details>
 
-   * The fixes are mentioned in the same report.
-   * Update the kube-apiserver static pod definition file under `/etc/kubernetes/manifests/kube-apiserver.yaml` as per the recommendations.
-   * Make sure that `--authorization-mode=Node,RBAC`
+   The fixes are mentioned in the same report. We are asked to fix the `FAIL` for Controller Manager and Scheduler
+
+   * Update the `kube-controller-manager` and `kube-scheduler` static pod manifests under `/etc/kubernetes/manifests` as per the recommendations.
+   * Make sure that `--profiling=false`
+   * Make sure both pods restart
 
    </details>
 
@@ -171,8 +180,8 @@ With questions where you need to modify API server, you can use [this resource](
 
   1. Create `/opt/security_incidents`
 
-      ```
-      $ mkdir -p /opt/security_incidents
+      ```bash
+      mkdir -p /opt/security_incidents
       ```
 
   1. Enable file_output in `/etc/falco/falco.yaml`
@@ -187,28 +196,40 @@ With questions where you need to modify API server, you can use [this resource](
   1. Add the updated rule under the `/etc/falco/falco_rules.local.yaml`:
 
       ```yaml
-       - rule: Write below binary dir
-         desc: an attempt to write to any file below a set of binary directories
-         condition: >
-           bin_dir and evt.dir = < and open_write
-           and not package_mgmt_procs
-           and not exe_running_docker_save
-           and not python_running_get_pip
-           and not python_running_ms_oms
-           and not user_known_write_below_binary_dir_activities
-         output: >
-           File below a known binary directory opened for writing (user=%user.name file_updated=%fd.name command=%proc.cmdline)
-         priority: CRITICAL
-         tags: [filesystem, mitre_persistence]
+      - rule: Write below binary dir
+        desc: an attempt to write to any file below a set of binary directories
+        condition: >
+          bin_dir and evt.dir = < and open_write
+          and not package_mgmt_procs
+          and not exe_running_docker_save
+          and not python_running_get_pip
+          and not python_running_ms_oms
+          and not user_known_write_below_binary_dir_activities
+        output: >
+          File below a known binary directory opened for writing (user=%user.name file_updated=%fd.name command=%proc.cmdline)
+        priority: CRITICAL
+        tags: [filesystem, mitre_persistence]
       ```
 
-  1. To perform hot-reload falco use 'kill -1' (SIGHUP) on controlplane node:
+  1. To perform hot-reload falco use `kill -1` (SIGHUP) on controlplane node:
 
-        ```
-        $ kill -1 $(pidof falco)
+        ```bash
+        kill -1 $(pidof falco)
         ```
 
-   </details>
+  1.  Verify falco is running, i.e. you didn't make some syntax error that crashed it
+
+      ```bash
+      systemctl status falco
+      ```
+
+  1.  Check the new log file. It may take up to a minute for events to be logged.
+
+      ```bash
+      cat /opt/security_incidents/alerts.log
+      ```
+
+  </details>
 
 
 - 7
@@ -254,8 +275,7 @@ With questions where you need to modify API server, you can use [this resource](
             retryBackoff: 500
             defaultAllow: false
       ```
-  1. The `/root/CKS/ImagePolicy` is mounted at the path /etc/admission-controllers directory in the kube-apiserver. So, you can directly place the files under `/root/CKS/ImagePolicy`.
-      Snippet of the volume and volumeMounts (Note these are already present in apiserver manifest)
+  1. The `/root/CKS/ImagePolicy` is mounted at the path /etc/admission-controllers directory in the kube-apiserver. So, you can directly place the files under `/root/CKS/ImagePolicy`.<br/>Snippet of the volume and volumeMounts (Note these are already present in apiserver manifest, so you do not need to add them)
 
       ```yaml
       containers:
@@ -271,10 +291,27 @@ With questions where you need to modify API server, you can use [this resource](
         name: admission-controllers
       ```
 
-  1. update the kube-apiserver command flags and add `ImagePolicyWebhook` to the `enable-admission-plugins` flag
+  1. Update the kube-apiserver command flags and add `ImagePolicyWebhook` to the `enable-admission-plugins` flag
 
       ```
       - --admission-control-config-file=/etc/admission-controllers/admission-configuration.yaml
       - --enable-admission-plugins=NodeRestriction,ImagePolicyWebhook
       ```
+
+  1. Wait for the API server to restart. May take up to a minute.
+
+      You can use the folloowing command to monitor the containers
+
+      ```bash
+      watch crictl ps
+      ```
+
+      `CTRL + C` exits the watch.
+
+  1. Finally, update the pod with the correct image
+
+      ```bash
+      kubectl set image -n magnum pods/app-0403 app-0403=gcr.io/google-containers/busybox:1.27
+      ```
+
   </details>
