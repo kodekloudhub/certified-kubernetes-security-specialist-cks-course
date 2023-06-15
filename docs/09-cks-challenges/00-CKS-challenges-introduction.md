@@ -12,7 +12,7 @@ The interface of these challenges is divided into two parts:
 
 To do CKS, we are tough, right? In the two hours for the exam there is a lot to get through including repetitive tasks like scanning multiple images with trivy. These solutions make use of various bash trickery and commands found on all Linux terminals like awk, sed and grep, that if you are comfortable with will save much time!
 
-- [01-Challenge-1](./09-cks-challenges/01-challenge-1.md)
+- [01-Challenge-1](./01-challenge-1.md)
 - 02-Challenge-2 - Coming soon!
 - 03-Challenge-3 - Coming soon!
 - 04-Challenge-4 - Coming soon!
