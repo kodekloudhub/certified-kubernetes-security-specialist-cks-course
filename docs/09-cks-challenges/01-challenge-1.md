@@ -12,7 +12,7 @@ Secure this deployment by enforcing the AppArmor profile called `custom-nginx`.
 
 Expose this deployment with a NodePort type service and make sure that only incoming connections from the pod called `middleware` is accepted and everything else is rejected.
 
-Click on each icon to (in the lab) see more details. Once done, click the Check button to test your work.
+Click on each icon (in the lab) to see more details. Once done, click the Check button to test your work.
 
 ![Diagram](../../images/challenge-1.png)
 
@@ -102,7 +102,7 @@ Do the tasks in this order:
             nginx:1.14 64<br/>
             nginx:1.13 85
 
-        We can see that `nginx:apline` has the least (zero) criticals, which is kind of as expected! We will use this image when we come to deploy the pod later.
+        We can see that `nginx:alpine` has the least (zero) criticals, which is kind of as expected! We will use this image when we come to deploy the pod later.
 
     </details>
 
@@ -277,7 +277,7 @@ done
 mv /root/usr.sbin.nginx /etc/apparmor.d/usr.sbin.nginx
 apparmor_parser /etc/apparmor.d/usr.sbin.nginx
 
-# Create deployment with selcted image
+# Create deployment with selected image
 
 cat << EOF | kubectl create -f -
 apiVersion: apps/v1
@@ -318,6 +318,7 @@ kubectl wait deployment -n alpha alpha-xyz --for condition=Available=True --time
 # Expose deployment
 kubectl expose deployment alpha-xyz --type ClusterIP --name alpha-svc --port 80 --target-port 80
 
+# Create netpol
 cat << EOF | kubectl create -f -
 
 apiVersion: networking.k8s.io/v1
