@@ -10,7 +10,7 @@ There are 6 images listed in the diagram. Using `Aquasec Trivy` (which is alread
 
 Secure this deployment by enforcing the AppArmor profile called `custom-nginx`.
 
-Expose this deployment with a NodePort type service and make sure that only incoming connections from the pod called `middleware` is accepted and everything else is rejected.
+Expose this deployment with a ClusterIP type service and make sure that only incoming connections from the pod called `middleware` is accepted and everything else is rejected.
 
 Click on each icon (in the lab) to see more details. Once done, click the Check button to test your work.
 
