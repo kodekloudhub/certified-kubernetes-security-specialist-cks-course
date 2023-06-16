@@ -84,7 +84,7 @@ Do the tasks in this order:
 
         Note there are additional images other than those stated
 
-    1.  Loop over the images we want (by filtering out those we don't), and trivy them getting the imformation we need
+    1.  Loop over the images we want (by filtering out those we don't), and trivy them getting the information we need
 
         ```bash
         for i in $(docker image ls --format '{{.Repository}}:{{.Tag}}' | grep nginx | grep -v none)
