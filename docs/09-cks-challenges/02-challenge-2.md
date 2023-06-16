@@ -79,12 +79,13 @@ Do the tasks in this order:
 1.  <details>
     <summary>kubesec</summary>
 
-    * Fix issues with the '/root/dev-webapp.yaml' file which was used to deploy the 'dev-webapp' pod in the 'dev' namespace.
-    * Redeploy the 'dev-webapp' pod once issues are fixed with the image 'kodekloud/webapp-color:stable'
-    * Fix issues with the '/root/staging-webapp.yaml' file which was used to deploy the 'staging-webapp' pod in the 'staging' namespace.
-    * Redeploy the 'staging-webapp' pod once issues are fixed with the image 'kodekloud/webapp-color:stable'
+    * Fix issues with the `/root/dev-webapp.yaml` file which was used to deploy the `dev-webapp` pod in the `dev` namespace.
+    * Redeploy the `dev-webapp` pod once issues are fixed with the image `kodekloud/webapp-color:stable`
+    * Fix issues with the `/root/staging-webapp.yaml` file which was used to deploy the `staging-webapp` pod in the `staging` namespace.
+    * Redeploy the `staging-webapp` pod once issues are fixed with the image `kodekloud/webapp-color:stable`
 
     <br/>
+
     When running `kubesec` we can use `jq` to extract the part of the JSON output that's relevant to identifying critical issues with the scanned manifest. Run without `| jq` and everything after to see the whole report.
 
     1. `dev-webapp.yaml`
@@ -115,9 +116,9 @@ Do the tasks in this order:
 1.  <details>
     <summary>dev-webapp</summary>
 
-    Ensure that the pod 'dev-webapp' is immutable:
+    Ensure that the pod `dev-webapp` is immutable:
 
-    * This pod can be accessed using the 'kubectl exec' command. We want to make sure that this does not happen. Use a startupProbe to remove all shells before the container startup. Use 'initialDelaySeconds' and 'periodSeconds' of '5'. Hint: For this to work you would have to run the container as root!
+    * This pod can be accessed using the `kubectl exec` command. We want to make sure that this does not happen. Use a startupProbe to remove all shells before the container startup. Use `initialDelaySeconds` and `periodSeconds` of `5`. Hint: For this to work you would have to run the container as root!
     * Image used: `kodekloud/webapp-color:stable` (We have already done this above)
     * Redeploy the pod as per the above recommendations and make sure that the application is up.
 
@@ -165,9 +166,9 @@ Do the tasks in this order:
 1.  <details>
     <summary>staging-webapp</summary>
 
-    Ensure that the pod 'dev-webapp' is immutable:
+    Ensure that the pod `dev-webapp` is immutable:
 
-    * This pod can be accessed using the 'kubectl exec' command. We want to make sure that this does not happen. Use a startupProbe to remove all shells before the container startup. Use 'initialDelaySeconds' and 'periodSeconds' of '5'. Hint: For this to work you would have to run the container as root!
+    * This pod can be accessed using the `kubectl exec` command. We want to make sure that this does not happen. Use a startupProbe to remove all shells before the container startup. Use `initialDelaySeconds` and `periodSeconds` of `5`. Hint: For this to work you would have to run the container as root!
     * Image used: `kodekloud/webapp-color:stable` (We have already done this above)
     * Redeploy the pod as per the above recommendations and make sure that the application is up.
 
