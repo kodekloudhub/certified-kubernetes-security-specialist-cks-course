@@ -34,7 +34,7 @@ Do the tasks in this order:
     1. We are asked to move the application to subdirectory `app`, so change to `COPY` instruction in anticipation of this
 
         ```
-        COPY ./app/ /opt
+        COPY ./app /opt
         ```
 
     1. Run as non root
@@ -118,7 +118,7 @@ Do the tasks in this order:
     Ensure that the pod 'dev-webapp' is immutable:
 
     * This pod can be accessed using the 'kubectl exec' command. We want to make sure that this does not happen. Use a startupProbe to remove all shells before the container startup. Use 'initialDelaySeconds' and 'periodSeconds' of '5'. Hint: For this to work you would have to run the container as root!
-    * Image used: 'kodekloud/webapp-color:stable' (We have already done this above)
+    * Image used: `kodekloud/webapp-color:stable` (We have already done this above)
     * Redeploy the pod as per the above recommendations and make sure that the application is up.
 
     1.  Check what shells are present in the container - shell commands are found in `/bin` directory and usually end with `sh`, e.g. `sh` itself, `bash` etc.
@@ -168,7 +168,7 @@ Do the tasks in this order:
     Ensure that the pod 'dev-webapp' is immutable:
 
     * This pod can be accessed using the 'kubectl exec' command. We want to make sure that this does not happen. Use a startupProbe to remove all shells before the container startup. Use 'initialDelaySeconds' and 'periodSeconds' of '5'. Hint: For this to work you would have to run the container as root!
-    * Image used: 'kodekloud/webapp-color:stable' (We have already done this above)
+    * Image used: `kodekloud/webapp-color:stable` (We have already done this above)
     * Redeploy the pod as per the above recommendations and make sure that the application is up.
 
     <br/>
@@ -180,7 +180,7 @@ Do the tasks in this order:
 1.  <details>
     <summary>prod-web</summary>
 
-    * The deployment has a secret hardcoded. Instead, create a secret called 'prod-db' for all the hardcoded values and consume the secret values as environment variables within the deployment.
+    * The deployment has a secret hardcoded. Instead, create a secret called `prod-db` for all the hardcoded values and consume the secret values as environment variables within the deployment.
 
     <br/>
 
@@ -222,7 +222,7 @@ Do the tasks in this order:
 1.  <details>
     <summary>prod-netpol</summary>
 
-    * Use a network policy called 'prod-netpol' that will only allow traffic only within the 'prod' namespace. All the traffic from other namespaces should be denied.
+    * Use a network policy called `prod-netpol` that will only allow traffic only within the `prod` namespace. All the traffic from other namespaces should be denied.
 
     <br/>
 
