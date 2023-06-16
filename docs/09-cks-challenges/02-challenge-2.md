@@ -235,16 +235,16 @@ Do the tasks in this order:
       name: prod-netpol
       namespace: prod
     spec:
-      podSelector: {}       # all pods in prod namespace
+      podSelector: {}       # apply to all pods in prod namespace
       policyTypes:
         - Ingress
       ingress:
         - from:
-            - podSelector: {}                       # any pod
+            - podSelector: {}                        # any pod...
             - namespaceSelector:
                 matchLabels:
-                  kubernetes.io/metadata.name: prod  # only from prod namespace
-        ```
+                  kubernetes.io/metadata.name: prod  # ...only in prod namespace
+    ```
     </details>
 
 Once all the above tasks are completed, click the `Check` button.
