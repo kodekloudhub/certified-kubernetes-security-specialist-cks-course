@@ -14,6 +14,6 @@ To do CKS, we are tough, right? In the two hours for the exam there is a lot to 
 
 - [01-Challenge-1](./01-challenge-1.md)
 - [02-Challenge-2](./02-challenge-2.md)
-- 03-Challenge-3 - ETA 2023-06-19
+- [03-Challenge-3](./03-challenge-3.md)
 - 04-Challenge-4 - ETA 2023-06-20
 
