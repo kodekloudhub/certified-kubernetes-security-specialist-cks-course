@@ -162,5 +162,5 @@ Please note that the CKS is an advanced level course. There are concepts within 
   - [01-Challenge-1](docs/09-cks-challenges/01-challenge-1.md)
   - [02-Challenge-2](docs/09-cks-challenges/02-challenge-2.md)
   - [03-Challenge-3](docs/09-cks-challenges/03-challenge-3.md)
-  - 04-Challenge-4 - ETA 2023-06-20
+  - 04-Challenge-4 - ETA 2023-06-23
 
