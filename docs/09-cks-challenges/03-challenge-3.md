@@ -110,7 +110,7 @@ Do the tasks in this order:
     1.  Edit the manifest
 
         ```bash
-        vi /etc/kubernetes/manifests/kube-controller-manager.yaml 
+        vi /etc/kubernetes/manifests/kube-controller-manager.yaml
         ```
 
     1.  Add the following to the list of arguments in the `command` section of the pod spec:
@@ -216,3 +216,99 @@ Do the tasks in this order:
 
     </details>
 
+# Automate the lab in a single script!
+
+As DevOps engineers, we love everything to be automated!
+
+<details>
+<summary>Automation Script</summary>
+
+Paste this entire script to the lab terminal, sit back and enjoy!<br/>
+When the script completes, you can press the `Check` button and the lab will be complete!
+
+```bash
+{
+start_time=$(date '+%s')
+
+## kube-bench
+
+# Install and run kube-bench
+echo 'kube-bench'
+curl -L https://github.com/aquasecurity/kube-bench/releases/download/v0.6.2/kube-bench_0.6.2_linux_amd64.tar.gz | tar -xz -C /opt
+mkdir -p /var/www/html
+/opt/kube-bench --config-dir /opt/cfg --config /opt/cfg/config.yaml > /var/www/html/index.html
+
+
+## etcd
+echo 'etcd'
+chown -R etcd:etcd /var/lib/etcd
+
+## kubelet
+echo 'kubelet'
+echo 'protectKernelDefaults: true' >> /var/lib/kubelet/config.yaml
+systemctl restart kubelet
+ssh node01 'echo "protectKernelDefaults: true" >> /var/lib/kubelet/config.yaml'
+ssh node01 'systemctl restart kubelet'
+
+## kube-controller-mananger
+echo 'kube-controller-mananger'
+yq -i e '.spec.containers[0].command += "--profiling=false"' /etc/kubernetes/manifests/kube-controller-manager.yaml
+
+## kube-scheduler
+echo 'kube-scheduler'
+yq -i e '.spec.containers[0].command += "--profiling=false"' /etc/kubernetes/manifests/kube-scheduler.yaml
+
+## kube-apiserver
+echo 'kube-apiserver'
+# Create audit log path
+mkdir -p /var/log/apiserver
+
+# Patch api-server
+yq e '.spec.containers[0].command += [
+    "--profiling=false",
+    "--insecure-port=0",
+    "--audit-log-maxage=30",
+    "--audit-log-maxbackup=10",
+    "--audit-log-path=/var/log/apiserver/audit.log",
+    "--audit-log-maxsize=100"
+    ] |
+    .spec.volumes += {"name": "audit-log", "hostPath":{"path":"/var/log/apiserver/audit.log", "type":"FileOrCreate"}} |
+    .spec.containers[0].volumeMounts += {"mountPath": "/var/log/apiserver/audit.log", "name": "audit-log"}' \
+    /etc/kubernetes/manifests/kube-apiserver.yaml | \
+  sed 's/NodeRestriction/NodeRestriction,PodSecurityPolicy/' > \
+  kube-apiserver.yaml.out
+
+# Save current API server container ID
+api_container_id=$(crictl ps | grep apiserver | cut -f 1 -d ' ')
+
+mv -f kube-apiserver.yaml.out /etc/kubernetes/manifests/kube-apiserver.yaml
+
+# Kick kubelet - I have seen it not notice the manifest change here.
+systemctl restart kubelet
+
+# Shut up warnings from crictl
+crictl config \
+  --set runtime-endpoint=unix:///var/run/dockershim.sock \
+  --set image-endpoint=unix:///var/run/dockershim.sock
+
+# Wait for API server restart (gets a new container ID)
+new_id=''
+
+while [ -z "$new_id" -o "$api_container_id" = "$new_id" ]
+do
+    sleep 2
+    new_id=$(crictl ps | grep apiserver | cut -f 1 -d ' ')
+    echo "API server container id is $new_id"
+done
+
+sleep 5
+
+kubectl get pods -n kube-system
+
+end_time=$(date '+%s')
+duration=$(( end_time - start_time ))
+echo "Complete in ${duration}s"
+}
+```
+
+</details>
