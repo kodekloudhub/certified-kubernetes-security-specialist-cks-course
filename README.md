@@ -157,10 +157,10 @@ Please note that the CKS is an advanced level course. There are concepts within 
   - [02-Mock-Exam-1](docs/08-Mock-Exams/02-Mock-Exam-1.md)
   - [03-Mock-Exam-2](docs/08-Mock-Exams/03-Mock-Exam-2.md)
   - [04-Mock-Exam-3](docs/08-Mock-Exams/04-Mock-Exam-3.md)
- 
+
 - [09-CKS-Challenges](docs/09-cks-challenges/README.md)
   - [01-Challenge-1](docs/09-cks-challenges/01-challenge-1.md)
   - [02-Challenge-2](docs/09-cks-challenges/02-challenge-2.md)
   - [03-Challenge-3](docs/09-cks-challenges/03-challenge-3.md)
-  - 04-Challenge-4 - ETA 2023-06-23
+  - [04-Challenge-4](./docs/09-cks-challenges/04-challenge-4.md)
 
