@@ -129,8 +129,28 @@ Do the tasks in this order
     # Install prerequiste and falco
     apt-get -y install linux-headers-$(uname -r) falco
 
-    # Not strictly necessary to start it now, but if you want a green icon 
+
+    # Configure Falco systemd service. (Note: falco.service was not created automatically with Falco binary download.)
+    cat > /lib/systemd/system/falco.service <<EOF
+    [Unit]
+    Description=Falco agent
+    Wants=network-online.target
+    After=network.target network-online.target
+    
+    [Service]
+    Type=simple
+    User=root
+    ExecStart=/usr/bin/falco --pidfile=/var/run/falco.pid
+    KillMode=process
+    RemainAfterExit=yes
+    
+    [Install]
+    WantedBy=multi-user.target
+    EOF
+
+
     # at this stage, you will need to start it.
+    systemctl daemon-reload
     systemctl start falco
     ```
 
