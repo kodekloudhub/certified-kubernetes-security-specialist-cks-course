@@ -176,24 +176,15 @@ With questions where you need to modify API server, you can use [this resource](
         </details>
 
     1.  <details>
-        <summary>Get all the images of pods running in the <code>delta</code> namespace</summary>
-
-        ```bash
-        kubectl -n delta get pods -o json | jq -r '.items[].spec.containers[].image'
-        ```
-
-        </details>
-
-    1.  <details>
         <summary>Scan each image using <code>trivy image scan</code></summary>
 
-        For each image:
+        For each image, replace `<image-name>` with image from the step above and run the command:
 
         ```bash
-        trivy image --severity CRITICAL kodekloud/webapp-delayed-start | grep Total
+        trivy image --severity CRITICAL <image-name> | grep Total
         ```
 
-        Or, do the above two steps in a single line
+        Or, do it using a one-liner for loop.
 
         ```bash
         for i in $(kubectl -n delta get pods -o json | jq -r '.items[].spec.containers[].image') ; do echo $i ; trivy image --severity CRITICAL $i 2>&1 | grep Total ; done
@@ -271,7 +262,7 @@ With questions where you need to modify API server, you can use [this resource](
     1.  <details>
         <summary>Examine report</summary>
 
-        CLick on `CIS Reoprt 1` above the terminal
+        Click on `CIS Reoprt 1` above the terminal
 
         Note the failures at 1.3.2 and 1.4.1
 
@@ -332,6 +323,8 @@ With questions where you need to modify API server, you can use [this resource](
 
         Find the relevant rule in `falco_rules.yaml`, copy it, paste it into `falco_rules.local.yaml` and then modify it to get the requested output:
 
+        Refer to the field reference: https://falco.org/docs/reference/rules/supported-fields/
+
           ```yaml
           - rule: Write below binary dir
             desc: an attempt to write to any file below a set of binary directories
@@ -366,7 +359,7 @@ With questions where you need to modify API server, you can use [this resource](
           systemctl status falco
           ```
 
-        <details>
+        </details>
 
 
     1.  <details>
@@ -376,7 +369,7 @@ With questions where you need to modify API server, you can use [this resource](
           cat /opt/security_incidents/alerts.log
           ```
 
-        <details>
+        </details>
 
   </details>
 
