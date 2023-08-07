@@ -167,7 +167,7 @@ With questions where you need to modify API server, you can use [this resource](
 
     Pretty much all Falco questions will involve you modifying an existing rule to change its output in order with what the question asks. You should not be asked to create a new rule from scratch.
 
-    Modifying an existing rule means funding it in `/etc/falco/falco_rules.yaml`, copying it to `/etc/falco/falco_rules.local.yaml` and the making the changes there.
+    Modifying an existing rule means finding it in `/etc/falco/falco_rules.yaml`, copying it to `/etc/falco/falco_rules.local.yaml` and then making the changes there.
 
     The question suggests that Falco is already running and should be logging the rule we need to change, so here's how to solve
 
@@ -239,7 +239,7 @@ With questions where you need to modify API server, you can use [this resource](
         kubectl get role -A | grep dev
         ```
 
-        Note that there is a role `dev-user-access` in each of the three namespaces indicated. From how the question is worded and the fact that there is only this role in each of the tree namespaces, then we can deduce that it is this role that we must examine.
+        Note that there is a role `dev-user-access` in each of the three namespaces indicated. From how the question is worded and the fact that there is only this role in each of the three namespaces, then we can deduce that it is this role that we must examine.
 
     1.  Examine the role permissions
 
@@ -452,7 +452,7 @@ With questions where you need to modify API server, you can use [this resource](
     </details>
 
 1.  <details>
-    <summary>Create a new pod called `secure-nginx-pod` in the `seth` namespace. Use one of the images from the below which has a least number of `CRITICAL` vulnerabilities.</summary>
+    <summary>Create a new pod called <code>secure-nginx-pod</code> in the <code>seth</code> namespace. Use one of the images from the below which has a least number of <code>CRITICAL</code> vulnerabilities.</summary>
 
     1. nginx
     1. nginx:1.19
