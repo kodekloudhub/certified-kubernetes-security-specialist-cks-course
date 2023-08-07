@@ -20,7 +20,7 @@ With questions where you need to modify API server, you can use [this resource](
     1. There are several service accounts created in the `omni` namespace. Apply the principle of least privilege and use the service account with the minimum privileges (excluding the `default` service account).
     1. Once the pod is recreated with the correct service account, delete the other unused service accounts in `omni` namespace (excluding the `default` service account).
 
-    Let's get the solutions:
+    ---
 
     1.  Use the `omni` namespace to save on typing
 
@@ -121,6 +121,8 @@ With questions where you need to modify API server, you can use [this resource](
 
     You are not done, instead of using secrets as an environment variable, mount the secret as a read-only volume at path `/mnt/connector/password` that can be then used by the application inside.
 
+    ---
+
     1.  <details>
         <summary>Extract the secret</summary>
 
@@ -181,13 +183,13 @@ With questions where you need to modify API server, you can use [this resource](
         For each image, replace `<image-name>` with image from the step above and run the command:
 
         ```bash
-        trivy image --severity CRITICAL <image-name> | grep Total
+        trivy i --severity CRITICAL <image-name> | grep Total
         ```
 
         Or, do it using a one-liner for loop.
 
         ```bash
-        for i in $(kubectl -n delta get pods -o json | jq -r '.items[].spec.containers[].image') ; do echo $i ; trivy image --severity CRITICAL $i 2>&1 | grep Total ; done
+        for i in $(kubectl -n delta get pods -o json | jq -r '.items[].spec.containers[].image') ; do echo $i ; trivy i --severity CRITICAL $i 2>&1 | grep Total ; done
         ```
 
         </details>
@@ -208,11 +210,12 @@ With questions where you need to modify API server, you can use [this resource](
 
   </details>
 
-
 4.  <details>
     <summary>Create a new pod called <code>audit-nginx</code> in the default namespace using the <code>nginx</code> image. Secure the syscalls that this pod can use by using the <code>audit.json</code> seccomp profile in the pod's security context.</summary>
 
     The `audit.json` is provided at `/root/CKS` directory. Make sure to move it under the `profiles` directory inside the default seccomp directory before creating the pod
+
+    ---
 
     1.  <details>
         <summary>Place <code>audit.json</code> into the default seccomp directory.</summary>
@@ -259,6 +262,8 @@ With questions where you need to modify API server, you can use [this resource](
 
     Inspect this report and fix the issues reported as `FAIL`.
 
+    ---
+
     1.  <details>
         <summary>Examine report</summary>
 
@@ -296,6 +301,7 @@ With questions where you need to modify API server, you can use [this resource](
 
     Note: Once the alert has been updated, you may have to wait for up to a minute for the alerts to be written to the new log location.
 
+    ---
 
     1.  <details>
         <summary>Create <code>/opt/security_incidents</code></summary>
@@ -377,22 +383,25 @@ With questions where you need to modify API server, you can use [this resource](
 7.  <details>
     <summary>A pod called <code>busy-rx100</code> has been created in the <code>production</code> namespace. Secure the pod by recreating it using the <code>runtimeClass</code> called <code>gvisor</code>. You may delete and recreate the pod.</summary>
 
-      Recreate the pod using the YAML file as below:
+    Simply recreate the pod using the YAML file as below. We onlt need to add `runtimeClassName`
 
-      ```yaml
-      apiVersion: v1
-      kind: Pod
-      metadata:
-        labels:
-          run: busy-rx100
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      labels:
+        run: busy-rx100
+      name: busy-rx100
+      namespace: production
+    spec:
+      runtimeClassName: gvisor
+      containers:
+      - image: nginx
         name: busy-rx100
-        namespace: production
-      spec:
-        runtimeClassName: gvisor
-        containers:
-        - image: nginx
-          name: busy-rx100
-      ```
+    ```
+
+    Note that the pod may not start due to the fact that `gvisor` runtime is not installed on this system. That's OK as what is being marked is that the pod YAML is correct.
+
     </details>
 
 
@@ -407,7 +416,7 @@ With questions where you need to modify API server, you can use [this resource](
     1. Make sure that if the latest tag is used, the request must be rejected at all times.
     1. Enable the Admission Controller.
 
-    Solution
+    ---
 
     1.  <details>
         <summary>Create the admission-configuration inside <code>/root/CKS/ImagePolicy</code> directory as <code>admission-configuration.yaml</code></summary>
