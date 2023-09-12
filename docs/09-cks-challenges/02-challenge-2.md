@@ -242,9 +242,9 @@ Do the tasks in this order:
       ingress:
         - from:
             - podSelector: {}                        # any pod...
-            - namespaceSelector:
+              namespaceSelector:
                 matchLabels:
-                  kubernetes.io/metadata.name: prod  # ...only in prod namespace
+                  kubernetes.io/metadata.name: prod  # ...that is only in prod namespace
     ```
     </details>
 
@@ -416,7 +416,7 @@ spec:
   ingress:
     - from:
         - podSelector: {}
-        - namespaceSelector:
+          namespaceSelector:
             matchLabels:
               kubernetes.io/metadata.name: prod
 EOF
