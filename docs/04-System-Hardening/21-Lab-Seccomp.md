@@ -57,7 +57,7 @@ Solutions to Lab - Seccomp:
     kubectl logs -f `kubectl get pods -l=io.kompose.service=tracee -o custom-columns=":metadata.name" --no-headers`
     ```
 
-    Tracee is now running as a pod in the cluster and is listening for events. Switch to the second terminal to run commands in the next question and switch back to see the tracee output.
+    Tracee is now running as a pod in the cluster and is listening for events. Switch to the second terminal to run commands in following questions and switch back to see the tracee output when needed.
 
 
 1.  <details>
