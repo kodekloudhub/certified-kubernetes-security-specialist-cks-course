@@ -79,7 +79,7 @@ Solutions for Lab - Use Falco to detect threats:
       <details>
       <summary>Reveal</summary>
 
-      this is the section you need to look at@
+      this is the section you need to look at:
 
       ```yaml
       rules_file:
