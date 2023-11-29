@@ -1,0 +1,38 @@
+[
+    {
+        "op": "remove",
+        "path": "/spec/template/spec/containers/0/env"
+    },
+    {
+        "op": "add",
+        "path": "/spec/template/spec/containers/0/env",
+        "value": [
+            {
+                "name": "DB_User",
+                "valueFrom": {
+                    "secretKeyRef": {
+                        "key": "DB_User",
+                        "name": "prod-db"
+                    }
+                }
+            },
+            {
+                "name": "DB_Host",
+                "valueFrom": {
+                    "secretKeyRef": {
+                        "key": "DB_Host",
+                        "name": "prod-db"
+                    }
+                }
+            },
+            {
+                "name": "DB_Password",
+                "valueFrom": {
+                    "secretKeyRef": {
+                        "key": "DB_Password",
+                        "name": "prod-db"
+                    }
+                }
+            }
+        ]
+    ]

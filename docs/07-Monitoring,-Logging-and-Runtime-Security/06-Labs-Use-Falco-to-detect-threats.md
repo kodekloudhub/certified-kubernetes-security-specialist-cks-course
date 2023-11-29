@@ -16,7 +16,7 @@ Solutions for Lab - Use Falco to detect threats:
       systemctl status falco
       ```
 
-      <details>
+      </details>
     </details>
 
 1.  <details>
@@ -36,7 +36,7 @@ Solutions for Lab - Use Falco to detect threats:
 
       * Running
 
-      <details>
+      </details>
     </details>
 
 1.  <details>
@@ -65,7 +65,7 @@ Solutions for Lab - Use Falco to detect threats:
 
       * `/etc/falco/falco.yaml`
 
-      <details>
+      </details>
     </details>
 
 
@@ -90,7 +90,7 @@ Solutions for Lab - Use Falco to detect threats:
 
       Note that `/etc/falco/custom_rules.yaml` is not present
 
-      <details>
+      </details>
     </details>
 
 1.  <details>
@@ -102,7 +102,7 @@ Solutions for Lab - Use Falco to detect threats:
       <summary>Reveal</summary>
 
       Find the `json_output` property which is a boolean. `true` - JSON, `false` - text. XML and YAML are not options.
-      <details>
+      </details>
     </details>
 
 1.  <details>
@@ -114,7 +114,7 @@ Solutions for Lab - Use Falco to detect threats:
       <summary>Reveal</summary>
 
       Thus the answer is `The Rule defined in the file that comes last in the list`
-      <details>
+      </details>
     </details>
 
 1.  <details>
@@ -152,7 +152,7 @@ Solutions for Lab - Use Falco to detect threats:
 
       and it will tell you the pod name in the output, which in this case is also `simple-webapp-1`
 
-      <details>
+      </details>
     </details>
 
 1.  <details>
@@ -164,7 +164,7 @@ Solutions for Lab - Use Falco to detect threats:
       <summary>Reveal</summary>
 
       * `Error`
-      <details>
+      </details>
     </details>
 
 1.  <details>
@@ -177,7 +177,7 @@ Solutions for Lab - Use Falco to detect threats:
 
       * `command=apt update`, therefore `apt update`
 
-      <details>
+      </details>
     </details>
 
 1.  <details>
@@ -199,7 +199,7 @@ Solutions for Lab - Use Falco to detect threats:
 
           * `Launch Package Management Process in Container`
 
-      <details>
+      </details>
     </details>
 
 1.  <details>
@@ -207,14 +207,14 @@ Solutions for Lab - Use Falco to detect threats:
 
     Now you may be tempted to say `/etc/falco/falco_rules.yaml`, because that's how you answered the previous question, but if you examine the `output` section of that rule, the fields being printed are *not* what you are seeing in the log. It doesn't have `namespace` for a start. This means it must be redefined in one of the other files under `rules_file:`.
 
-    Inspect them to find the redfininition.
+    Inspect them to find the redefinition.
 
       <details>
       <summary>Reveal</summary>
 
       * `/etc/falco/falco_rules.local.yaml`
 
-      <details>
+      </details>
 
     </details>
 
@@ -227,7 +227,7 @@ Solutions for Lab - Use Falco to detect threats:
     Error Package Management Tools Executed (user_loginuid=-1 command=apt update container_name=simple-webapp-1)
     ```
 
-    To update, edit the rule in `/etc/falco/falco_rules.local.yaml``. Then reload the Falco configuration and restart the engine without restarting the service.
+    To update, edit the rule in `/etc/falco/falco_rules.local.yaml`. Then reload the Falco configuration and restart the engine without restarting the service.
 
     Finally, try running `kubectl exec simple-webapp-1 -- apt update` on the controlplane node and see if the changed rule is seen in the falco logs.
 
@@ -265,6 +265,6 @@ Solutions for Lab - Use Falco to detect threats:
           ```bash
           kubectl exec simple-webapp-1 -- apt update
           ```
-      <details>
+      </details>
     </details>
 
