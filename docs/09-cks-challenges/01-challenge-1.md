@@ -60,13 +60,13 @@ Do the tasks in this order:
     name: alpha-pvc
     namespace: alpha
     spec:
-    accessModes:
-    - ReadWriteMany
-    resources:
+      accessModes:
+      - ReadWriteMany
+      resources:
         requests:
-        storage: 1Gi
-    storageClassName: local-storage
-    volumeMode: Filesystem
+          storage: 1Gi
+      storageClassName: local-storage
+      volumeMode: Filesystem
     ```
 
     </details>
