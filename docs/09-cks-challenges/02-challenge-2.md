@@ -65,7 +65,7 @@ Do the tasks in this order:
     1. Rebuild image
 
         ```bash
-        docker build -t kodekloud/webapp-color:stable .
+        docker build -t kodekloud/webapp-color:stable -f app/Dockerfile .
         ```
 
     1. Return to home directory
