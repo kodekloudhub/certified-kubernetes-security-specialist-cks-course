@@ -1,5 +1,7 @@
 # Lab - PSP
-  
+
+**RETIRED**
+
   - Take me to the [Lab](https://kodekloud.com/topic/labs-psp/)
 
 Solutions to Lab - PSP:
