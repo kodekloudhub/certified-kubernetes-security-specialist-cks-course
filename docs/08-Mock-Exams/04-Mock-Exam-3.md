@@ -274,7 +274,7 @@ With questions where you need to modify API server, you can use [this resource](
 
     * Pod `solaris` is immutable as it has `readOnlyRootFilesystem: true` so it should *not* be deleted.
     * Pod `sonata` is running with `readOnlyRootFilesystem: false` thus it can be mutated so should be deleted.
-    * Pod `triton` has no setting for `readOnlyRootFilesystem`. The default for this when not present is `true` therefore it should be deleted.
+    * Pod `triton` has no setting for `readOnlyRootFilesystem`. The default for this when not present is `false` therefore it should be deleted.
 
     </details>
     </details>
