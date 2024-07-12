@@ -77,30 +77,36 @@ With questions where you need to modify API server, you can use [this resource](
 
         1. Recreate the pod with the correct service account, and also apply the AppArmor profile
 
-                ```yaml
-                apiVersion: v1
-                kind: Pod
-                metadata:
-                  annotations:
-                    container.apparmor.security.beta.kubernetes.io/nginx: localhost/restricted-frontend # Apply profile 'restricted-fronend' on 'nginx' container
-                  labels:
-                    run: nginx
-                  name: frontend-site
-                  namespace: omni
-                spec:
-                  serviceAccount: frontend-default # Use the service account with least privileges
-                  containers:
-                  - image: nginx:alpine
-                    name: nginx
-                    volumeMounts:
-                    - mountPath: /usr/share/nginx/html
-                      name: test-volume
-                  volumes:
-                  - name: test-volume
-                    hostPath:
-                      path: /data/pages
-                      type: Directory
-                ```
+            ```yaml
+            apiVersion: v1
+            kind: Pod
+            metadata:
+              labels:
+                run: nginx
+              name: frontend-site
+              namespace: omni
+            spec:
+              securityContext:
+                appArmorProfile:                          # Apply apparmor profle
+                  localhostProfile: restricted-frontend
+                  type: Localhost
+              serviceAccount: frontend-default            # Use the service account with least privileges
+              containers:
+              - image: nginx:alpine
+                name: nginx
+                volumeMounts:
+                - mountPath: /usr/share/nginx/html
+                  name: test-volume
+              volumes:
+              - name: test-volume
+                hostPath:
+                  path: /data/pages
+                  type: Directory
+            ```
+
+            Note that older versions of Kubernetes used the following annotation to apply profiles, however now it is part of `securityContext` and can be applied at pod or container level. Note that while the annotation still works, a warning will be printed when the pod is created.
+
+            `container.apparmor.security.beta.kubernetes.io/<container-name>`
         </details>
 
     1.  <details>
