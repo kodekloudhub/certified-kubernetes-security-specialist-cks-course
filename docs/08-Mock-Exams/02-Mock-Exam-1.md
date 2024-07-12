@@ -25,7 +25,7 @@ With questions where you need to modify API server, you can use [this resource](
     1.  Use the `omni` namespace to save on typing
 
           ```
-          k config set-context --current --namespace omni
+          kubectl config set-context --current --namespace omni
           ```
 
     1.  <details>
@@ -46,7 +46,7 @@ With questions where you need to modify API server, you can use [this resource](
         1. Find the service accounts
 
             ```
-            k get sa
+            kubectl get sa
             ```
 
             There are 3 service accounts exculding the `default`. These are the ones we are concerned with.
@@ -54,7 +54,7 @@ With questions where you need to modify API server, you can use [this resource](
         1.  Find the bindings
 
             ```
-             k get rolebindings
+             kubectl get rolebindings
             ```
 
             Notice there are 2 bindings, to the roles `fe` and `frontend`
@@ -62,45 +62,51 @@ With questions where you need to modify API server, you can use [this resource](
         1.  Examine permissions of roles
 
                 ```
-                k describe role fe
-                k describe role frontend
+                kubectl describe role fe
+                kubectl describe role frontend
                 ```
 
         1.  See which service accounts these roles are bound to
 
                 ```
-                k describe rolebinding fe
-                k describe rolebinding frontend
+                kubectl describe rolebinding fe
+                kubectl describe rolebinding frontend
                 ```
 
             Notice that these roles are bound to service accounts `fe` and `frontend` respectively. No role is bound to service account `frontend-default`. This means that this service account is the one with least privilege by virtue of the fact that it has _no_ binding and therefore _no_ permissions at all.
 
         1. Recreate the pod with the correct service account, and also apply the AppArmor profile
 
-                ```yaml
-                apiVersion: v1
-                kind: Pod
-                metadata:
-                  annotations:
-                    container.apparmor.security.beta.kubernetes.io/nginx: localhost/restricted-frontend # Apply profile 'restricted-fronend' on 'nginx' container
-                  labels:
-                    run: nginx
-                  name: frontend-site
-                  namespace: omni
-                spec:
-                  serviceAccount: frontend-default # Use the service account with least privileges
-                  containers:
-                  - image: nginx:alpine
-                    name: nginx
-                    volumeMounts:
-                    - mountPath: /usr/share/nginx/html
-                      name: test-volume
-                  volumes:
-                  - name: test-volume
-                    hostPath:
-                      path: /data/pages
-                      type: Directory
-                ```
+            ```yaml
+            apiVersion: v1
+            kind: Pod
+            metadata:
+              labels:
+                run: nginx
+              name: frontend-site
+              namespace: omni
+            spec:
+              securityContext:
+                appArmorProfile:                          # Apply apparmor profle
+                  localhostProfile: restricted-frontend
+                  type: Localhost
+              serviceAccount: frontend-default            # Use the service account with least privileges
+              containers:
+              - image: nginx:alpine
+                name: nginx
+                volumeMounts:
+                - mountPath: /usr/share/nginx/html
+                  name: test-volume
+              volumes:
+              - name: test-volume
+                hostPath:
+                  path: /data/pages
+                  type: Directory
+            ```
+
+            Note that older versions of Kubernetes used the following annotation to apply profiles, however now it is part of `securityContext` and can be applied at pod or container level. Note that while the annotation still works, a warning will be printed when the pod is created.
+
+            `container.apparmor.security.beta.kubernetes.io/<container-name>`
         </details>
 
     1.  <details>
@@ -173,7 +179,7 @@ With questions where you need to modify API server, you can use [this resource](
         <summary>List pods with images for reference</summary>
 
         ```
-        k get pods -n delta -o custom-columns='NAME:.spec.containers[0].name,IMAGE:.spec.containers[0].image'
+        kubectl get pods -n delta -o custom-columns='NAME:.spec.containers[0].name,IMAGE:.spec.containers[0].image'
         ```
         </details>
 
