@@ -1,6 +1,6 @@
 # CKS Challenge 1
 
-[Take me to the lab!](https://kodekloud.com/topic/lab-challenge-1/)
+[Take me to the lab!](https://learn.kodekloud.com/user/courses/cks-challenges/module/624cd49b-715f-45e8-9959-372425b771a6/lesson/4e781840-cc73-46d2-8608-f4608be7f005)
 
 Please note that the competition status for CKS Challenges is ended. Please do not submit a solution. It will not be scored.
 
