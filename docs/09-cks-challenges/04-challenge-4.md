@@ -114,7 +114,6 @@ Do the tasks in this order
 1.  <details>
     <summary>Falco</summary>
 
-    Note that since the challenge was created, newer versions of Falco have been released with different configuration requirements. We will install the version that was current (v0.31.1) at the time the challenge was created.
 
     * Install the 'falco' utility on the controlplane node and start it as a systemd service
 
