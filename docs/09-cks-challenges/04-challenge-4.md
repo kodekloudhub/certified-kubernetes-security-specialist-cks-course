@@ -119,10 +119,6 @@ Do the tasks in this order
     * Install the 'falco' utility on the controlplane node and start it as a systemd service
 
     ```bash
-    # Set up the apt repo for Falco
-    curl -s https://falco.org/repo/falcosecurity-3672BA8F.asc | apt-key add -
-    echo "deb https://download.falco.org/packages/deb stable main" | tee -a /etc/apt/sources.list.d/falcosecurity.list
-
     # Update apt indexes
     apt-get update -y
 
@@ -347,11 +343,8 @@ done
 ##
 echo "Install/configure falco"
 
-curl -s https://falco.org/repo/falcosecurity-3672BA8F.asc | apt-key add -
-echo "deb https://download.falco.org/packages/deb stable main" | tee -a /etc/apt/sources.list.d/falcosecurity.list
 apt-get update -y
-apt-get -y install linux-headers-$(uname -r)
-apt-get install -y falco
+apt-get -y install linux-headers-$(uname -r) falco
 
 # Set file output
 yq -i e '.file_output.filename = "/opt/falco.log" | .file_output.enabled = true' /etc/falco/falco.yaml
