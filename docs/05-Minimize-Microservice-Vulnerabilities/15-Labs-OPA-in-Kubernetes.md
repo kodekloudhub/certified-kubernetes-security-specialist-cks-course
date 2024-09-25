@@ -165,6 +165,8 @@ Solutions for Lab - OPA in Kubernetes:
     <details>
     <summary>Reveal</summary>
 
+    Create namespaces as needed.
+
     ```
     kubectl apply -f /root/ingress-test-1.yaml
     kubectl apply -f /root/ingress-test-2.yaml
