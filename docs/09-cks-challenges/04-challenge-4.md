@@ -43,7 +43,8 @@ Do the tasks in this order
     * Use a volume called `audit` that will mount only the file `/etc/kubernetes/audit-policy.yaml` from the controlplane inside the api server pod in a read only mode.
     * `audit-log-path set` to `/var/log/kubernetes/audit/audit.log`
 
-    <br/>
+    <details>
+    <summary>Reveal</summary>
 
     1. Create the audit policy
         1. Open the new policy file in
@@ -110,25 +111,28 @@ Do the tasks in this order
             1. Save and exit `vi`. Wait for api-server to restart. If it does not, know how to [diagnose crashing API server](https://github.com/kodekloudhub/community-faq/blob/main/docs/diagnose-crashed-apiserver.md).
 
     </details>
+    </details>
 
 1.  <details>
     <summary>Falco</summary>
 
 
-    * Install the 'falco' utility on the controlplane node and start it as a systemd service
+    * Install the 'falco' utility version 0.33.1 on the controlplane node and start it as a systemd service
+
+    <details>
+    <summary>Reveal</summary>
 
     ```bash
     # Update apt indexes
     apt-get update -y
 
     # Install prerequiste and falco
-    apt-get -y install linux-headers-$(uname -r) falco
-
-    # Not strictly necessary to start it now, but if you want a green icon 
-    # at this stage, you will need to start it.
-    systemctl start falco
+    apt-get -y install linux-headers-$(uname -r) falco=0.33.1
     ```
 
+    `apt` will start it as a service for you.
+
+    </details>
     </details>
 
 1.  <details>
@@ -136,7 +140,8 @@ Do the tasks in this order
 
     * Configure falco to save the event output to the file `/opt/falco.log`
 
-    <br/>
+    <details>
+    <summary>Reveal</summary>
 
     1. Open `/etc/falco/falco.yaml` in `vi`,  find the file output section and make it like this
         ```yaml
@@ -151,12 +156,16 @@ Do the tasks in this order
         ```
 
     </details>
+    </details>
 
 1.  <details>
     <summary>security report</summary>
 
     * Inspect the API server audit logs and identify the user responsible for the abnormal behaviour seen in the `citadel` namespace. Save the name of the `user`, `role` and `rolebinding` responsible for the event to the file `/opt/blacklist_users` file (comma separated and in this specific order).
     * Inspect the falco logs and identify the pod that has events generated because of packages being updated on it. Save the namespace and the pod name in the file `/opt/compromised_pods` (comma separated - namespace followed by the pod name)
+
+    <details>
+    <summary>Reveal</summary>
 
     1.  Inspect audit logs.
 
@@ -211,6 +220,7 @@ Do the tasks in this order
 
 
     </details>
+    </details>
 
 1.  <details>
     <summary>eden-prime/pod</summary>
@@ -218,7 +228,9 @@ Do the tasks in this order
 
     * Delete pods belonging to the `eden-prime` namespace that were flagged in the 'Security Report' file `/opt/compromised_pods`. Do not delete the non-compromised pods!
 
-    <br/>
+    <details>
+    <summary>Reveal</summary>
+
 
     Using the pod discovered in the previous task with falco log:
 
@@ -227,13 +239,15 @@ Do the tasks in this order
     ```
 
     </details>
+    </details>
 
 1.  <details>
     <summary>citadel/deploy</summary>
 
     * Delete the rolebinding causing the constant deletion and creation of the configmaps and pods in this namespace. Do not delete any other rolebinding!
 
-    <br/>
+    <details>
+    <summary>Reveal</summary>
 
     Refer to what was found in the audit log
 
@@ -242,19 +256,23 @@ Do the tasks in this order
     ```
 
     </details>
+    </details>
 
 1.  <details>
     <summary>citadel/secret</summary>
 
     * Delete the role causing the constant deletion and creation of the configmaps and pods in this namespace. Do not delete any other role!
 
-    <br/>
+    <details>
+    <summary>Reveal</summary>
+
 
     Refer to what was found in the audit log
 
     ```
     kubectl delete role -n citadel important_role_do_not_delete
     ```
+    </details>
     </details>
 
 # Automate the lab in a single script!
@@ -322,11 +340,6 @@ systemctl restart kubelet
 
 echo "Waiting for API server to restart..."
 
-# Shut up warnings from crictl
-crictl config \
-  --set runtime-endpoint=unix:///var/run/dockershim.sock \
-  --set image-endpoint=unix:///var/run/dockershim.sock
-
 # Wait for API server restart (gets a new container ID)
 new_id=''
 
@@ -343,7 +356,7 @@ done
 echo "Install/configure falco"
 
 apt-get update -y
-apt-get -y install linux-headers-$(uname -r) falco
+apt-get -y install linux-headers-$(uname -r) falco=0.33.1
 
 # Set file output
 yq -i e '.file_output.filename = "/opt/falco.log" | .file_output.enabled = true' /etc/falco/falco.yaml
