@@ -222,17 +222,17 @@ Do the tasks in this order:
       name: restrict-inbound
       namespace: alpha
     spec:
-      podSelector:
+      podSelector:                  # Policy should be only applied on pods with label app=alpha-xyz
         matchLabels:
           app: alpha-xyz
       policyTypes:
         - Ingress
       ingress:
         - from:
-            - podSelector:
+            - podSelector:          # Inbound access only allowed from the pod called middleware with label app=middleware
                 matchLabels:
                   app: middleware
-          ports:
+          ports:                    # Inbound access only allowed to TCP port 80 on pods matching the policy
             - port: 80
     ```
 
@@ -353,17 +353,17 @@ metadata:
   name: restrict-inbound
   namespace: alpha
 spec:
-  podSelector:                  # Policy should be only applied on pods with label app=alpha-xyz
+  podSelector:
     matchLabels:
       app: alpha-xyz
   policyTypes:
     - Ingress
   ingress:
     - from:
-        - podSelector:          # Inbound access only allowed from the pod called middleware with label app=middleware
+        - podSelector:
             matchLabels:
               app: middleware
-      ports:                    # Inbound access only allowed to TCP port 80 on pods matching the policy
+      ports:
         - port: 80
 EOF
 
