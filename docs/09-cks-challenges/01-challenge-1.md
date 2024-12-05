@@ -74,12 +74,12 @@ Do the tasks in this order:
 1.  <details>
     <summary>images</summary>
 
-    * Permitted images are: `nginx:alpine`, `bitnami/nginx`, `nginx:1.13`, `nginx:1.17`, `nginx:1.16`and `nginx:1.14`. Use `trivy` to find the image with the least number of `CRITICAL` vulnerabilities.
+    * Permitted images are: `docker.io/library/nginx:alpine`, `docker.io/bitnami/nginx`, `docker.io/library/nginx:1.13`, `docker.io/library/nginx:1.17`, `docker.io/library/nginx:1.16` and `docker.io/library/nginx:1.14`. Use `trivy` to find the image with the least number of `CRITICAL` vulnerabilities.
 
     1. Inspect all images
 
         ```
-        docker image ls
+        crictl image ls
         ```
 
         Note there are additional images other than those stated
@@ -87,10 +87,10 @@ Do the tasks in this order:
     1.  Loop over the images we want (by filtering out those we don't), and trivy them getting the information we need
 
         ```bash
-        for i in $(docker image ls --format '{{.Repository}}:{{.Tag}}' | grep nginx | grep -v none)
+        for i in $(crictl image -f reference=nginx -o json | jq -r .images[].repoTags[] | grep -v "docker.io/library/nginx:latest")
         do
             echo -n "$i "
-            trivy i -s CRITICAL $i | grep Total | awk '{print $2}'
+            trivy i -s CRITICAL $i 2>&1 | grep Total | awk '{print $2}'
         done
         ```
 
@@ -153,8 +153,6 @@ Do the tasks in this order:
       strategy: {}
       template:
         metadata:
-          annotations:
-            container.apparmor.security.beta.kubernetes.io/nginx: localhost/custom-nginx
           labels:
             app: alpha-xyz
         spec:
@@ -165,6 +163,10 @@ Do the tasks in this order:
           containers:
           - image: nginx:alpine
             name: nginx
+            securityContext:
+              appArmorProfile:
+                type: Localhost
+                localhostProfile: custom-nginx
             volumeMounts:
             - name: data-volume
               mountPath: /usr/share/nginx/html
@@ -267,11 +269,14 @@ kubectl wait --for=jsonpath='{.status.phase}'=Bound pvc/alpha-pvc --timeout=30s
 img=''
 vuln=10000
 
-for i in $(docker image ls --format '{{.Repository}}:{{.Tag}}' | grep nginx | grep -v none)
+for i in $(crictl image -f reference=nginx -o json | jq -r .images[].repoTags[] | grep -v "docker.io/library/nginx:latest")
 do
-    crit=$(trivy i -s CRITICAL $i | grep Total | awk '{print $2}')
+    echo "Trivy - $i"
+    crit=$(trivy i -s CRITICAL $i  2>&1 | grep Total | awk '{print $2}')
     [ $crit -lt $vuln ] && vuln=$crit && img=$i
 done
+
+echo "$img - $vuln critical."
 
 # Set up apparmor
 mv /root/usr.sbin.nginx /etc/apparmor.d/usr.sbin.nginx
@@ -296,8 +301,6 @@ spec:
   strategy: {}
   template:
     metadata:
-      annotations:
-        container.apparmor.security.beta.kubernetes.io/nginx: localhost/custom-nginx
       labels:
         app: alpha-xyz
     spec:
@@ -308,6 +311,10 @@ spec:
       containers:
       - image: $img
         name: nginx
+        securityContext:
+          appArmorProfile:
+            type: Localhost
+            localhostProfile: custom-nginx
         volumeMounts:
         - name: data-volume
           mountPath: /usr/share/nginx/html
