@@ -64,8 +64,8 @@ Do the tasks in this order:
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-    name: alpha-pvc
-    namespace: alpha
+      name: alpha-pvc
+      namespace: alpha
     spec:
       accessModes:
       - ReadWriteMany
