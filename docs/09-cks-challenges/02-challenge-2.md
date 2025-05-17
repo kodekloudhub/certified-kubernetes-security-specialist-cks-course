@@ -20,7 +20,7 @@ Do the tasks in this order:
     * Run as non root(instead, use correct application user)
     * Avoid exposing unnecessary ports
     * Avoid copying the `Dockerfile` and other unnecessary files and directories in to the image. Move the required files and directories (app.py, requirements.txt and the templates directory) to a subdirectory called `app` under `webapp` and update the COPY instruction in the `Dockerfile` accordingly.
-    * Once the security issues are fixed, rebuild this image locally with the tag `kodekloud/webapp-color:stable`
+    *Once the security issues are fixed, rebuild this image locally with the tag `controlplane:32766/kodekloud/webapp-color:stable` and push it to the private registry using the `/root/push-to-registry.sh` script.
 
     The first two subtasks involve cleaning the Dockerfile...
 
@@ -62,10 +62,11 @@ Do the tasks in this order:
         mv templates app/
         ```
 
-    1. Rebuild image
+    1. Rebuild image and push it. It is actually faster just to use `docker push` which is all the given shell script actually does if you examine it.
 
         ```bash
-        docker build -t kodekloud/webapp-color:stable .
+        docker build -t controlplane:32766/kodekloud/webapp-color:stable .
+        docker push controlplane:32766/kodekloud/webapp-color:stable
         ```
 
     1. Return to home directory
@@ -80,9 +81,9 @@ Do the tasks in this order:
     <summary>kubesec</summary>
 
     * Fix issues with the `/root/dev-webapp.yaml` file which was used to deploy the `dev-webapp` pod in the `dev` namespace.
-    * Redeploy the `dev-webapp` pod once issues are fixed with the image `kodekloud/webapp-color:stable`
+    * Redeploy the `dev-webapp` pod once issues are fixed with the image `controlplane:32766/kodekloud/webapp-color:stable`
     * Fix issues with the `/root/staging-webapp.yaml` file which was used to deploy the `staging-webapp` pod in the `staging` namespace.
-    * Redeploy the `staging-webapp` pod once issues are fixed with the image `kodekloud/webapp-color:stable`
+    * Redeploy the `staging-webapp` pod once issues are fixed with the image `controlplane:32766/kodekloud/webapp-color:stable`
 
     <br/>
 
@@ -99,7 +100,7 @@ Do the tasks in this order:
         1.  Edit the manifest:
             1. Remove the `SYS_ADMIN` capability
             1. Set `allowPrivilegeEscalation` to `false`
-            1. Set the container's image to `kodekloud/webapp-color:stable` (which we built earlier)
+            1. Set the container's image to `controlplane:32766/kodekloud/webapp-color:stable` (which we built earlier)
 
         1.  Don't recreate the pod yet. There's more to do in the next stage.
 
@@ -119,7 +120,7 @@ Do the tasks in this order:
     Ensure that the pod `dev-webapp` is immutable:
 
     * This pod can be accessed using the `kubectl exec` command. We want to make sure that this does not happen. Use a startupProbe to remove all shells before the container startup. Use `initialDelaySeconds` and `periodSeconds` of `5`. Hint: For this to work you would have to run the container as root!
-    * Image used: `kodekloud/webapp-color:stable` (We have already done this above)
+    * Image used: `controlplane:32766/kodekloud/webapp-color:stable` (We have already done this above)
     * Redeploy the pod as per the above recommendations and make sure that the application is up.
 
     1.  Check what shells are present in the container - shell commands are found in `/bin` directory and usually end with `sh`, e.g. `sh` itself, `bash` etc.
@@ -155,6 +156,8 @@ Do the tasks in this order:
           periodSeconds: 5
         ```
 
+        NOTE: If we were deploying such an image in a real world scenario, we would remove these shells when creating a custom image with `docker build` as a final step after doing anything during the build that would require use of a shell. This exercise just shows that you can do such things in a probe, although it's not really a correct use of a probe!
+
     1. Now recreate the running pod with everything we changed in step 2 and this step
 
         ```
@@ -169,7 +172,7 @@ Do the tasks in this order:
     Ensure that the pod `dev-webapp` is immutable:
 
     * This pod can be accessed using the `kubectl exec` command. We want to make sure that this does not happen. Use a startupProbe to remove all shells before the container startup. Use `initialDelaySeconds` and `periodSeconds` of `5`. Hint: For this to work you would have to run the container as root!
-    * Image used: `kodekloud/webapp-color:stable` (We have already done this above)
+    * Image used: `controlplane:32766/kodekloud/webapp-color:stable` (We have already done this above)
     * Redeploy the pod as per the above recommendations and make sure that the application is up.
 
     <br/>
@@ -295,7 +298,8 @@ EOF
 
 sed -i -f prog.sed Dockerfile
 
-docker build -t kodekloud/webapp-color:stable .
+docker build -t controlplane:32766/kodekloud/webapp-color:stable .
+docker push controlplane:32766/kodekloud/webapp-color:stable
 
 cd ~
 
@@ -335,7 +339,7 @@ spec:
   - env:
     - name: APP_COLOR
       value: pink
-    image: kodekloud/webapp-color:stable
+    image: controlplane:32766/kodekloud/webapp-color:stable
     imagePullPolicy: IfNotPresent
     name: webapp-color
     resources: {}
@@ -374,7 +378,7 @@ spec:
   - env:
     - name: APP_COLOR
       value: darkblue
-    image: kodekloud/webapp-color:stable
+    image: controlplane:32766/kodekloud/webapp-color:stable
     imagePullPolicy: Never
     name: webapp-color
     resources: {}
@@ -424,13 +428,12 @@ metadata:
 spec:
   podSelector: {}
   policyTypes:
-    - Ingress
+  - Ingress
   ingress:
-    - from:
-        - podSelector: {}
-          namespaceSelector:
-            matchLabels:
-              kubernetes.io/metadata.name: prod
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: prod
 EOF
 
 end_time=$(date '+%s')

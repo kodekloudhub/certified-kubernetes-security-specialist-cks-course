@@ -60,7 +60,7 @@ With questions where you need to modify API server, you can use [this resource](
 
 
 1.  <details>
-    <summary>A few pods have been deployed in the <code>apps-xyz</code> namespace. There is a pod called <code>redis-backend</code> which serves as the backend for the apps<code>app1</code> and <code>app2</code>. The pod called <code>app3</code> on the other hand, does not need access to this <code>redis-backend</code> pod. Create a network policy called <code>allow-app1-app2</code> that will only allow incoming traffic from <code>app1</code> and <code>app2</code> to the <code>redis-pod</code>.</summary>
+    <summary>There is an existing CiliumNetworkPolicy <code>default-allow</code> in namespace <code>team-azure</code> which allows all traffic..</summary>
 
     Make sure that all the available labels are used correctly to target the correct pods. Do not make any other changes to these objects.
 
