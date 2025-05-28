@@ -323,9 +323,7 @@ sed -i -f prog.sed /root/staging-webapp.yaml
 
 ## Staging
 
-kubectl delete pod -n staging staging-webapp --grace-period 0 --force
-
-cat <<EOF | kubectl create -f -
+kubectl replace --force --grace-period 0 -f - <<EOF
 apiVersion: v1
 kind: Pod
 metadata:
@@ -362,9 +360,7 @@ kubectl wait pods -n staging -l name=staging-webapp --for condition=Ready --time
 
 ## dev
 
-kubectl delete pod -n dev dev-webapp --grace-period 0 --force
-
-cat <<EOF | kubectl create -f -
+kubectl replace --force --grace-period 0 -f - <<EOF
 apiVersion: v1
 kind: Pod
 metadata:
@@ -419,7 +415,7 @@ kubectl patch deployment -n prod prod-web --type json \
 kubectl rollout status deployment -n prod prod-web --timeout=90s
 
 ## Prod netpol
-cat <<EOF | kubectl create -f -
+kubectl create -f - <<EOF
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
